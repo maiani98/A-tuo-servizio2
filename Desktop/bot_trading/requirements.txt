@@ -1,0 +1,13 @@
+ccxt
+loguru
+pandas
+scikit-learn
+lightgbm
+python-dotenv
+mlfinlab
+ta
+websocket-client
+joblib
+optuna
+vectorbt
+tenacity>=8.2.2 
