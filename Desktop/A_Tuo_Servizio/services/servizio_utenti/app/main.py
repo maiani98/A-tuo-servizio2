@@ -15,3 +15,9 @@ app.include_router(utenti.router, prefix="/api/v1/utenti", tags=["utenti"])
 @app.get("/")
 async def root():
     return {"message": "Servizio Utenti"}
+
+
+@app.get("/health", tags=["Health Check"])
+async def health_check():
+    """Simple endpoint to verify service status."""
+    return {"status": "ok", "service": "Servizio Utenti"}

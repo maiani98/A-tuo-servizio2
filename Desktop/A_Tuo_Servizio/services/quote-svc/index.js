@@ -233,6 +233,11 @@ app.get('/', (req, res) => {
   res.send('quote-svc is running. See documentation for API endpoints.');
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', service: 'quote-svc' });
+});
+
 // Handle 404 for undefined routes
 app.use((req, res, next) => {
   res.status(404).send("Sorry, can't find that!");

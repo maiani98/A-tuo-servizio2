@@ -46,6 +46,11 @@ app.get('/', (req, res) => {
   res.send(`chat-svc is running. Socket.IO is active. User Sockets: ${JSON.stringify(Array.from(userSockets.entries()))}`);
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', service: 'chat-svc' });
+});
+
 // --- Initialize Socket.IO ---
 initializeSocketIO(io);
 
