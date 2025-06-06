@@ -1,0 +1,144 @@
+/* Stili per PaginaOpzioniAccesso */
+
+.paginaContenitore {
+    max-width: 480px; /* Larghezza massima per il form */
+    margin: 4rem auto; /* Centra il contenitore e aggiunge spazio sopra/sotto */
+    padding: 2.5rem; /* Spazio interno */
+    background-color: var(--colore-sfondo-secondario, #ffffff); /* Sfondo bianco o leggermente grigio */
+    border-radius: var(--bordi-radius-grande, 8px); /* Bordi arrotondati */
+    box-shadow: var(--ombreggiatura-media, 0 4px 12px rgba(0, 0, 0, 0.1)); /* Ombra per dare profondità */
+    border: 1px solid var(--colore-bordo-input, #e0e0e0); /* Bordo sottile */
+}
+
+.logoOpzioni {
+    text-align: center;
+    font-size: 2.2rem; /* Dimensione del logo */
+    font-weight: bold;
+    color: var(--colore-primario, #007bff); /* Colore primario del tema */
+    margin-bottom: 2rem; /* Spazio sotto il logo */
+    font-family: var(--font-titoli, 'Arial', sans-serif); /* Font per il logo */
+}
+
+.titoloOpzioni {
+    text-align: center;
+    margin-bottom: 2.5rem; /* Spazio sotto il titolo */
+    font-size: 1.6rem; /* Dimensione del titolo */
+    color: var(--colore-testo-principale, #333333);
+    font-weight: 600; /* Leggermente meno bold del logo */
+}
+
+.ctaWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Spazio tra i bottoni principali */
+    margin-bottom: 2rem; /* Spazio sotto i CTA principali */
+}
+
+.bottoneOpzione {
+    /* I bottoni usano il componente Bottone, che ha già stili.
+       Possiamo aggiungere sovrascritture specifiche qui se necessario.
+       La prop 'block' sul componente Bottone dovrebbe renderli width: 100% */
+    padding: 0.8rem 1rem; /* Padding interno dei bottoni */
+    font-size: 1.05rem; /* Dimensione testo bottoni */
+}
+
+.divisoreSocial {
+    text-align: center;
+    color: var(--colore-testo-terziario, #757575); /* Colore testo per "Oppure" */
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; /* Spazio attorno al divisore */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Spazio tra linee e testo */
+}
+
+.divisoreSocial::before,
+.divisoreSocial::after {
+    content: '';
+    flex-grow: 1; /* Le linee occupano lo spazio disponibile */
+    height: 1px; /* Spessore della linea */
+    background-color: var(--colore-bordo-input, #e0e0e0); /* Colore della linea */
+}
+
+.socialLoginWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Spazio tra i bottoni social */
+    margin-bottom: 2rem; /* Spazio sotto i bottoni social */
+}
+
+.bottoneSocial {
+    /* Stile base per i bottoni social (es. Google, Facebook, Apple)
+       Utilizza la variante 'outline' del componente Bottone.
+       Potrebbe includere padding specifico o stili per le icone. */
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+    /* text-align: left; /* Se si volessero le icone a sinistra e testo allineato */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; /* O 'flex-start' se si vuole l'icona a sx e testo che segue */
+    /* gap: 0.5rem; */
+}
+
+/* Esempio se avessimo icone (da aggiungere al componente Bottone o qui)
+.socialIcon {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+*/
+
+.testoLegale {
+    font-size: 0.8rem;
+    color: var(--colore-testo-secondario, #555555);
+    text-align: center;
+    line-height: 1.5; /* Interlinea per leggibilità */
+    margin-top: 1rem; /* Spazio sopra il testo legale */
+}
+
+.testoLegale a {
+    color: var(--colore-primario, #007bff); /* Colore per i link */
+    text-decoration: underline; /* Sottolineatura per i link */
+}
+
+.testoLegale a:hover {
+    color: var(--colore-primario-scuro, #0056b3); /* Colore al hover per i link */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .paginaContenitore {
+        margin: 2rem auto;
+        padding: 1.5rem;
+        box-shadow: none; /* Rimuovi ombra su schermi piccoli se si preferisce un look più flat */
+        border: none; /* Rimuovi bordo su schermi piccoli */
+    }
+
+    .logoOpzioni {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .titoloOpzioni {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .paginaContenitore {
+        margin: 1rem auto; /* Ancora meno margine per schermi molto stretti */
+        padding: 1rem;
+    }
+    .logoOpzioni {
+        font-size: 1.8rem;
+    }
+    .titoloOpzioni {
+        font-size: 1.25rem;
+    }
+    .bottoneOpzione, .bottoneSocial {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}

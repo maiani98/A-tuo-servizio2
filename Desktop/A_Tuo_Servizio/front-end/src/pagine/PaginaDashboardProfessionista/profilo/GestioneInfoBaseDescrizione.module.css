@@ -1,0 +1,110 @@
+.containerForm {
+  padding: 20px;
+  background-color: #fff; /* White background for the form area */
+}
+
+.titoloSezione {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.sottotitoloSezione {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.formModifica {
+  display: flex;
+  flex-direction: column;
+  gap: 22px; /* Spazio tra i campi del form */
+}
+
+.label { /* Stile per etichette se non fornito da CampoTesto o per etichette di select/textarea custom */
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.selectInput, /* Per il select Tipo Attività */
+.textareaInput { /* Per la textarea Descrizione Dettagliata */
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #fff;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.selectInput:focus,
+.textareaInput:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+.col {
+  flex: 1;
+}
+
+.uploadImmagineContainer {
+  margin-top: 10px;
+  padding: 15px;
+  border: 1px dashed #ced4da;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+.immaginePreview {
+  display: block;
+  max-width: 150px;
+  max-height: 150px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  object-fit: cover;
+}
+.immaginePreviewCopertina {
+  display: block;
+  width: 100%;
+  max-height: 250px; /* Limita altezza anteprima copertina */
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  object-fit: cover;
+}
+
+.inputFile {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.suggerimentoUpload {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+.azioniForm {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.feedbackPositivo {
+  color: #155724; /* Verde scuro */
+  background-color: #d4edda; /* Verde chiaro */
+  border: 1px solid #c3e6cb;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+}

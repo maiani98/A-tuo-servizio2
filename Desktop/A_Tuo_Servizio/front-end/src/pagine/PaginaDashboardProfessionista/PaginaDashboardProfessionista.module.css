@@ -1,0 +1,48 @@
+/* src/pagine/PaginaDashboardProfessionista/PaginaDashboardProfessionista.module.css */
+
+.dashboardContenitore {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.titoloDashboard {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--colore-primario);
+}
+
+.navDashboard {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--colore-sfondo-chiaro);
+  flex-wrap: wrap;
+}
+
+.navDashboard a {
+  text-decoration: none;
+  color: var(--colore-testo-secondario);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-medio);
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navDashboard a:hover {
+  background-color: var(--colore-sfondo-chiaro);
+  color: var(--colore-primario);
+}
+
+/* Stile per il link attivo, se si usa NavLink o si aggiunge una classe manualmente */
+.navDashboard a.active { /* Esempio se si usa NavLink e imposta 'active' */
+  background-color: var(--colore-primario-trasparente, rgba(43, 78, 114, 0.1)); /* Usa variabile se definita, altrimenti fallback */
+  color: var(--colore-primario);
+  font-weight: 600;
+}
+
+.contenutoDashboard {
+  /* Stile per il contenitore dell'Outlet, se necessario */
+  /* Esempio: background-color: var(--colore-bianco); padding: 1.5rem; border-radius: 8px; */
+}

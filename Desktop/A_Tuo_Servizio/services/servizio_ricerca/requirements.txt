@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+pydantic[dotenv] # Per caricare config da .env
+opensearch-py # O elasticsearch se si preferisce Elasticsearch
+pytest
+httpx # Required by TestClient
+pytest-asyncio # For async tests and mocks

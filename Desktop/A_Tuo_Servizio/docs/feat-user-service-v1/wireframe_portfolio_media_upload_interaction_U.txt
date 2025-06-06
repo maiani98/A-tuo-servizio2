@@ -1,0 +1,72 @@
+**Wireframe Testuale: Interazione di Caricamento Media nel Form "Aggiungi Nuovo Progetto" (Sezione Portfolio U)**
+
+**1. Contesto:**
+
+*   Questo wireframe si concentra sull'interazione specifica dell'area "Caricamento Media (Multi-Immagine/Video)" all'interno del Corpo del Modale del form "Aggiungi Nuovo Progetto".
+*   Il form è già aperto, e l'area "Caricamento Media" è visibile, inizialmente con l'etichetta "Immagini/Video del Progetto\*", l'area rettangolare con bordo tratteggiato, il testo "Trascina qui i tuoi file (immagini/video) o", il pulsante "Clicca per Selezionare File", e il testo di aiuto sottostante ("Formati supportati: JPG, PNG, MP4, MOV. Max 5 file. Dimensione massima per file: 10MB. Si consiglia almeno un'immagine.").
+
+**2. Azione di Innesco per la Selezione dei File:**
+
+*   **Opzione 1: Click sul Pulsante:**
+    *   L'utente clicca sul pulsante con etichetta "Clicca per Selezionare File" presente all'interno dell'area di caricamento.
+*   **Opzione 2: Drag and Drop:**
+    *   L'utente trascina uno o più file (immagini o video) dal proprio computer e li rilascia all'interno dell'area rettangolare con bordo tratteggiato. Durante il trascinamento sopra l'area designata, l'area potrebbe cambiare aspetto (es. colore di sfondo più accentuato) per indicare che è una "drop zone" attiva.
+
+**3. Simulazione della Finestra di Dialogo del Sistema Operativo:**
+
+*   **Apparizione Concettuale:**
+    *   Se l'utente ha cliccato sul pulsante "Clicca per Selezionare File", il wireframe indica concettualmente che si aprirebbe una **finestra di dialogo standard del sistema operativo**.
+    *   Questa finestra (non dettagliata nel wireframe) permetterebbe all'utente di navigare tra le cartelle del proprio computer e selezionare uno o più file media.
+    *   Dopo la selezione e la conferma nella finestra di dialogo del SO, questa scompare.
+
+**4. Visualizzazione delle Anteprime dei File Selezionati/Caricati:**
+
+*   **Area Anteprime:** L'area precedentemente identificata dal placeholder testuale "Le anteprime dei file caricati appariranno qui" (sotto il pulsante di selezione file, o che sostituisce l'intera area di drop una volta che i file sono stati selezionati/trascinati) ora si popola.
+*   **Layout delle Anteprime:**
+    *   Una **griglia flessibile** (es. 3-4 anteprime per riga su desktop, che si adatta a meno colonne su schermi più piccoli) o una **lista orizzontale scrollabile** di piccole card di anteprima. Ogni card rappresenta un file selezionato.
+
+*   **Contenuto della Card di Anteprima per File Immagine:**
+    *   **Miniatura Immagine:** Un piccolo riquadro (es. 100x100 pixel) che mostra una miniatura dell'immagine caricata.
+    *   **Nome File (sotto la miniatura):** Testo del nome del file (es. "foto_vacanza_01.jpg"), troncato con ellissi (...) se troppo lungo.
+    *   **Icona/Pulsante "Elimina" (X):**
+        *   Una piccola icona "X" posizionata nell'angolo in alto a destra della miniatura.
+        *   Azione: Al click, rimuove l'anteprima dalla lista e annulla il caricamento (se in corso) o la selezione di quel file.
+    *   **Indicatore/Selezione "Immagine Principale" (Opzionale Concettuale):**
+        *   Un piccolo checkbox o un'icona a forma di stella sotto la miniatura, con etichetta "Principale".
+        *   Solo un'immagine può essere selezionata come principale. Se un'altra immagine viene selezionata come principale, la precedente perde tale stato. L'immagine principale potrebbe avere un bordo visivamente distinto.
+
+*   **Contenuto della Card di Anteprima per File Video:**
+    *   **Miniatura Generica Video:** Un piccolo riquadro (es. 100x100 pixel) che mostra un'icona standard di "video" (es. una cinepresa o un pulsante "play") o, se tecnicamente fattibile, un frame iniziale del video.
+    *   **Nome File (sotto la miniatura):** Testo del nome del file (es. "presentazione_prodotto.mp4"), troncato con ellissi (...) se troppo lungo.
+    *   **Icona/Pulsante "Elimina" (X):**
+        *   Una piccola icona "X" posizionata nell'angolo in alto a destra della miniatura.
+        *   Azione: Al click, rimuove l'anteprima e il file.
+
+**5. Indicatori di Progresso Caricamento (Concettuale):**
+
+*   **Durante il Caricamento Effettivo (dopo la selezione e prima della visualizzazione completa dell'anteprima o in parallelo):**
+    *   **Sull'Anteprima:** La miniatura dell'immagine/video potrebbe essere semi-trasparente con una **barra di progresso orizzontale** sovrapposta che si riempie da sinistra a destra.
+    *   **Testo sull'Anteprima/Sotto l'Anteprima:** In alternativa o in aggiunta alla barra, un testo "In caricamento..." o "XX%".
+    *   Una volta completato il caricamento, la barra/testo scompare e l'anteprima diventa completamente visibile e opaca.
+
+**6. Gestione degli Errori di Caricamento (Base):**
+
+*   **Errore per Singolo File:**
+    *   Se un file caricato non rispetta i vincoli (es. formato non supportato, dimensione eccessiva), l'anteprima corrispondente mostra:
+        *   Un bordo rosso o un'icona di errore (es. un punto esclamativo rosso).
+        *   Un breve messaggio di errore sotto il nome del file (es. "Formato non valido" o "File troppo grande (max 10MB)").
+        *   L'icona "Elimina" (X) rimane attiva per permettere la rimozione del file errato.
+*   **Superamento Numero Massimo di File:**
+    *   Se l'utente tenta di caricare più dei 5 file consentiti (tramite selezione multipla o drag and drop), solo i primi 5 file (o quelli che rientrano nel limite) vengono processati e mostrati come anteprime.
+    *   Un messaggio di avviso appare sopra o sotto l'area delle anteprime: "Limite massimo di 5 file raggiunto. Alcuni file potrebbero non essere stati aggiunti."
+    *   In alternativa, se l'utente seleziona più di 5 file nella finestra di dialogo del SO, un avviso potrebbe apparire immediatamente prima che inizi il caricamento, chiedendo di ridurre la selezione.
+
+**7. Testo di Aiuto Esistente (Contesto):**
+
+*   Il testo di aiuto precedentemente definito rimane visibile sotto l'intera area di caricamento media: "Formati supportati: JPG, PNG, MP4, MOV. Max 5 file. Dimensione massima per file: 10MB. Si consiglia almeno un'immagine." Questo testo fornisce il contesto per i limiti e gli errori.
+
+**8. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sull'interfaccia e sul feedback visivo durante il processo di caricamento.
+*   Le interazioni specifiche del server (come la velocità di caricamento reale) sono al di fuori dello scopo di questo wireframe.
+*   Il footer del modale con i pulsanti "Annulla" e "Salva Progetto" rimane come definito nei wireframe precedenti. Il pulsante "Salva Progetto" si abiliterà solo se almeno un media obbligatorio è stato caricato con successo e gli altri campi obbligatori del form sono compilati.

@@ -1,0 +1,82 @@
+/* src/stili/globale.css */
+
+:root {
+  /* Palette Colori */
+  --colore-primario: #2B4E72;         /* Blu Profondo */
+  --colore-secondario: #6AC0B2;       /* Verde Acqua Chiaro / Turchese Morbido */
+  
+  --colore-testo-principale: #333333; /* Grigio Scuro */
+  --colore-testo-secondario: #888888; /* Grigio Medio */
+  --colore-sfondo-chiaro: #F4F6F8;    /* Grigio Chiaro (Sfondi/Separatori) */
+  --colore-bianco: #FFFFFF;           /* Bianco Puro */
+  
+  --colore-successo: #4CAF50;         /* Verde Brillante */
+  --colore-errore: #D9534F;           /* Rosso Vivace */
+  --colore-warning: #F0AD4E;          /* Arancione Ambrato */
+
+  /* Tipografia */
+  --font-titoli: 'Montserrat', sans-serif;
+  --font-corpo: 'Open Sans', sans-serif;
+
+  /* Spaziatura e Layout (Esempi, possono essere estesi) */
+  --border-radius-piccolo: 4px;
+  --border-radius-medio: 6px;
+  --border-radius-grande: 8px; /* Per card/modali, la guida dice 8px o 12px */
+  --border-radius-contenitori: 12px;
+}
+
+/* Reset CSS Minimale e Stili di Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base per calcoli rem/em se necessario */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-corpo);
+  color: var(--colore-testo-principale);
+  background-color: var(--colore-bianco);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; /* Aumentato leggermente per leggibilità come da guida */
+  -webkit-font-smoothing: antialiased; /* Migliora resa font su Webkit */
+  -moz-osx-font-smoothing: grayscale; /* Migliora resa font su Firefox */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-titoli);
+  margin-top: 0; /* Rimuove margine default per controllo più fine */
+}
+
+a {
+  color: var(--colore-primario);
+  text-decoration: none; /* Rimuove sottolineatura di default */
+}
+
+a:hover {
+  text-decoration: underline; /* Aggiunge sottolineatura su hover per accessibilità */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Rimuove spazio extra sotto le immagini */
+}
+
+/* Stili di base per input e bottoni (possono essere sovrascritti da CSS Modules) */
+input,
+button,
+textarea,
+select {
+  font-family: inherit; /* Eredita font dal body o contenitore */
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}

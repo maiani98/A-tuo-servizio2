@@ -1,0 +1,114 @@
+/* src/pagine/PaginaChat/PaginaChat.module.css */
+
+.paginaChatContenitore {
+  padding: 1.5rem; /* Padding generale per la pagina */
+  max-width: 800px; /* Come specificato nel TSX */
+  margin: 2rem auto; /* Centra e dà spazio sopra/sotto */
+  background-color: var(--colore-bianco);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 4rem - var(--altezza-header, 70px) - var(--altezza-footer, 70px)); /* Esempio di altezza per occupare più spazio, sottraendo header/footer e margini */
+  max-height: 700px; /* Limite massimo per non diventare troppo grande su schermi alti */
+}
+
+.headerChat {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--colore-primario);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--colore-sfondo-chiaro);
+}
+
+.areaMessaggi {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px solid var(--colore-sfondo-chiaro);
+  background-color: #f9f9f9; /* Sfondo leggermente diverso per l'area messaggi */
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Spazio tra i messaggi */
+}
+
+.messaggio {
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  max-width: 75%; /* Messaggi non troppo larghi */
+  word-wrap: break-word; /* Per andare a capo con parole lunghe */
+  line-height: 1.5;
+}
+
+.utente {
+  align-self: flex-end;
+  background-color: var(--colore-primario);
+  color: var(--colore-bianco);
+  border-bottom-right-radius: 4px; /* Stile "fumetto" */
+}
+
+.professionista {
+  align-self: flex-start;
+  background-color: var(--colore-sfondo-chiaro);
+  color: var(--colore-testo-principale);
+  border: 1px solid #e0e0e0; /* Leggero bordo per distinguerli meglio */
+  border-bottom-left-radius: 4px; /* Stile "fumetto" */
+}
+
+.testoMessaggio { /* Classe applicata al Paragrafo dentro il messaggio */
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.timestampMessaggio {
+  font-size: 0.7rem; /* Più piccolo */
+  display: block;
+  text-align: right;
+  opacity: 0.8; /* Leggermente più visibile */
+  margin-top: 5px; /* Aumentato leggermente lo spazio */
+  color: inherit; /* Eredita colore da .utente o .professionista */
+}
+
+.utente .timestampMessaggio {
+  /* Se si vuole un colore specifico per il timestamp dell'utente */
+  /* color: rgba(255, 255, 255, 0.8); */
+}
+
+.professionista .timestampMessaggio {
+   /* Se si vuole un colore specifico per il timestamp del professionista */
+  /* color: var(--colore-testo-secondario); */
+}
+
+
+.areaInputMessaggio {
+  display: flex;
+  gap: 0.75rem; /* Aumentato leggermente il gap */
+  margin-top: 1.5rem; /* Più spazio sopra l'area input */
+  padding-top: 1.5rem; /* Spazio dentro l'area, sopra l'input */
+  border-top: 1px solid var(--colore-sfondo-chiaro);
+}
+
+.campoInputMessaggio { /* Applicato a CampoTesto */
+  flex-grow: 1;
+}
+
+/* Se CampoTesto non applica flex-grow al suo input interno,
+   potrebbe essere necessario un target più specifico o una prop per CampoTesto
+   che permetta di passare una classe all'input.
+   Per ora, assumiamo che .campoInputMessaggio su CampoTesto sia sufficiente
+   o che CampoTesto gestisca bene il suo layout interno.
+*/
+
+/* Media query per schermi piccoli */
+@media (max-width: 600px) {
+  .paginaChatContenitore {
+    margin: 1rem;
+    padding: 1rem;
+    height: calc(100vh - 2rem - var(--altezza-header, 60px) - var(--altezza-footer, 50px));
+  }
+  .messaggio {
+    max-width: 85%; /* Permetti ai messaggi di essere un po' più larghi */
+  }
+}

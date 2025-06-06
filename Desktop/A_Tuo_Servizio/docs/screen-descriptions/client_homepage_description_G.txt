@@ -1,0 +1,96 @@
+**Descrizione Testuale: Client Homepage (G)**
+
+**1. Obiettivo Primario (UX):**
+
+L'obiettivo primario della Client Homepage è fornire agli utenti un punto di accesso chiaro, intuitivo e accogliente per cercare e trovare rapidamente professionisti e servizi. La pagina deve comunicare immediatamente la proposta di valore del servizio e guidare l'utente verso l'azione principale: la ricerca.
+
+**2. Elementi Chiave UI e Layout:**
+
+**2.1. Header Fisso (Sticky):**
+    *   **Scopo:** Garantire accesso costante alla navigazione principale e alle azioni chiave.
+    *   **Layout Desktop:**
+        *   A sinistra: Logo del brand.
+        *   A destra:
+            *   Link testuale o icona "Accedi/Registrati" (per utenti non autenticati).
+            *   Link testuale o icona "Il Mio Account" con menu dropdown (per utenti autenticati).
+            *   Link testuale evidente "Sei un professionista?".
+    *   **Layout Mobile:**
+        *   A sinistra: Logo del brand.
+        *   A destra: Icona hamburger menu che espande per mostrare i link di navigazione (incluso "Accedi/Registrati" o "Il Mio Account") e il link "Sei un professionista?".
+    *   **Comportamento:** L'header rimane fisso nella parte superiore della viewport durante lo scroll.
+
+**2.2. Hero Section:**
+    *   **Scopo:** Catturare l'attenzione dell'utente, comunicare il servizio offerto e invitarlo all'azione di ricerca.
+    *   **Layout Desktop:**
+        *   **Titolo Principale (H1):** Testo grande, chiaro e conciso che esprime il beneficio principale o il tipo di servizio offerto (es. "Trova il professionista giusto per te").
+        *   **Sottotitolo/Testo di Supporto:** Breve testo che elabora il titolo, aggiungendo contesto o rassicurazione (es. "Confronta preventivi e scegli l'esperto ideale in pochi click.").
+        *   **Barra di Ricerca Prominente:**
+            *   Campo di input testuale "Che servizio cerchi?" (con placeholder esplicativo, es. "Idraulico, Elettricista, Web Designer").
+            *   Campo di input testuale "Dove?" (con placeholder esplicativo, es. "Milano, Roma, CAP..." e possibile icona per geolocalizzazione).
+            *   Pulsante "Cerca" ben visibile, con testo chiaro (es. "Cerca" o icona lente d'ingrandimento).
+    *   **Layout Mobile:**
+        *   Titolo Principale (H1) e Sottotitolo rimangono prominenti.
+        *   **Barra di Ricerca:** I campi "Che servizio cerchi?" e "Dove?" sono impilati verticalmente per ottimizzare lo spazio. Il pulsante "Cerca" si trova sotto i campi, a piena larghezza o quasi.
+
+**2.3. Sezione "Categorie Popolari" (o "Come Possiamo Aiutarti?"):**
+    *   **Scopo:** Offrire percorsi di navigazione alternativi e veloci verso aree di servizio comuni, ispirare l'utente se non ha una ricerca specifica in mente.
+    *   **Layout Desktop:**
+        *   Titolo di sezione chiaro (es. "Le categorie più richieste" o "Come possiamo aiutarti?").
+        *   **Grid Layout:** Una griglia di card (es. 2x3 o 2x4). Ogni card contiene:
+            *   Icona rappresentativa della categoria.
+            *   Nome della Categoria (es. "Idraulici", "Elettricisti", "Servizi per Eventi").
+        *   Le card sono cliccabili e portano alla pagina di risultati per quella categoria.
+    *   **Layout Mobile:**
+        *   Titolo di sezione.
+        *   **Carousel Orizzontale:** Le card delle categorie scorrono orizzontalmente. Questo ottimizza lo spazio verticale e permette di visualizzare molte categorie. In alternativa, una griglia 2xN con scroll verticale.
+
+**2.4. Sezione "Come Funziona" (Opzionale):**
+    *   **Scopo:** Spiegare in modo semplice e veloce il processo di utilizzo della piattaforma, aumentando la fiducia dell'utente.
+    *   **Layout:**
+        *   Titolo di sezione (es. "Semplice e Veloce" o "Come Funziona").
+        *   Serie di 3-4 step grafici orizzontali (su desktop) o verticali (su mobile).
+        *   Ogni step è composto da:
+            *   Icona o illustrazione semplice.
+            *   Titolo breve dello step (es. "1. Descrivi la tua richiesta").
+            *   Breve descrizione testuale.
+        *   Esempio step: 1. Cerca il servizio -> 2. Confronta i profili -> 3. Contatta e scegli.
+
+**2.5. Sezione "Testimonianze/Valore Aggiunto" (Opzionale):**
+    *   **Scopo:** Costruire fiducia e credibilità mostrando feedback positivi o partner/brand noti.
+    *   **Layout:**
+        *   Titolo di sezione (es. "Dicono di noi" o "I nostri vantaggi").
+        *   **Testimonianze:** Brevi citazioni di clienti soddisfatti, possibilmente con nome e foto (se con consenso). Presentate come card singole o in un piccolo carousel.
+        *   **Valore Aggiunto/Loghi:** Se applicabile, loghi di partner, certificazioni o media che hanno parlato del servizio. Disposti in una riga o griglia discreta.
+
+**2.6. Footer:**
+    *   **Scopo:** Fornire accesso a informazioni secondarie, legali e di contatto.
+    *   **Layout Desktop e Mobile (generalmente simile, con possibile impilamento su mobile):**
+        *   **Sezioni/Colonne:**
+            *   Link Utili: Chi Siamo, FAQ/Aiuto, Termini e Condizioni, Informativa Privacy, Contatti, Blog (se esistente).
+            *   Link Social: Icone o link testuali ai profili social media del brand (Facebook, Instagram, LinkedIn, ecc.).
+        *   Copyright e P.IVA in fondo.
+
+**3. Interazioni Principali (UX):**
+
+*   **Ricerca:**
+    *   L'utente digita il servizio desiderato nel campo "Che servizio cerchi?".
+    *   L'utente digita la località nel campo "Dove?".
+    *   Possibilità di auto-completamento/suggerimenti durante la digitazione in entrambi i campi.
+    *   Opzione di utilizzare la geolocalizzazione (previo consenso) per il campo "Dove?" (click su icona).
+    *   Click sul pulsante "Cerca" per avviare la ricerca e visualizzare la pagina dei risultati.
+*   **Navigazione Categorie:**
+    *   Click su una card di categoria nella sezione "Categorie Popolari" per visualizzare i risultati filtrati per quella categoria.
+*   **Navigazione Header/Footer:**
+    *   Click sui link nell'header (Logo per tornare alla home, Accedi/Registrati, Il Mio Account, Sei un professionista?).
+    *   Click sui link nel footer (Chi Siamo, FAQ, Termini, ecc.).
+*   **Scroll:** L'utente scorre la pagina per visualizzare tutte le sezioni. L'header rimane fisso.
+
+**4. Considerazioni UI/UX Aggiuntive Chiave:**
+
+*   **Above the Fold (Contenuto Visibile Senza Scroll):** La Hero Section, con la barra di ricerca, deve essere interamente visibile "above the fold" sulla maggior parte dei dispositivi desktop e mobile. Questa è l'area di massima priorità.
+*   **Chiarezza Proposta di Valore:** Il messaggio principale (H1 e sottotitolo) deve comunicare in modo immediato e chiaro cosa offre il servizio e quali benefici porta all'utente.
+*   **Mobile First:** Il design e il layout devono essere pensati primariamente per l'esperienza mobile, garantendo usabilità e accessibilità ottimali. L'adattamento a desktop è una conseguenza.
+*   **Performance:** La pagina deve caricarsi rapidamente, specialmente su mobile. Ottimizzare immagini, codice e richieste server.
+*   **Accessibilità (a11y):** Considerare contrasto dei colori, navigazione da tastiera, alternative testuali per le immagini (attributi ALT) per garantire l'utilizzo a utenti con disabilità.
+*   **Call to Action (CTA) Evidenti:** I pulsanti di ricerca e altri inviti all'azione devono essere visivamente prominenti e facili da identificare.
+*   **Feedback Visivo:** Fornire feedback all'utente durante le interazioni (es. caricamento dopo click su "Cerca", hover state sui link e pulsanti).

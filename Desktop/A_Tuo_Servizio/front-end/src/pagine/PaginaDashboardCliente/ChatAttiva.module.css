@@ -1,0 +1,185 @@
+/* Stili per ChatAttiva.tsx (precedentemente PaginaChat.module.css) */
+
+.paginaChatContainer { /* Questo è il wrapper principale di ChatAttiva.tsx */
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    background-color: var(--colore-bianco); /* Assicura sfondo bianco se non ereditato */
+    overflow: hidden; 
+}
+
+/* Header Chat Interno (specifico per ChatAttiva quando dentro DashboardClienteMessaggi) */
+.headerChatInterno {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+    background-color: var(--colore-sfondo-grigio-molto-chiaro, #f8f9fa); /* Leggero sfondo per staccare */
+}
+
+.avatarHeaderChat {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--colore-grigio-placeholder-avatar, #ced4da);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600; /* Per le iniziali */
+    color: var(--colore-bianco);
+    flex-shrink: 0;
+}
+.avatarHeaderChat img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.infoContattoHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem; /* Poco spazio tra nome e stato online */
+}
+
+.nomeContattoHeaderChat {
+    font-weight: 600;
+    font-size: 1.05rem; /* Leggermente più grande */
+    color: var(--colore-testo-forte);
+    line-height: 1.2;
+}
+
+.statoOnlineIndicatore,
+.statoOfflineIndicatore {
+    font-size: 0.8rem;
+    display: flex; /* Per allineare pallino e testo */
+    align-items: center;
+}
+.statoOnlineIndicatore::before,
+.statoOfflineIndicatore::before {
+    content: '●'; 
+    margin-right: 0.4rem;
+    font-size: 0.9em; 
+}
+.statoOnlineIndicatore {
+    color: var(--colore-successo-testo, #155724);
+}
+.statoOnlineIndicatore::before {
+    color: var(--colore-successo-testo, #28a745); /* Pallino verde */
+}
+.statoOfflineIndicatore {
+    color: var(--colore-testo-terziario, #6c757d);
+}
+.statoOfflineIndicatore::before {
+    color: var(--colore-grigio-leggero-testo, #adb5bd); /* Pallino grigio */
+}
+
+
+/* Area Messaggi */
+.areaMessaggi {
+    flex-grow: 1; 
+    overflow-y: auto; 
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: var(--colore-sfondo-chat, #f0f2f5); /* Sfondo leggermente diverso per l'area messaggi */
+}
+
+.messaggioItem {
+    display: flex;
+    max-width: 75%; 
+    word-wrap: break-word; 
+}
+
+.corpoMessaggio {
+    padding: 0.6rem 0.9rem;
+    border-radius: var(--bordi-radius-messaggio, 18px); /* Bordi più arrotondati */
+    line-height: 1.4;
+    box-shadow: var(--ombreggiatura-molto-leggera);
+}
+
+.testoMessaggio {
+    margin: 0 0 0.25rem 0; 
+    font-size: 0.95rem;
+    white-space: pre-wrap; 
+}
+
+.timestampMessaggio {
+    font-size: 0.7rem;
+    color: var(--colore-testo-timestamp, rgba(0,0,0,0.5)); 
+    display: block; 
+    text-align: right;
+}
+
+.messaggioUtente { 
+    align-self: flex-end; 
+}
+.messaggioUtente .corpoMessaggio {
+    background-color: var(--colore-primario);
+    color: var(--colore-bianco);
+    border-bottom-right-radius: var(--bordi-radius-piccolo, 4px); 
+}
+.messaggioUtente .timestampMessaggio {
+    color: var(--colore-bianco-traslucido, rgba(255,255,255,0.8));
+}
+
+
+.messaggioProfessionista { 
+    align-self: flex-start; 
+}
+.messaggioProfessionista .corpoMessaggio {
+    background-color: var(--colore-bianco); /* Messaggi ricevuti bianchi su sfondo colorato */
+    color: var(--colore-testo-principale);
+    border: 1px solid var(--colore-bordo-input-leggero, #e0e0e0);
+    border-bottom-left-radius: var(--bordi-radius-piccolo, 4px); 
+}
+.messaggioProfessionista .timestampMessaggio {
+    color: var(--colore-testo-secondario);
+}
+
+.nessunMessaggio {
+    text-align: center;
+    color: var(--colore-testo-secondario);
+    padding: 2rem;
+    font-style: italic;
+    flex-grow: 1; /* Per centrare se l'area è vuota */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Area Input Messaggio */
+.areaInputMessaggio {
+    display: flex;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--colore-bordo-input-leggero);
+    background-color: var(--colore-sfondo-grigio-molto-chiaro, #f8f9fa); 
+    gap: 0.75rem;
+    align-items: center; /* Allinea verticalmente campo e bottone */
+}
+
+/* Stile per l'input interno del componente CampoTesto */
+.campoInputChatInterno { 
+    flex-grow: 1;
+    padding: 0.7rem 1rem; /* Padding consistente */
+    border-radius: var(--bordi-radius-grande, 20px); /* Input chat arrotondato */
+    border: 1px solid var(--colore-bordo-input, #ced4da);
+    font-size: 0.95rem;
+    /* Il componente CampoTesto dovrebbe applicare questi stili al suo <input>
+       Se CampoTesto ha un suo wrapper, potrebbe essere necessario uno stile più specifico
+       o passare queste proprietà come props al componente CampoTesto se le accetta. */
+}
+.campoInputChatInterno:focus {
+    border-color: var(--colore-primario);
+    box-shadow: 0 0 0 0.2rem var(--colore-primario-trasparente-30);
+}
+
+
+.bottoneInviaChat {
+    padding: 0.7rem 1.25rem; 
+    flex-shrink: 0; 
+    border-radius: var(--bordi-radius-grande); /* Bottone arrotondato come l'input */
+}

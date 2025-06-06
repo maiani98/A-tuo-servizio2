@@ -1,0 +1,19 @@
+**User Stories per il Flusso di Ricerca Professionisti da parte del Cliente (Schermate G & J)**
+
+**1. User Story: Avvio Ricerca Base per Servizio e Località dalla Homepage (G)**
+
+*   **Come** un utente che necessita di un servizio e visita la homepage (G) della piattaforma "A tuo servizio",
+*   **Voglio** poter inserire facilmente il tipo di servizio che sto cercando e la località di mio interesse in una barra di ricerca ben visibile,
+*   **Così che** possa ottenere rapidamente una lista di professionisti che potrebbero soddisfare le mie esigenze iniziali.
+
+**2. User Story: Visualizzazione e Comprensione Rapida dei Risultati tramite le Professional Card (K) sulla Pagina dei Risultati (J)**
+
+*   **Come** un utente che ha eseguito una ricerca e si trova sulla pagina dei risultati (J),
+*   **Voglio** poter visualizzare un elenco di professionisti attraverso delle "Professional Card" (K) chiare e sintetiche, che mostrino a colpo d'occhio le informazioni più importanti (come foto, nome, specializzazione principale, valutazione media, e numero di recensioni),
+*   **Così che** possa rapidamente farmi un'idea generale dei profili disponibili e decidere quali approfondire.
+
+**3. User Story: Utilizzo dei Filtri o dell'Ordinamento per Affinare i Risultati di Ricerca sulla Pagina (J)**
+
+*   **Come** un utente che analizza la lista dei risultati di ricerca (J),
+*   **Voglio** poter applicare filtri specifici (come distanza, valutazione minima, disponibilità, sottocategorie di servizio) e/o ordinare i risultati (per rilevanza, valutazione, distanza),
+*   **Così che** possa personalizzare e restringere l'elenco dei professionisti in base alle mie priorità e preferenze, facilitando la scelta del professionista più adatto.

@@ -1,0 +1,255 @@
+/* src/pagine/HomePage.module.css */
+
+/* === Hero Section === */
+.heroSection {
+  padding: 4rem 1rem; /* Aggiunto padding laterale di fallback se il Contenitore non lo avesse */
+  background-color: var(--colore-sfondo-chiaro);
+  text-align: center;
+}
+
+.contenitoreHero {
+  /* Nessuno stile specifico qui, il Contenitore base dovrebbe gestire max-width e padding.
+     Se servisse un padding diverso per la hero, si può passare la prop 'padding' al Contenitore.
+  */
+}
+
+.titoloHero {
+  font-size: 2.8rem; /* Esempio, potrebbe essere più grande o più piccolo */
+  margin-bottom: 0.75rem;
+  color: var(--colore-primario);
+  font-weight: 700; /* Bold */
+}
+
+.sottotitoloHero {
+  font-size: 1.15rem;
+  color: var(--colore-testo-secondario);
+  margin-bottom: 2.5rem;
+  max-width: 650px; /* Per non rendere il testo troppo largo nella hero */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Search Bar === */
+.searchBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* Allinea gli elementi per altezza uniforme */
+  gap: 1rem;
+  background-color: var(--colore-bianco);
+  padding: 1.5rem;
+  border-radius: 12px; /* Leggermente più grande per un look moderno */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Ombra più pronunciata */
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.campoRicercaServizio,
+.campoLocalitaWrapper { /* Applicato al wrapper per coerenza con flex */
+  flex: 2; 
+  min-width: 220px; /* Larghezza minima prima di andare a capo */
+}
+
+.campoRicercaLocalita { /* Classe per lo specifico CampoTesto dentro il wrapper */
+  width: 100%; /* Occupa tutta la larghezza del wrapper */
+}
+
+.campoLocalitaWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* flex: 2;  già definito sopra */
+  /* min-width: 220px; già definito sopra */
+}
+
+.iconaGeolocalizzazione {
+  position: absolute;
+  right: 12px; /* Adattato per padding di CampoTesto */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--colore-primario);
+  font-size: 1.3rem;
+  padding: 5px; /* Aumenta area cliccabile */
+}
+
+.bottoneRicerca {
+  flex: 1;
+  min-width: 130px;
+  /* Il padding è gestito dal componente Bottone. Se si vuole un'altezza specifica
+     che allinei perfettamente con CampoTesto, potrebbe essere necessario
+     standardizzare l'altezza di entrambi o usare flex align-items: stretch
+     sul container .searchBar e assicurarsi che i componenti si espandano.
+     Il padding di CampoTesto è 10px 12px. Il padding del Bottone è 10px 16px.
+     Sono già abbastanza allineati in altezza.
+  */
+  font-weight: 600; /* Testo più marcato per il bottone di ricerca */
+}
+
+/* Media Query per la Search Bar */
+@media (max-width: 768px) {
+  .searchBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .campoRicercaServizio,
+  .campoLocalitaWrapper, /* Si applica al wrapper */
+  .bottoneRicerca {
+    width: 100%; /* Ogni elemento occupa tutta la larghezza */
+  }
+}
+
+/* === Sezione Categorie Popolari === */
+.categorieSection {
+  padding: 3.5rem 1rem;
+  text-align: center;
+}
+
+.titoloSezione {
+  margin-bottom: 2.5rem;
+  font-size: 2rem; /* Esempio: 32px */
+  color: var(--colore-testo-principale);
+  font-weight: 600; /* Semibold */
+}
+
+.grigliaCategorie {
+  /* La Griglia componente gestisce display:grid e gap.
+     Possiamo aggiungere qui stili specifici per il numero di colonne desiderato
+     per diversi breakpoint se non lo si vuole gestire via props nel TSX.
+     HomePage.tsx usa <Griglia colonne={4}>.
+  */
+}
+
+@media (max-width: 992px) { /* Esempio per tablet */
+  .grigliaCategorie {
+    grid-template-columns: repeat(3, 1fr) !important; /* Sovrascrive prop 'colonne' */
+  }
+}
+@media (max-width: 768px) { /* Esempio per mobile grande */
+  .grigliaCategorie {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 480px) { /* Esempio per mobile piccolo */
+  .grigliaCategorie {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+.categoriaCard {
+  background-color: var(--colore-bianco);
+  padding: 1.8rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.categoriaCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.iconaCategoriaPlaceholder {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--colore-primario);
+  line-height: 1; /* Per evitare spazio extra dall'icona (font) */
+}
+
+.nomeCategoria {
+  font-weight: 500; /* Medium */
+  color: var(--colore-testo-principale);
+  margin-bottom: 0; /* Rimuove margine inferiore del paragrafo */
+  font-size: 1rem;
+}
+
+/* === Sezioni Opzionali ("Come Funziona", "Testimonianze") === */
+.comeFunzionaSection,
+.testimonianzeSection {
+  padding: 3.5rem 1rem;
+}
+
+.comeFunzionaSection {
+  background-color: var(--colore-sfondo-chiaro); /* Alterna colore sfondo */
+}
+
+.grigliaComeFunziona,
+.grigliaTestimonianze {
+  /* La Griglia componente gestisce display:grid e gap.
+     HomePage.tsx usa <Griglia colonne={3}> per entrambe.
+     Aggiungiamo media query per responsività.
+  */
+}
+
+@media (max-width: 768px) {
+  .grigliaComeFunziona,
+  .grigliaTestimonianze {
+    grid-template-columns: 1fr !important; /* Una colonna su mobile */
+  }
+}
+
+
+.stepCard,
+.cardTestimonianza {
+  background-color: var(--colore-bianco);
+  padding: 1.8rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.stepCard {
+  text-align: center;
+}
+
+.cardTestimonianza {
+  text-align: left; /* Testimonianze solitamente allineate a sinistra */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Per spingere l'autore in basso se necessario */
+}
+
+.iconaStep {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--colore-secondario);
+  font-weight: 700;
+  background-color: var(--colore-sfondo-chiaro); /* Cerchio dietro l'icona */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.titoloStep {
+  font-family: var(--font-titoli);
+  font-weight: 600; /* Semibold */
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--colore-testo-principale);
+}
+
+/* Paragrafo dentro stepCard (già stilato da componente Paragrafo, ma se serve specificità) */
+/* .stepCard .paragrafo {} */
+
+
+.testoTestimonianza {
+  font-style: italic;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  color: var(--colore-testo-principale); /* Testo principale per la testimonianza */
+}
+
+.autoreTestimonianza {
+  font-weight: 600; /* Semibold */
+  color: var(--colore-testo-secondario);
+  text-align: right; /* Autore allineato a destra */
+  margin-bottom: 0; /* Rimuove margine inferiore del paragrafo */
+  font-size: 0.9rem;
+}

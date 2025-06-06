@@ -1,0 +1,160 @@
+/* src/pagine/PaginaDashboardProfessionista/PaginaGestioneServizi.module.css */
+
+.contenitoreGestione {
+  padding: 1.5rem;
+  background-color: var(--colore-bianco);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.headerSezione {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap; /* Per far andare a capo il bottone su schermi piccoli */
+  gap: 1rem; /* Spazio tra titolo e bottone se vanno a capo */
+}
+
+.headerSezione > h2 { /* Se Titolo livello={2} renderizza un h2 */
+  margin: 0; /* Rimuove margine default del titolo per allineamento corretto */
+}
+
+.formServizioContenitore {
+  background-color: var(--colore-sfondo-chiaro);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem; /* Spazio se il form è sotto l'header */
+  margin-bottom: 2rem;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Leggera ombra interna */
+}
+
+.titoloForm { /* Per il Titolo H3 del form */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--colore-primario);
+  text-align: center;
+}
+
+.formServizio {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.messaggioErroreForm {
+  color: var(--colore-errore);
+  background-color: rgba(217, 83, 79, 0.08);
+  border: 1px solid rgba(217, 83, 79, 0.5);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 0.5rem; /* Spazio se l'errore è mostrato */
+}
+
+/* Stili per textarea specifici se CampoTesto non li copre adeguatamente */
+.etichettaTextarea {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--colore-testo-principale);
+  font-size: 14px;
+}
+
+.textareaInput {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #CCCCCC;
+  font-family: var(--font-corpo);
+  font-size: 14px;
+  color: var(--colore-testo-principale);
+  min-height: 80px; /* Altezza per descrizione servizio */
+  resize: vertical;
+  transition: border-color 0.2s ease, outline 0.2s ease;
+}
+
+.textareaInput:focus,
+.textareaInput:focus-visible {
+  border-color: var(--colore-primario);
+  outline: 2px solid var(--colore-secondario);
+  outline-offset: 1px;
+}
+
+.bottoniFormServizio {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.elencoServizi {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.messaggioNessunServizio {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--colore-testo-secondario);
+  background-color: var(--colore-sfondo-chiaro);
+  border-radius: 8px;
+}
+
+.cardServizio {
+  background-color: var(--colore-bianco);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Allinea inizio testo e bottoni */
+  gap: 1rem;
+}
+
+.infoServizio {
+  flex-grow: 1;
+}
+
+.nomeServizioCard { /* Stile per h5 o Titolo */
+  font-family: var(--font-titoli);
+  font-weight: 600;
+  font-size: 1.15rem; 
+  color: var(--colore-testo-principale);
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+}
+
+.descrizioneServizioCard { /* Stile per Paragrafo */
+  font-size: 0.95rem;
+  color: var(--colore-testo-secondario);
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+}
+
+.prezzoServizioCard { /* Stile per Paragrafo */
+  font-size: 0.9rem;
+  color: var(--colore-primario);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.azioniCardServizio {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0; /* Impedisce ai bottoni di restringersi */
+  align-items: center; /* Allinea i bottoni verticalmente se il testo è su più righe */
+}
+
+/* Media query per adattare il layout delle card servizio */
+@media (max-width: 600px) {
+  .cardServizio {
+    flex-direction: column;
+    align-items: stretch; /* Fa sì che la sezione info e azioni usino tutta la larghezza */
+  }
+  .azioniCardServizio {
+    justify-content: flex-end; /* Allinea i bottoni a destra */
+    margin-top: 0.75rem; /* Spazio tra info e azioni */
+  }
+}

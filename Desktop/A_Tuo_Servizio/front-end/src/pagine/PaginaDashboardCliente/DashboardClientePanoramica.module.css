@@ -1,0 +1,87 @@
+/* Stili per DashboardClientePanoramica */
+
+.panoramicaContenitore {
+    /* Se il .contenutoPrincipaleDashboard in PaginaDashboardCliente.module.css 
+       ha già padding, questo potrebbe non essere necessario o essere minimo. */
+    /* padding: 0.5rem; */
+}
+
+.titoloSezioneDashboard {
+    font-size: 1.6rem; /* Dimensione per i titoli delle sezioni interne al dashboard */
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-forte);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.grigliaWidget {
+    display: grid;
+    /* Definisce 2 colonne di larghezza uguale, ma permette di andare a una colonna se lo spazio è poco */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1.5rem; /* Spazio tra le card widget */
+}
+
+.cardWidgetPanoramica {
+    background-color: var(--colore-sfondo-widget, var(--colore-bianco)); /* Sfondo della card */
+    padding: 1.25rem 1.5rem; /* Padding interno alla card */
+    border-radius: var(--bordi-radius-medio, 6px);
+    box-shadow: var(--ombreggiatura-molto-leggera, 0 1px 3px rgba(0,0,0,0.04));
+    border: 1px solid var(--colore-bordo-widget, var(--colore-bordo-input-leggero));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spinge il bottone in fondo se la card ha altezza variabile */
+    min-height: 150px; /* Altezza minima per dare consistenza */
+}
+
+.cardWidgetPanoramica h4 { /* Titolo del widget */
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+    color: var(--colore-primario); /* Colore primario per i titoli dei widget */
+    font-family: var(--font-corpo);
+    font-weight: 600;
+}
+
+.cardWidgetPanoramica p { /* Testo nel widget */
+    margin-bottom: 1.25rem; /* Spazio prima del bottone */
+    font-size: 0.95rem;
+    color: var(--colore-testo-secondario);
+    line-height: 1.5;
+    flex-grow: 1; /* Permette al paragrafo di crescere e spingere il bottone in fondo */
+}
+
+.cardWidgetPanoramica a {
+    text-decoration: none; /* Rimuove sottolineatura dai Link che wrappano i Bottoni */
+}
+
+.cardWidgetPanoramica .bottoneWidget { /* Classe specifica per bottoni nei widget se necessario */
+    /* La prop size="small" sul componente Bottone dovrebbe già gestire il padding.
+       Potrebbe essere necessario width: auto o width: 100% a seconda del design. */
+    width: auto; /* Di default, il bottone occupa solo lo spazio del suo contenuto */
+    align-self: flex-start; /* Allinea il bottone a sinistra */
+}
+
+.azioniRapideWidget .bottoneWidget {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem; /* Spazio se vanno a capo */
+}
+
+/* Responsive per la griglia dei widget */
+@media (max-width: 768px) {
+    .grigliaWidget {
+        /* Su schermi più piccoli, minmax(min(100%, 300px), 1fr) farà sì che le card
+           occupino tutta la larghezza e vadano in una singola colonna.
+           Se si vuole forzare una colonna prima: */
+        /* grid-template-columns: 1fr; */
+    }
+    .cardWidgetPanoramica {
+        padding: 1rem 1.25rem;
+    }
+    .cardWidgetPanoramica h4 {
+        font-size: 1.1rem;
+    }
+    .cardWidgetPanoramica p {
+        font-size: 0.9rem;
+    }
+}

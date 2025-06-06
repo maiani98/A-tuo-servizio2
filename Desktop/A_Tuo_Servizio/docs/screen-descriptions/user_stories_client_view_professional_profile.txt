@@ -1,0 +1,25 @@
+**User Stories per il Flusso di Visualizzazione del Profilo Professionista da parte del Cliente (Schermata L)**
+
+**1. User Story: Comprensione Generale del Profilo Professionista**
+
+*   **Come** un potenziale cliente che visita la pagina profilo (L) di un professionista,
+*   **Voglio** poter visualizzare una panoramica chiara e completa delle sue informazioni chiave (come nome, foto, specializzazioni, descrizione dell'attività, e informazioni di contatto di base),
+*   **Così che** possa rapidamente capire chi è il professionista, cosa fa, e farmi una prima idea della sua adeguatezza alle mie esigenze.
+
+**2. User Story: Esplorazione Approfondita del Portfolio Lavori**
+
+*   **Come** un potenziale cliente che sta valutando un professionista sul suo profilo (L),
+*   **Voglio** poter navigare facilmente nella sezione portfolio (M), visualizzare una galleria (N) di anteprime dei suoi progetti passati, e cliccare su quelli di mio interesse per vedere i dettagli (O) con più immagini/video e descrizioni complete,
+*   **Così che** possa valutare concretamente la qualità, lo stile e l'esperienza del professionista attraverso i suoi lavori precedenti e capire se sono in linea con le mie aspettative.
+
+**3. User Story: Consultazione delle Recensioni per Valutare Affidabilità e Qualità**
+
+*   **Come** un potenziale cliente che esamina il profilo di un professionista (L),
+*   **Voglio** poter accedere e leggere facilmente le recensioni e le valutazioni lasciate da altri clienti, inclusi i commenti testuali,
+*   **Così che** possa ottenere un riscontro da esperienze passate di altri utenti, valutare l'affidabilità, la professionalità e la qualità del servizio offerto dal professionista.
+
+**4. User Story (Opzionale): Avvio Contatto o Richiesta dal Profilo**
+
+*   **Come** un potenziale cliente che, dopo aver esaminato il profilo (L) di un professionista, ritiene che possa essere la scelta giusta,
+*   **Voglio** poter trovare e utilizzare facilmente delle chiare Call to Action (CTA) sul profilo (come "Invia Messaggio", "Richiedi Preventivo", o "Richiedi Appuntamento"),
+*   **Così che** possa avviare speditamente una comunicazione diretta con il professionista per discutere le mie esigenze specifiche o richiedere un'offerta.

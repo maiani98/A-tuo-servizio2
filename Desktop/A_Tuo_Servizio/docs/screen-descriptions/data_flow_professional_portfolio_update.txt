@@ -1,0 +1,125 @@
+**Flusso di Dati: Aggiornamento del Portfolio da parte di un Professionista (Aggiunta/Modifica Progetto)**
+
+Questo documento descrive il flusso di dati passo dopo passo quando un professionista aggiunge un nuovo progetto o modifica un progetto esistente nel proprio portfolio, attraverso la schermata "Modifica Profilo Professionista (T)".
+
+---
+
+**1. Azione Utente Iniziale (Professional Profile Editing - T):**
+
+*   Il professionista si trova nella sezione "Portfolio (U)" della schermata **"Modifica Profilo Professionista (T)"**.
+*   Apre il modale per **"Aggiungi Nuovo Progetto"** o **"Modifica Progetto Esistente"**.
+*   Compila/modifica i campi testuali del form (titolo, descrizione, data, categoria, link esterno).
+*   Nell'area "Caricamento Media":
+    *   Seleziona nuovi file immagine/video dal proprio dispositivo (per aggiunta o per sostituire/aggiungere a un progetto esistente).
+    *   (Opzionale) Rimuove media precedentemente caricati (in caso di modifica).
+    *   (Opzionale) Seleziona un'immagine come "principale".
+*   Una volta completato l'inserimento/modifica dei dati e la selezione/gestione dei media, il professionista clicca sul pulsante **"Salva Progetto"** (per un nuovo progetto) o **"Salva Modifiche"** (per un progetto esistente).
+
+---
+
+**2. Interazione Frontend (Browser/App Professionista):**
+
+*   **Raccolta Dati:**
+    *   Il codice JavaScript del frontend raccoglie tutti i dati testuali dai campi del form.
+    *   Identifica i file media che sono stati appena selezionati per l'upload e quelli che sono stati eventualmente contrassegnati per la rimozione (in caso di modifica).
+*   **Validazione Lato Client:**
+    *   Viene eseguita una validazione base sui dati testuali (es. campi obbligatori compilati, lunghezza massima rispettata).
+    *   Viene verificato che i file media selezionati rispettino i vincoli (formato, dimensione, numero massimo), se non già fatto durante la selezione.
+    *   Se la validazione fallisce, vengono mostrati messaggi di errore inline nel form e il processo si interrompe qui, permettendo al professionista di correggere.
+*   **Gestione Upload File Media (Strategia Comune: Upload Separato Anticipato):**
+    *   **Per ogni nuovo file media selezionato:**
+        *   Il frontend invia una **richiesta HTTP `POST` separata e asincrona direttamente al Servizio Media** (o tramite l'API Gateway che poi instrada al Servizio Media).
+        *   Questa richiesta è tipicamente di tipo `multipart/form-data` e contiene il file binario stesso.
+        *   Potrebbero essere inviati anche metadati minimi (es. nome file originale, tipo MIME se rilevato dal client).
+        *   Il frontend mostra un **indicatore di progresso** per ogni upload (come descritto nel wireframe `wireframe_portfolio_media_upload_interaction_U.txt`).
+        *   **Questo avviene spesso *prima* dell'invio dei dati testuali del progetto, o in parallelo ma con la necessità di attendere il completamento degli upload.**
+    *   **Risposta dal Servizio Media (per ogni file):** Il Servizio Media, dopo aver salvato il file, restituisce un JSON contenente l'**URL univoco del media caricato** (o un ID univoco del media).
+    *   Il frontend colleziona questi URL/ID dei media caricati con successo.
+*   **Costruzione Richiesta Dati Progetto:**
+    *   Una volta che tutti i nuovi file media sono stati caricati con successo e il frontend ha i loro URL/ID (e dopo la validazione positiva dei dati testuali):
+        *   Il frontend costruisce una richiesta HTTP (es. `POST` per un nuovo progetto, `PUT` per un progetto esistente) all'endpoint del **Servizio Portfolio** (tramite API Gateway).
+        *   Il **corpo (payload) JSON** di questa richiesta contiene:
+            *   Tutti i dati testuali del progetto (titolo, descrizione, data, categoria, link).
+            *   Una **lista degli URL/ID dei media associati** (quelli appena caricati e quelli esistenti che non sono stati rimossi, in caso di modifica). Include informazioni sull'ordine e quale immagine è principale.
+            *   Se si tratta di una modifica, l'ID del progetto da aggiornare.
+            *   Eventuali ID di media da dissociare/eliminare (se la gestione della rimozione non avviene solo tramite la lista aggiornata).
+*   Il frontend invia la richiesta per i dati del progetto e mostra un indicatore di caricamento generale per l'operazione di salvataggio del progetto.
+
+---
+
+**3. Coinvolgimento API Gateway:**
+
+*   **Richieste Media (se passano per l'API Gateway):**
+    *   L'API Gateway riceve le richieste di upload dei singoli file media.
+    *   Autentica il professionista (essenziale per l'upload).
+    *   Instrada le richieste al **Servizio Media**.
+*   **Richiesta Dati Progetto:**
+    *   L'API Gateway riceve la richiesta `POST` o `PUT` con i dati testuali del progetto e i riferimenti ai media.
+    *   Autentica il professionista.
+    *   Instrada la richiesta al **Servizio Portfolio**.
+
+---
+
+**4. Interazione con il Servizio Media (se i file vengono gestiti separatamente e anticipatamente):**
+
+*   Il **Servizio Media** riceve la richiesta di upload per ogni singolo file (dal frontend, via API Gateway).
+*   Valida ulteriormente il file (tipo, dimensione, potenziale scansione antivirus).
+*   Salva il file binario su uno storage persistente (es. AWS S3, Google Cloud Storage, o file system locale in contesti più semplici).
+*   Genera un URL univoco e sicuro per accedere al file (o un ID interno).
+*   (Opzionale) Esegue ottimizzazioni (es. compressione immagini, creazione thumbnail, transcodifica video iniziale).
+*   Salva i metadati del file (nome originale, tipo MIME, dimensione, URL/path, UserID del caricatore) nel proprio database.
+*   Restituisce una risposta HTTP (es. `201 Created`) al frontend con l'URL/ID del media.
+*   In caso di errore durante l'upload/elaborazione di un file, restituisce un messaggio di errore specifico per quel file.
+
+---
+
+**5. Interazione con il Servizio Portfolio:**
+
+*   Il **Servizio Portfolio** riceve la richiesta `POST` (nuovo progetto) o `PUT` (modifica progetto) dall'API Gateway.
+*   La richiesta contiene i dati testuali del progetto e la lista degli URL/ID dei media associati (forniti dal Servizio Media e inoltrati dal frontend).
+*   **Validazione Dati:** Esegue una validazione server-side completa dei dati ricevuti.
+*   **Operazioni sul Database del Servizio Portfolio:**
+    *   **Nuovo Progetto:**
+        *   Crea un nuovo record per il progetto nella tabella `ProgettiPortfolio`.
+        *   Per ogni media associato, crea record nella tabella `MediaProgetto`, salvando l'URL/ID del media, il tipo, l'ordine, e l'indicazione se è immagine principale.
+    *   **Modifica Progetto Esistente:**
+        *   Aggiorna il record esistente del progetto nella tabella `ProgettiPortfolio`.
+        *   Aggiorna/aggiunge/rimuove i record associati nella tabella `MediaProgetto` in base alla lista di media ricevuta (sincronizza i media).
+*   **(Potenziale Interazione con Servizio Profili Professionisti):** Se l'esistenza del profilo professionista o alcuni suoi stati dovessero influenzare la capacità di aggiungere/modificare portfolio, il Servizio Portfolio potrebbe dover comunicare brevemente con il Servizio Profili Professionisti (generalmente non necessario per questa operazione specifica se l'ID del profilo è già noto e validato).
+
+---
+
+**6. Risposta al Frontend:**
+
+*   Il **Servizio Portfolio**, dopo aver completato l'operazione di salvataggio/aggiornamento nel database:
+    *   **Successo:** Invia una risposta HTTP di successo (es. `201 Created` per nuovo progetto, `200 OK` per modifica) all'API Gateway, che la inoltra al frontend. La risposta può includere i dati completi del progetto appena salvato/aggiornato.
+    *   **Errore:** Se la validazione server-side fallisce o si verifica un errore durante il salvataggio nel database, invia una risposta HTTP di errore (es. `400 Bad Request`, `500 Internal Server Error`) con un messaggio di errore JSON.
+
+---
+
+**7. Aggiornamento UI Frontend (Professional Profile Editing - T):**
+
+*   Il frontend riceve la risposta dal Servizio Portfolio (via API Gateway).
+*   Nasconde l'indicatore di caricamento generale.
+*   **In caso di Successo:**
+    *   Chiude il modale "Aggiungi/Modifica Progetto".
+    *   Aggiorna dinamicamente la vista principale della sezione "Portfolio (U)":
+        *   Se è stato aggiunto un nuovo progetto, una nuova card progetto appare nella griglia/lista.
+        *   Se un progetto è stato modificato, la card esistente di quel progetto viene aggiornata per riflettere le modifiche (es. nuovo titolo, nuova immagine principale).
+    *   Mostra una notifica "toast" di successo (es. "Progetto salvato con successo!").
+*   **In caso di Errore (dal Servizio Portfolio o errore generale di rete):**
+    *   Il modale "Aggiungi/Modifica Progetto" rimane aperto (o viene riaperto se l'errore è molto tardivo).
+    *   Mostra un messaggio di errore generale all'interno del modale.
+    *   Il professionista può tentare di correggere i dati (se applicabile) e salvare di nuovo.
+
+---
+
+**Microservizi Coinvolti e Comunicazione:**
+
+*   **Client Frontend (Browser/App Professionista)**
+*   **API Gateway:** HTTP.
+*   **Servizio Media (Media Service):** HTTP (per upload file). Probabilmente riceve richieste dirette dal frontend (via API Gateway).
+*   **Servizio Portfolio (Portfolio Service):** HTTP (per gestione dati progetto). Riceve richieste dall'API Gateway.
+*   **(Indiretto/Potenziale) Servizio Profili Professionisti:** Se il Servizio Portfolio necessita di validare l'ID del profilo.
+
+Questo flusso privilegia l'upload diretto dei media al Servizio Media per separare la gestione dei file pesanti dalla gestione dei metadati del progetto, migliorando la scalabilità e la manutenibilità.

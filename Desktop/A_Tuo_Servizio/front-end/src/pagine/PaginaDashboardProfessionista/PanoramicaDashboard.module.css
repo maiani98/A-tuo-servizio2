@@ -1,0 +1,72 @@
+.panoramicaContainer {
+  padding: 20px;
+}
+
+.headerTitle {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.widgetsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.widgetCard {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center; /* Align icon and content */
+}
+
+.widgetIcon {
+  /* Placeholder for icon styling, e.g., using FontAwesome or SVGs */
+  font-size: 2rem;
+  margin-right: 15px;
+  color: #007bff; /* Example icon color */
+}
+
+.widgetContent {
+  flex-grow: 1;
+}
+
+.widgetTitle {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.widgetValue {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.widgetDetails {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+}
+
+.recentActivitySection {
+  margin-top: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.recentActivitySection h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}

@@ -1,0 +1,116 @@
+.listaContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Occupa tutta l'altezza del genitore .colonnaListaConversazioni */
+}
+
+.headerLista {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f9fa; /* Sfondo leggermente diverso per l'header */
+}
+
+.titoloHeader {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.noConversazioni {
+  padding: 20px;
+  text-align: center;
+  color: #6c757d;
+}
+
+.conversazioneItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.conversazioneItem:last-child {
+  border-bottom: none;
+}
+
+.conversazioneItem:hover {
+  background-color: #f1f3f5; /* Grigio chiaro al hover */
+}
+
+.conversazioneItem.attiva {
+  background-color: #e0e7ff; /* Blu chiaro per la chat attiva */
+  border-left: 3px solid #007bff;
+  padding-left: 12px; /* Compensa il border-left */
+}
+
+.conversazioneItem.nonLetta .nomeCliente,
+.conversazioneItem.nonLetta .anteprimaMessaggio {
+  font-weight: bold;
+  color: #212529; /* Testo più scuro per non lette */
+}
+
+.fotoContainer {
+  margin-right: 12px;
+}
+
+.fotoProfilo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.contenutoConversazione {
+  flex-grow: 1;
+  overflow: hidden; /* Per gestire testi lunghi con ellipsis */
+}
+
+.headerContenuto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.nomeCliente {
+  font-weight: 600;
+  color: #343a40;
+  font-size: 0.95rem;
+}
+
+.dataMessaggio {
+  font-size: 0.75rem;
+  color: #6c757d;
+  white-space: nowrap; /* Non mandare a capo la data */
+}
+
+.anteprimaMessaggio {
+  font-size: 0.85rem;
+  color: #545b62;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Mostra ... se il testo è troppo lungo */
+  /* Potrebbe servire un max-width se il contenitore non limita abbastanza */
+}
+
+.badgeNonLettiContainer {
+  margin-left: 10px; /* Spazio dal contenuto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeNonLetti {
+  background-color: #007bff; /* Blu per il badge */
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 10px; /* Forma a pillola */
+  min-width: 20px; /* Per mantenere la forma circolare con 1 cifra */
+  text-align: center;
+}

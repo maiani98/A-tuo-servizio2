@@ -1,0 +1,60 @@
+**Wireframe Testuale: Campi e Input del Form "Aggiungi Nuovo Progetto" (Sezione Portfolio U)**
+
+**1. Contesto:**
+
+*   Questo wireframe descrive i dettagli dei campi e degli input all'interno del **Corpo del Modale** del form "Aggiungi Nuovo Progetto". Il modale è già apparso sovrapponendosi alla pagina "Modifica Profilo Professionista (T)", con l'header (titolo "Aggiungi Nuovo Progetto", pulsante chiusura "X") e il footer (pulsanti "Annulla" e "Salva Progetto") già definiti.
+*   Lo sfondo della pagina sottostante è oscurato.
+
+**2. Dettaglio dei Campi e Input nel Corpo del Modale:**
+
+*   **Layout Generale:** I campi sono impilati verticalmente, ognuno con la propria etichetta e controllo di input. C'è un'adeguata spaziatura verticale tra ogni blocco campo-etichetta.
+
+*   **2.1. Titolo Progetto:**
+    *   **Etichetta:** Testo "Titolo del Progetto\*" (l'asterisco indica campo obbligatorio). Posizionata sopra il campo di input.
+    *   **Tipo di Input:** Campo di testo singolo (rettangolo standard per l'inserimento di testo su una linea).
+    *   **Placeholder:** Testo grigio chiaro all'interno del campo: "Es. Ristrutturazione Appartamento Centro Città".
+    *   **Note/Vincoli (visibili sotto il campo o come tooltip):** Testo piccolo "Max 100 caratteri".
+
+*   **2.2. Descrizione Progetto:**
+    *   **Etichetta:** Testo "Descrizione Dettagliata del Progetto\*" (l'asterisco indica campo obbligatorio). Posizionata sopra l'area di testo.
+    *   **Tipo di Input:** Area di testo multi-linea (un rettangolo più alto rispetto a un campo di testo singolo, per consentire l'inserimento di più righe di testo). Si prevede l'inserimento di plain text, senza controlli di formattazione WYSIWYG in questa fase del wireframe.
+    *   **Placeholder:** Testo grigio chiaro all'interno dell'area: "Descrivi il lavoro svolto, gli obiettivi del progetto, le sfide affrontate, le soluzioni adottate e i risultati ottenuti...".
+    *   **Note/Vincoli (visibili sotto l'area o come tooltip):** Testo piccolo "Max 1500 caratteri".
+
+*   **2.3. Caricamento Media (Multi-Immagine/Video):**
+    *   **Etichetta:** Testo "Immagini/Video del Progetto\*" (l'asterisco indica campo obbligatorio). Posizionata sopra l'area di caricamento.
+    *   **Descrizione del Controllo:**
+        *   **Area di Caricamento Interattiva:** Un'ampia area rettangolare con un bordo tratteggiato per suggerire una "drop zone".
+        *   **Testo Centrale nell'Area:** "Trascina qui i tuoi file (immagini/video) o"
+        *   **Pulsante di Selezione File (sotto il testo precedente, all'interno dell'area tratteggiata):**
+            *   Etichetta: "Clicca per Selezionare File".
+            *   Stile: Pulsante standard.
+        *   **Area Anteprime (sotto il pulsante, ancora all'interno dell'area tratteggiata, o che appare dinamicamente sotto):**
+            *   Placeholder testuale: "Le anteprime dei file caricati appariranno qui." (Questa area verrà dettagliata nel prossimo wireframe per mostrare le anteprime effettive).
+    *   **Testo di Aiuto (visibile sotto l'area di caricamento):** Testo piccolo: "Formati supportati: JPG, PNG, MP4, MOV. Max 5 file. Dimensione massima per file: 10MB. Si consiglia almeno un'immagine."
+
+*   **2.4. Data di Completamento (Opzionale):**
+    *   **Etichetta:** Testo "Data di Completamento Progetto". Posizionata sopra il campo di input.
+    *   **Tipo di Input:** Campo di testo singolo. Sulla destra del campo, un'icona piccola a forma di calendario, a suggerire che al click si aprirà un widget date-picker.
+    *   **Placeholder:** Testo grigio chiaro all'interno del campo: "GG/MM/AAAA".
+
+*   **2.5. Categoria/Tipo di Lavoro (Opzionale):**
+    *   **Etichetta:** Testo "Categoria del Progetto". Posizionata sopra il campo di input.
+    *   **Tipo di Input:** Campo di testo singolo. È sottinteso che potrebbe avere funzionalità di auto-completamento con suggerimenti basati su categorie predefinite o precedentemente inserite, ma il wireframe mostra solo un campo di testo standard.
+    *   **Placeholder:** Testo grigio chiaro all'interno del campo: "Es. Design d'Interni, Sviluppo Applicazioni Mobili, Consulenza SEO".
+
+*   **2.6. Link Esterno al Progetto (Opzionale):**
+    *   **Etichetta:** Testo "Link al Progetto Online (se esistente)". Posizionata sopra il campo di input.
+    *   **Tipo di Input:** Campo di testo singolo, predisposto per l'inserimento di un URL.
+    *   **Placeholder:** Testo grigio chiaro all'interno del campo: "https://www.nomeprogettocliente.com".
+
+**3. Considerazioni Generali Implementate nel Wireframe:**
+
+*   **Indicazione Campi Obbligatori:** Un asterisco (\*) è presente accanto alle etichette dei campi "Titolo del Progetto", "Descrizione Dettagliata del Progetto" e "Immagini/Video del Progetto" per indicarne l'obbligatorietà.
+*   **Ordine Logico:** I campi sono presentati in un ordine che segue un flusso naturale di inserimento delle informazioni.
+*   **Spaziatura:** È presente una spaziatura verticale consistente tra ogni gruppo etichetta-campo per migliorare la leggibilità e la separazione visiva.
+
+**4. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sulla definizione dei campi e dei loro tipi di input, non sulle interazioni di validazione o sui messaggi di errore specifici.
+*   Il footer del modale con i pulsanti "Annulla" e "Salva Progetto" rimane come definito nel wireframe precedente.

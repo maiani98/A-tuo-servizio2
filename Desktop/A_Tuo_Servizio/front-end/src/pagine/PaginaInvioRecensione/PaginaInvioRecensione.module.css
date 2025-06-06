@@ -1,0 +1,131 @@
+/* Stili per PaginaInvioRecensione */
+
+.paginaContenitore {
+    max-width: 700px; /* Larghezza media per form di recensione */
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--colore-bianco);
+    border-radius: var(--bordi-radius-grande);
+    box-shadow: var(--ombreggiatura-media);
+}
+
+.titoloPagina {
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-principale);
+    margin-bottom: 0.5rem;
+}
+
+.sottotitoloServizio {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--colore-testo-secondario);
+    margin-bottom: 2rem;
+}
+
+.formRecensione {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Spazio tra i campi del form */
+}
+
+.campoValutazione {
+    display: flex;
+    flex-direction: column; /* Etichetta sopra le stelle */
+    align-items: center; /* Centra le stelle */
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--colore-bordo-input-leggero);
+    border-radius: var(--bordi-radius-medio);
+    background-color: var(--colore-sfondo-grigio-molto-chiaro);
+}
+
+.campoValutazione label {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--colore-testo-forte);
+}
+
+.inputStelleContainer { /* Contenitore per le stelle cliccabili */
+    display: flex;
+    gap: 0.3rem; /* Spazio tra le stelle */
+}
+
+.stellaInput { /* Stile per ogni stella (button o span) */
+    font-size: 2.2rem; /* Dimensione delle stelle */
+    color: var(--colore-grigio-placeholder-avatar); /* Colore stella vuota */
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.1s ease;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.stellaInput:hover {
+    transform: scale(1.15); /* Leggero ingrandimento al hover */
+}
+
+.stellaInputAttiva { /* Stella piena (o fino alla valutazione data) */
+    color: var(--colore-valutazione-stella, #ffc107); /* Giallo/Oro per le stelle */
+}
+
+.checkboxWrapperRecensione { /* Wrapper per la checkbox "anonima" */
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem; /* Spazio sopra la checkbox */
+}
+.checkboxWrapperRecensione input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--colore-primario);
+}
+.checkboxWrapperRecensione label {
+    font-size: 0.95rem;
+    color: var(--colore-testo-secondario-scuro);
+    cursor: pointer;
+}
+
+.feedbackMessaggio { /* Classe comune per messaggi di successo o errore */
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 1.5rem; 
+    border-radius: var(--bordi-radius-medio);
+    font-size: 0.95rem;
+    text-align: center;
+}
+.successoRecensione {
+    background-color: var(--colore-successo-sfondo-leggero);
+    color: var(--colore-successo-testo);
+    border: 1px solid var(--colore-successo-bordo);
+}
+.erroreRecensione {
+    background-color: var(--colore-errore-sfondo);
+    color: var(--colore-errore-testo);
+    border: 1px solid var(--colore-errore-bordo);
+}
+
+.containerPostInvio { /* Contenitore per messaggio di conferma e link */
+    text-align: center;
+    padding: 1rem 0;
+}
+.linkTornaProfilo {
+    display: inline-block; /* Per permettere margin-top */
+    margin-top: 1rem;
+}
+
+/* Stili per CampoTesto se necessitano sovrascritture specifiche qui */
+/* .formRecensione textarea { min-height: 120px; } */
+
+@media (max-width: 600px) {
+    .paginaContenitore {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    .titoloPagina {
+        font-size: 1.5rem;
+    }
+    .stellaInput {
+        font-size: 2rem; /* Riduci leggermente le stelle su mobile */
+    }
+}

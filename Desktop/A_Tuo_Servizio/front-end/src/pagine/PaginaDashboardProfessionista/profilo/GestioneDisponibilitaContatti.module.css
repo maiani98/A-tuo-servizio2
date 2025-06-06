@@ -1,0 +1,135 @@
+.containerDisponibilitaContatti {
+  padding: 20px;
+}
+
+.titoloSezione {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.sottotitoloSezione {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fieldset {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.legend {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0056b3;
+  padding: 0 10px; /* Per non far toccare il bordo della fieldset */
+  margin-left: 5px; /* Allineamento con il padding della fieldset */
+}
+
+/* Stili per i campi del form, se non coperti da CampoTesto */
+.labelForm {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.selectInput,
+.textareaInput {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #fff;
+  margin-bottom: 15px; /* Spazio sotto ogni select/textarea */
+}
+.textareaInput {
+  min-height: 80px;
+}
+
+.selectInput:focus,
+.textareaInput:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Stili per la gestione giorni lavorativi */
+.containerGiorniLavorativi {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.rigaGiornoLavorativo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+}
+
+.checkboxGiorno {
+  transform: scale(1.1); /* Rende il checkbox leggermente più grande */
+  margin-right: 5px; /* Spazio dopo il checkbox */
+}
+
+.labelGiorno {
+  width: 90px; /* Larghezza fissa per allineare gli input orari */
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #343a40;
+}
+
+.timeInput { /* Stile per CampoTesto di tipo time */
+  padding: 6px 8px !important; /* Override se CampoTesto ha padding più grandi */
+  font-size: 0.95rem !important;
+  max-width: 100px; /* Larghezza per gli input orari */
+  border-radius: 4px !important;
+}
+
+.chiusoLabel {
+  font-style: italic;
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+
+.azioniForm {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.feedback {
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+.feedbackPositivo {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+.feedbackErrore {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}

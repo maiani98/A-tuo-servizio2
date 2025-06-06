@@ -1,0 +1,178 @@
+.containerRecensioni {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.titoloPagina {
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.riepilogoValutazioni {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.riepilogoValutazioni h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.mediaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.starRating {
+  font-size: 1.5rem; /* Dimensione delle stelle nel riepilogo */
+}
+.starFilled { color: #ffc107; /* Giallo per stella piena */ }
+.starEmpty { color: #e0e0e0; /* Grigio per stella vuota */ }
+
+.mediaNumero {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
+.numeroRecensioniTotali {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.filtriContainerRecensioni {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.selectFiltroRecensioni {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+.listaRecensioni {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recensioneCard {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.recensioneHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px; /* Spazio tra foto, info e stelle */
+}
+
+.fotoClienteRecensione {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.headerInfo {
+  flex-grow: 1;
+}
+.nomeClienteRecensione {
+  font-weight: 600;
+  color: #343a40;
+  display: block; /* Nome su una riga */
+}
+.dataRecensione {
+  font-size: 0.8rem;
+  color: #6c757d;
+  display: block; /* Data sotto il nome */
+}
+
+.recensioneHeader .starRating { /* Stelle nell'header della recensione singola */
+  font-size: 1rem; /* Più piccole delle stelle del riepilogo */
+  margin-left: auto; /* Spinge le stelle a destra */
+}
+
+.titoloRecensione {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.testoRecensione {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  white-space: pre-wrap;
+}
+
+.rispostaContainer {
+  background-color: #e9f5ff; /* Sfondo blu chiaro per la risposta */
+  border: 1px solid #b3d9ff;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.titoloRisposta {
+  font-size: 1rem;
+  color: #0056b3;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.testoRisposta {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  margin:0;
+}
+
+.azioniRecensione {
+  margin-top: 10px;
+  text-align: right; /* Allinea il bottone di risposta a destra */
+}
+
+.formRispostaContainer {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px dashed #e0e0e0;
+}
+.textareaRisposta {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  min-height: 70px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.noRecensioni {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  background-color: #fff;
+  border-radius: 8px;
+}

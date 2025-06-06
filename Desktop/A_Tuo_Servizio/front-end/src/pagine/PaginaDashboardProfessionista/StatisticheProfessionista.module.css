@@ -1,0 +1,178 @@
+.containerStatistiche {
+  padding: 20px;
+}
+
+.headerPaginaStatistiche {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permette al selettore di andare a capo su schermi piccoli */
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.titoloPagina {
+  color: #333;
+  margin: 0;
+}
+
+.selettorePeriodoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.labelSelettore {
+  font-size: 0.9rem;
+  color: #495057;
+  font-weight: 500;
+}
+.selectPeriodo {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  font-size: 0.95rem;
+}
+
+/* Stili per i Widget Card */
+.widgetsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.statWidgetCard {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.iconaWidget {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem; /* Dimensione dell'emoji/icona testuale */
+  color: white;
+  flex-shrink: 0;
+}
+.contenutoWidget {
+  flex-grow: 1;
+}
+.titoloWidget {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 5px 0;
+}
+.valoreWidget {
+  font-size: 1.75rem;
+  color: #333;
+  margin: 0 0 5px 0;
+  font-weight: 700;
+}
+.trendWidget {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Stili per i Placeholder dei Grafici */
+.graficiContainer {
+  display: grid;
+  grid-template-columns: 1fr; /* Una colonna per default */
+  gap: 25px;
+  margin-bottom: 30px;
+}
+@media (min-width: 992px) { /* Due colonne per schermi grandi */
+  .graficiContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.graficoPlaceholderCard {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+.titoloGrafico {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #0056b3;
+  text-align: center;
+}
+.graficoContenuto {
+  min-height: 200px; /* Altezza minima per il contenuto del grafico */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #6c757d;
+  border: 1px dashed #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+}
+.mockChart {
+  width: 90%;
+  max-width: 350px; /* Limita la larghezza del grafico mock SVG */
+  height: 100px;     /* Altezza fissa per il grafico mock SVG */
+  margin-top: 10px;
+}
+.mockChart svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Stili per la Tabella Keyword */
+.tabellaContainer {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  overflow-x: auto; /* Permette scroll orizzontale se la tabella è troppo larga */
+}
+.titoloTabella {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #0056b3;
+}
+.titoloTabella span[role="img"] { /* Stile per l'emoji */
+  margin-right: 8px;
+}
+.tabellaKeyword {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.tabellaKeyword th,
+.tabellaKeyword td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+.tabellaKeyword th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+.tabellaKeyword tbody tr:hover {
+  background-color: #f1f3f5;
+}
+.notaTabella {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-style: italic;
+}

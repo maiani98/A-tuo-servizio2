@@ -1,0 +1,60 @@
+.paginaContenitore {
+    max-width: 550px; /* Leggermente più stretto, meno contenuto */
+    margin: 3rem auto;
+    padding: 2.5rem; /* Un po' più di padding verticale */
+    text-align: center;
+    background-color: var(--colore-bianco);
+    border-radius: var(--bordi-radius-grande);
+    box-shadow: var(--ombreggiatura-leggera);
+}
+
+.iconaPagina {
+    font-size: 4.5rem; /* Icona leggermente più grande */
+    margin-bottom: 1.5rem;
+    color: var(--colore-successo, #28a745); /* Colore verde per la spunta */
+}
+
+.titoloPagina {
+    margin-bottom: 1rem;
+    color: var(--colore-testo-principale);
+    font-family: var(--font-titoli);
+    font-size: 1.9rem; /* Titolo leggermente più grande */
+}
+
+.testoInformativo {
+    margin-bottom: 2.5rem; /* Più spazio prima del bottone */
+    color: var(--colore-testo-secondario);
+    font-size: 1.05rem; /* Testo leggermente più grande */
+    line-height: 1.6;
+}
+
+.bottonePrimarioLargo {
+    padding: 0.8rem 2.5rem; /* Bottone più largo e alto */
+    font-size: 1.1rem;
+    /* Il componente Bottone con variante="primario" gestisce il resto */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .paginaContenitore {
+        margin: 1.5rem auto;
+        padding: 2rem 1.5rem; /* Adatta padding */
+    }
+
+    .titoloPagina {
+        font-size: 1.7rem;
+    }
+
+    .testoInformativo {
+        font-size: 1rem;
+    }
+
+    .iconaPagina {
+        font-size: 4rem;
+    }
+
+    .bottonePrimarioLargo {
+        padding: 0.7rem 2rem;
+        font-size: 1rem;
+    }
+}

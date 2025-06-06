@@ -1,0 +1,121 @@
+.paginaContenitore {
+    max-width: 780px; /* Aumentato leggermente per due card affiancate */
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--colore-sfondo-pagina, #f8f9fa); /* Sfondo leggermente diverso dalla pagina auth standard */
+}
+
+.titoloPagina {
+    margin-bottom: 0.75rem;
+    color: var(--colore-testo-principale); /* Usiamo il colore testo principale per il titolo */
+    font-family: var(--font-titoli);
+    font-size: 2.2rem; /* Dimensione titolo pagina */
+}
+
+.sottotitoloPagina {
+    margin-bottom: 3rem; /* Più spazio prima delle card */
+    color: var(--colore-testo-secondario);
+    font-size: 1.15rem; /* Dimensione sottotitolo */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.opzioniRuoloWrapper {
+    display: flex;
+    gap: 2.5rem; /* Spazio tra le card */
+    justify-content: center;
+    align-items: stretch; /* Assicura che le card abbiano la stessa altezza */
+    flex-wrap: wrap; /* Permette alle card di andare a capo su schermi piccoli */
+}
+
+.opzioneCard {
+    flex: 1; /* Le card dividono lo spazio disponibile */
+    min-width: 280px; /* Larghezza minima prima di andare a capo */
+    max-width: 340px; /* Larghezza massima per card */
+    background-color: var(--colore-bianco);
+    padding: 2rem 1.8rem; /* Padding interno card */
+    border-radius: 12px; /* Bordi più arrotondati */
+    box-shadow: var(--ombreggiatura-leggera, 0 2px 8px rgba(0,0,0,0.08));
+    border: 1px solid var(--colore-bordo-input-leggero, #e0e0e0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.opzioneCard:hover {
+    transform: translateY(-6px); /* Effetto hover più pronunciato */
+    box-shadow: var(--ombreggiatura-media, 0 5px 15px rgba(0,0,0,0.12));
+}
+
+.iconaRuolo {
+    font-size: 2.8rem; /* Dimensione icona emoji/testo */
+    margin-bottom: 1.25rem;
+    color: var(--colore-primario); /* Usa colore primario per l'icona */
+    background-color: var(--colore-primario-trasparente-10, rgba(0, 123, 255, 0.1)); /* Sfondo per l'icona */
+    padding: 1.25rem;
+    border-radius: 50%; /* Cerchio perfetto */
+    width: 90px; /* Larghezza fissa */
+    height: 90px; /* Altezza fissa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* Per centrare meglio le emoji */
+}
+
+.titoloOpzioneCard {
+    margin-bottom: 0.75rem;
+    color: var(--colore-testo-forte, #212529); /* Colore testo più scuro per il titolo della card */
+    font-size: 1.4rem; /* Dimensione titolo card */
+    font-family: var(--font-titoli);
+    font-weight: 600;
+}
+
+.descrizioneOpzioneCard {
+    font-size: 0.95rem; /* Dimensione testo descrizione */
+    color: var(--colore-testo-secondario);
+    margin-bottom: 2rem; /* Più spazio prima del bottone */
+    flex-grow: 1; /* Fa sì che il testo occupi lo spazio e i bottoni si allineino in basso */
+    line-height: 1.6;
+}
+
+.bottoneSelezioneRuolo {
+    width: 100%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 1rem;
+    /* Il componente Bottone dovrebbe già avere stili per la variante primaria */
+}
+
+/* Media Query per responsività */
+@media (max-width: 768px) { /* Tablet e mobile */
+    .paginaContenitore {
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+    .opzioniRuoloWrapper {
+        gap: 1.5rem; /* Riduci spazio tra card se vanno a capo */
+    }
+    .titoloPagina {
+        font-size: 1.8rem;
+    }
+    .sottotitoloPagina {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 650px) { /* Mobile large - quando le card probabilmente vanno in colonna */
+    .opzioniRuoloWrapper {
+        flex-direction: column; /* Card in colonna */
+        align-items: center; /* Centra le card in colonna */
+    }
+    .opzioneCard {
+        max-width: 380px; /* Permetti alle card di essere un po' più larghe in modalità colonna */
+        width: 100%; /* Occupa la larghezza disponibile */
+    }
+}

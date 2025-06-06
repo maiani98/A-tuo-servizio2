@@ -1,0 +1,93 @@
+**Mockup Visivo Dettagliato: Professional Card (K)**
+
+**Riferimento Stile:** Questa descrizione applica lo "Stile Visivo Generale: Piattaforma A tuo servizio" definito nel file `mockup_style_guide_general.txt`.
+
+**1. Contenitore Card:**
+
+*   **Forma:** Rettangolare con angoli arrotondati.
+    *   `border-radius: 12px`.
+*   **Sfondo:** Bianco Puro.
+    *   `background-color: #FFFFFF`.
+*   **Ombra (Box Shadow):** Ombra leggera, morbida e diffusa.
+    *   `box-shadow: 0px 4px 12px rgba(41, 78, 114, 0.08)`.
+*   **Bordo:** Nessun bordo esplicito.
+*   **Padding Interno:**
+    *   `padding: 24px`.
+*   **Layout Interno Generale (Desktop):**
+    *   Due colonne: Sinistra (Foto Profilo), Destra (Testi e CTA).
+    *   Mobile: Elementi impilati verticalmente.
+
+**2. Foto Profilo:**
+
+*   **Stile:** Circolare.
+    *   `border-radius: 50%`.
+*   **Dimensioni:** `width: 80px`, `height: 80px`.
+*   **Bordo:** Nessuno.
+*   **Placeholder (se immagine non disponibile):**
+    *   Sfondo: Colore Primario (`#2B4E72`).
+    *   Testo (Iniziali): Maiuscole, centrate. Font Montserrat Bold, Colore Bianco Puro (`#FFFFFF`), Dimensione ~`32px`.
+*   **Posizionamento (Desktop):** Colonna sinistra, verticalmente centrata o leggermente in alto rispetto al testo.
+
+**3. Testi:**
+
+*   **Nome Professionista/Azienda:**
+    *   Font: Montserrat Semibold, `20px`.
+    *   Colore: Grigio Scuro (`#333333`).
+    *   Line-height: `1.4`.
+*   **Specializzazione Principale:**
+    *   Font: Open Sans Regular, `14px`.
+    *   Colore: Grigio Medio (`#888888`).
+    *   Posizionamento: Sotto Nome, spaziatura ~`4px`.
+*   **Valutazione (Stelle + Testo):**
+    *   Posizionamento: Sotto Specializzazione, spaziatura ~`8px`.
+    *   **Stelle:**
+        *   Icone: Stile Lineare Arrotondato.
+        *   Colore Pieno (attive): Giallo dorato (`#FFC107`).
+        *   Colore Vuoto (inattive/sfondo): Grigio Chiaro (`#E0E0E0`).
+        *   Dimensione Icona: `18px`. Spaziatura tra stelle ~`2px`.
+    *   **Testo Recensioni (es. "(120 recensioni)"):**
+        *   Font: Open Sans Regular, `12px`.
+        *   Colore: Grigio Medio (`#888888`).
+        *   Posizionamento: Accanto o sotto le stelle.
+*   **Località/Distanza (es. "Milano, MI (2.5 km)"):**
+    *   Font: Open Sans Regular, `14px`.
+    *   Colore: Grigio Medio (`#888888`).
+    *   Posizionamento: Sotto Valutazione, spaziatura ~`8px`.
+    *   Icona Opzionale (Località): Stile Lineare Arrotondato, `14-16px`, colore `#888888`, prima del testo.
+*   **Tagline/Descrizione Breve:**
+    *   Font: Open Sans Regular, `14px`.
+    *   Colore: Grigio (`#555555`).
+    *   Stile: Max 2 righe, con ellipsis (...).
+    *   Line-height: `1.6`.
+    *   Posizionamento: Sotto Località/Distanza, spaziatura ~`12-16px`.
+
+**4. Badge (Opzionali, es. "Verificato", "Risposta Rapida"):**
+
+*   **Posizionamento:** Vicino Nome o sotto Specializzazione.
+*   **Forma:** "Pill-shape" (`border-radius: 100px`).
+*   **Sfondo:** Versione chiara Colore Secondario (es. `rgba(106, 192, 178, 0.15)` o `#E0F2F1`).
+*   **Testo Interno:**
+    *   Font: Open Sans Semibold, `10px`.
+    *   Colore: Colore Primario (`#2B4E72`) o Colore Secondario (`#6AC0B2`).
+    *   Padding Interno Badge: `padding: 2px 8px`.
+
+**5. Pulsante CTA ("Vedi Profilo"):**
+
+*   **Stile:** Bottone Secondario.
+    *   Bordo: `1.5px solid #2B4E72` (Colore Primario).
+    *   Testo Etichetta: Colore Primario (`#2B4E72`).
+    *   Sfondo: Bianco Puro (`#FFFFFF`).
+    *   Angoli: Arrotondati (`border-radius: 6px`).
+    *   Padding: `padding: 8px 16px`.
+*   **Testo Etichetta ("Vedi Profilo"):**
+    *   Font: Open Sans Semibold, `14px`.
+*   **Effetti Hover/Focus:**
+    *   Hover: Sfondo leggermente riempito con versione chiara Colore Primario (es. `#F0F4F8`).
+    *   Focus: Outline visibile Colore Primario o Secondario.
+*   **Posizionamento:** In basso a destra nella colonna testi (desktop), o a piena larghezza sotto i testi (mobile).
+
+**6. Effetti Hover sulla Card Intera (Opzionale):**
+
+*   Al passaggio del mouse (desktop):
+    *   Ombra card: Più pronunciata (es. `box-shadow: 0px 6px 16px rgba(43, 78, 114, 0.12)`).
+    *   Cursore: "puntatore" (mano).

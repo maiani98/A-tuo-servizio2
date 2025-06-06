@@ -1,0 +1,95 @@
+/* src/pagine/PaginaOnboardingProfessionista/PaginaOnboardingProfessionista.module.css */
+
+.paginaContenitore {
+  max-width: 650px; /* Leggermente più largo per il form di onboarding */
+  margin: 3rem auto; /* Margine sopra/sotto */
+  padding: 2rem 2.5rem; /* Più padding laterale */
+  background-color: var(--colore-bianco);
+  border-radius: 12px; /* Angoli più arrotondati */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.titoloPagina {
+  text-align: center;
+  margin-bottom: 0.75rem; /* Spazio leggermente aumentato */
+  color: var(--colore-primario);
+  /* font-size e font-weight sono gestiti dal componente Titolo */
+}
+
+.sottotitoloPagina {
+  text-align: center;
+  margin-bottom: 2.5rem; /* Spazio aumentato */
+  color: var(--colore-testo-secondario);
+  font-size: 1rem; /* Leggermente più grande per leggibilità */
+}
+
+.formOnboarding {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem; /* Spazio tra i campi leggermente aumentato */
+}
+
+/* Riutilizzo di uno stile simile a .messaggioErroreGlobale, ma con nome specifico se necessario */
+.messaggioErroreForm {
+  color: var(--colore-errore);
+  background-color: rgba(217, 83, 79, 0.08); /* Sfondo leggero per l'errore */
+  border: 1px solid rgba(217, 83, 79, 0.5); /* Bordo più tenue */
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1.5rem; /* Spazio se l'errore è sopra il form */
+}
+
+/* Stili specifici per il textarea se CampoTesto non lo gestisce nativamente o per override */
+.contenitoreCampo { /* Wrapper per coerenza, se CampoTesto lo usa internamente */
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5rem; /* Spazio tra etichetta e input, se l'etichetta è inclusa qui */
+}
+
+.etichettaTextarea { /* Stile per l'etichetta del textarea, se separata */
+  margin-bottom: 0.5rem;
+  font-weight: 500; /* Medium */
+  color: var(--colore-testo-principale);
+  font-size: 14px;
+}
+
+.textareaInput {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #CCCCCC; /* Colore da .inputBase */
+  font-family: var(--font-corpo);
+  font-size: 14px;
+  color: var(--colore-testo-principale);
+  background-color: var(--colore-bianco);
+  transition: border-color 0.2s ease, outline 0.2s ease;
+  min-height: 100px; /* Altezza minima per il textarea */
+  resize: vertical; /* Permette solo resize verticale */
+}
+
+.textareaInput::placeholder {
+  color: var(--colore-testo-secondario);
+  opacity: 1;
+}
+
+.textareaInput:focus,
+.textareaInput:focus-visible {
+  border-color: var(--colore-primario);
+  outline: 2px solid var(--colore-secondario);
+  outline-offset: 1px;
+}
+
+.infoFileSelezionato {
+  font-size: 0.85rem;
+  color: var(--colore-testo-secondario);
+  margin-top: -1rem; /* Per avvicinarlo al campo file */
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.bottoneSubmit {
+  margin-top: 1rem; /* Spazio extra sopra il bottone di submit */
+  padding-top: 0.8rem; /* Bottone leggermente più alto */
+  padding-bottom: 0.8rem;
+}

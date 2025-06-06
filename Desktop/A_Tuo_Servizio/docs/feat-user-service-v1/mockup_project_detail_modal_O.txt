@@ -1,0 +1,93 @@
+**Mockup Visivo Dettagliato: Modale Dettaglio Progetto del Portfolio (O)**
+
+**Riferimenti:**
+*   **Stile Visivo:** "Stile Visivo Generale: Piattaforma A tuo servizio" (`mockup_style_guide_general.txt`).
+*   **Struttura Wireframe:** "Wireframe Testuale: Dettaglio Progetto del Portfolio (O)" (`wireframe_profile_project_detail_LO.txt`).
+
+**1. Contenitore del Modale:**
+
+*   **Dimensioni:** Molto ampie (es. 85% larghezza, 80% altezza viewport su desktop).
+*   **Sfondo:** Bianco Puro (`#FFFFFF`).
+*   **Angoli:** Arrotondati (`border-radius: 12px`).
+*   **Ombra (Box Shadow):** `box-shadow: 0px 8px 24px rgba(41, 78, 114, 0.15)`.
+*   **Padding Interno:** `padding: 32px` (desktop), ridotto a `16px` o `24px` laterale su mobile.
+*   **Layout Interno Generale:**
+    *   Desktop/Tablet (landscape): Media Gallery a sinistra (~55-60%), Testi a destra (~40-45%).
+    *   Mobile/Tablet (portrait): Media Gallery in alto, Testi sotto.
+
+**2. Pulsante di Chiusura "X":**
+
+*   **Icona:** Stile Lineare Arrotondato, linee `2px`, colore Grigio Medio (`#888888`).
+*   **Posizionamento:** Angolo in alto a destra del modale, `~16px` dai bordi del padding.
+*   **Area Cliccabile:** `~32x32px` o `~40x40px`.
+*   **Effetto Hover:** Icona diventa Grigio Scuro (`#333333`); opzionale sfondo circolare/quadrato Grigio Chiaro (`#F4F6F8`).
+
+**3. Galleria Immagini/Video del Singolo Progetto:**
+
+*   **3.1. Visualizzatore Media Principale:**
+    *   **Sfondo:** Grigio Chiaro (`#F4F6F8`) o Bianco Puro (`#FFFFFF`).
+    *   **Bordo:** Opzionale `1px solid #E0E0E0` se sfondo bianco.
+    *   **Angoli:** Arrotondati (`border-radius: 8px`).
+
+*   **3.2. Controlli Navigazione Media (Frecce "Precedente"/"Successivo"):**
+    *   **Icone:** Lineare Arrotondato (chevron < >), `24px` o `32px`. Colore Bianco Puro (`#FFFFFF`) o Grigio Scuro (`#333333`).
+    *   **Sfondo Pulsante (Opzionale):** Cerchio/quadrato arrotondato, colore `rgba(0, 0, 0, 0.4)`. Padding interno `~8-12px`.
+    *   **Posizionamento:** Ai lati del Visualizzatore Media, verticalmente centrate.
+    *   **Hover (pulsante/icona):** Sfondo pulsante `rgba(0, 0, 0, 0.6)`.
+    *   **Stato Disabilitato:** Opacità `0.5`, non reattiva.
+
+*   **3.3. (Opzionale) Striscia di Miniature (Thumbnail Strip):**
+    *   **Posizionamento:** Sotto il Visualizzatore Media Principale.
+    *   **Sfondo Striscia:** Trasparente o Grigio Chiaro molto tenue.
+    *   **Stile Miniature:** Rettangoli `~80x50px`, angoli `border-radius: 4px`, bordo `1px solid #CCCCCC`. Opacità non attiva `0.7`.
+    *   **Indicazione Miniatura Attiva:** Bordo `2px solid #6AC0B2` (Colore Secondario), opacità `1.0`.
+    *   **Spaziatura:** `~8px` orizzontale tra miniature.
+    *   **Stile Barra di Scorrimento:** Sottile, discreta, thumb e track Grigio Medio.
+
+*   **3.4. (Opzionale) Controlli Video Standard (Player Video):**
+    *   **Aspetto:** Design pulito e minimale.
+    *   **Colore Controlli:** Grigio Scuro (`#333333`) o Nero su barra controlli semi-trasparente.
+    *   **Icone (Play/Pausa, Volume):** Stile Lineare Arrotondato.
+
+**4. Testi (Titolo Progetto, Descrizione, Altri Dettagli):**
+
+*   **Posizionamento Generale Testi:** Sotto Media Gallery (colonna singola) o colonna destra (due colonne).
+
+*   **Titolo Completo del Progetto:**
+    *   Font: Montserrat Semibold, `28px` (desktop), `~24px` (mobile).
+    *   Colore: Grigio Scuro (`#333333`).
+    *   Line-height: `1.3`.
+    *   Spaziatura Inferiore: `16px`.
+
+*   **Descrizione Dettagliata del Progetto:**
+    *   Font: Open Sans Regular, `16px`.
+    *   Colore: Grigio Scuro più chiaro (`#555555`).
+    *   Line-height: `1.7`.
+    *   Spaziatura Inferiore: `24px`.
+
+*   **Altri Dettagli (Data di Completamento, Categoria/Tipo di Lavoro, Cliente):**
+    *   **Etichette (es. "Data:", "Categoria:"):**
+        *   Font: Open Sans Semibold, `14px`.
+        *   Colore: Grigio Scuro (`#333333`).
+    *   **Valori (es. "[Data]", "[Nome Categoria]"):**
+        *   Font: Open Sans Regular, `14px`.
+        *   Colore: Grigio Scuro più chiaro (`#555555`).
+    *   **Spaziatura:** `8px` tra coppia etichetta-valore, o `12px` tra blocchi.
+
+**5. Link Esterno al Progetto (se presente):**
+
+*   **Posizionamento:** Sotto "Altri Dettagli".
+*   **Opzione 1: Link Testuale Semplice:**
+    *   Testo: "Visita il Progetto Online" o URL.
+    *   Font: Open Sans Regular, `14px`.
+    *   Colore: Colore Primario (`#2B4E72`).
+    *   Decorazione: Sottolineatura all'hover.
+    *   Icona Opzionale: "link esterno" Lineare Arrotondato, colore `#2B4E72`.
+*   **Opzione 2: Stile Bottone Secondario:**
+    *   Etichetta: "Visita il Sito del Progetto".
+    *   Bordo: `1.5px solid #2B4E72`.
+    *   Testo Etichetta: Colore Primario (`#2B4E72`), Open Sans Semibold, `14px`.
+    *   Sfondo: Bianco Puro (`#FFFFFF`).
+    *   Angoli: `border-radius: 6px`.
+    *   Padding: `padding: 8px 16px`.
+    *   Hover/Focus: Come da guida per bottoni secondari.

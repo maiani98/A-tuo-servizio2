@@ -1,0 +1,209 @@
+/* src/pagine/PaginaDashboardProfessionista/PaginaGestionePortfolio.module.css */
+
+.contenitoreGestionePortfolio {
+  padding: 1.5rem;
+  background-color: var(--colore-bianco);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.headerPagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Stili per il form (simulazione modale o area dedicata) */
+.overlayForm { /* Se si decide di usarlo come overlay per il form */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 950; /* Inferiore a Modale, ma sopra Header */
+  padding: 20px;
+  overflow-y: auto; /* Per form lunghi */
+}
+
+.formProgettoContenitore { /* Contenitore effettivo del form, se dentro un overlay */
+  background-color: var(--colore-bianco);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 600px; /* Larghezza massima del form */
+  max-height: calc(100vh - 80px); /* Altezza massima, con un po' di margine */
+  overflow-y: auto; /* Scroll interno se il contenuto è troppo alto */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Se il form non è in un overlay, ma direttamente nella pagina: */
+.formProgetto {
+  background-color: var(--colore-sfondo-chiaro);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.titoloForm { /* Per il Titolo H3 del form */
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--colore-primario);
+  text-align: center; /* Centra il titolo del form */
+}
+
+.infoFileImmagine { /* Rinominato da .infoFile per specificità */
+  font-size: 0.85rem;
+  color: var(--colore-testo-secondario);
+  margin-top: -0.75rem; /* Per avvicinarlo al campo file */
+  display: block; /* Assicura che prenda il suo spazio */
+  margin-bottom: 0.5rem; /* Spazio se ci sono altri elementi sotto */
+}
+
+.anteprimaImmagineModifica {
+  max-width: 200px;
+  max-height: 150px;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  border: 1px solid #ddd;
+  object-fit: cover; /* Assicura che l'immagine copra l'area senza distorsioni */
+}
+
+.contenitoreTextarea { /* Wrapper per textarea e label, se usato */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.etichettaTextarea {
+  font-weight: 500;
+  color: var(--colore-testo-principale);
+  font-size: 14px;
+}
+
+.textareaInput {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #CCCCCC;
+  font-family: var(--font-corpo);
+  font-size: 14px;
+  color: var(--colore-testo-principale);
+  min-height: 100px;
+  resize: vertical;
+  transition: border-color 0.2s ease, outline 0.2s ease; /* Aggiunta transizione */
+}
+
+.textareaInput:focus,
+.textareaInput:focus-visible {
+  border-color: var(--colore-primario);
+  outline: 2px solid var(--colore-secondario);
+  outline-offset: 1px;
+}
+
+.bottoniForm {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.elencoProgetti {
+  margin-top: 2rem;
+}
+
+.titoloElencoProgetti { /* Per il Titolo H3 dell'elenco */
+  margin-bottom: 1rem;
+  color: var(--colore-testo-principale);
+}
+
+.grigliaProgetti {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cardProgetto {
+  background-color: var(--colore-sfondo-chiaro);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column; /* Per gestire il layout interno */
+}
+
+.immagineCardProgetto {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  background-color: #e0e0e0; /* Placeholder se immagine non caricata */
+}
+
+.infoCardProgetto {
+  flex-grow: 1; /* Per far sì che questa sezione occupi spazio */
+}
+
+.titoloCardProgetto { /* Per h5 o Titolo */
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--colore-testo-principale); /* Assicurati sia leggibile */
+}
+
+.descrizioneCardProgetto {
+  font-size: 0.9rem;
+  color: var(--colore-testo-secondario);
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: calc(1.5em * 3); /* Spazio per 3 linee (assumendo line-height di 1.5em) */
+  line-height: 1.5em; /* Definisci line-height per calcolo corretto */
+}
+
+.azioniCardProgetto {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: auto; /* Spinge i bottoni in basso se la card ha altezza fissa o flex-grow */
+}
+
+.messaggioNessunProgetto {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--colore-testo-secondario);
+  background-color: var(--colore-sfondo-chiaro); /* Leggero sfondo per il messaggio */
+  border-radius: 8px;
+}
+
+/* Stili per il componente CampoTesto se necessario (es. per input file) */
+/* La classe .infoFile è stata rinominata in .infoFileImmagine per specificità */
+
+/* Media query per la griglia dei progetti, se necessario */
+@media (max-width: 600px) {
+  .grigliaProgetti {
+    grid-template-columns: 1fr; /* Una colonna su schermi piccoli */
+  }
+  .headerPagina {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch; /* Fa sì che il bottone occupi tutta la larghezza */
+  }
+  .headerPagina > button { /* Targetta il bottone Aggiungi Nuovo Progetto */
+    width: 100%;
+  }
+}

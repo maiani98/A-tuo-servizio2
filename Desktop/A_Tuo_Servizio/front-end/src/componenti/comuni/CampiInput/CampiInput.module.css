@@ -1,0 +1,109 @@
+/* src/componenti/comuni/CampiInput/CampiInput.module.css */
+
+.contenitoreCampo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.etichetta {
+  margin-bottom: 0.5rem;
+  font-weight: 500; /* Medium */
+  color: var(--colore-testo-principale);
+  font-size: 14px;
+}
+
+.inputBase {
+  padding: 10px 12px;
+  border-radius: 6px; /* Da guida stile "Angoli Arrotondati" per Input */
+  border: 1px solid #CCCCCC; /* Da guida stile: "Bordo sottile Grigio Medio (#888888 o #CCCCCC)" */
+  font-family: var(--font-corpo);
+  font-size: 14px;
+  color: var(--colore-testo-principale);
+  background-color: var(--colore-bianco);
+  transition: border-color 0.2s ease, outline 0.2s ease;
+}
+
+.inputBase::placeholder {
+  color: var(--colore-testo-secondario); /* Da guida: placeholder Grigio Medio */
+  opacity: 1; /* Assicura visibilità placeholder in Firefox */
+}
+
+.inputBase:focus,
+.inputBase:focus-visible { /* :focus-visible per accessibilità, :focus per fallback */
+  border-color: var(--colore-primario); /* Da guida: "Focus: Bordo più spesso e/o Colore Primario" */
+  outline: 2px solid var(--colore-secondario); /* Utilizza un colore di focus che sia visibile e accessibile */
+  outline-offset: 1px;
+}
+
+.inputErrore {
+  border-color: var(--colore-errore) !important; /* Sovrascrive altri stili di bordo quando c'è errore */
+}
+
+.inputBase:focus.inputErrore,
+.inputBase:focus-visible.inputErrore {
+  outline-color: var(--colore-errore); /* Cambia il colore dell'outline in caso di errore e focus */
+}
+
+.messaggioErrore {
+  color: var(--colore-errore);
+  font-size: 0.875em; /* Circa 12px se il testo base è 14px (0.875 * 16px = 14px, se base fosse 16px. Da aggiustare se il font-size base del body è diverso) */
+                       /* Se .inputBase è 14px, allora 0.875 * 14px = 12.25px. Va bene. */
+  margin-top: 0.35rem; /* Spazio tra input e messaggio errore */
+}
+
+/* === Stili per CampoSelect === */
+
+.contenitoreSelectConIcona {
+  position: relative;
+  display: block; 
+}
+
+.selectBase {
+  /* Stili base copiati da .inputBase per coerenza */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 30px; /* Spazio per l'icona a freccia */
+  border-radius: 6px;
+  border: 1px solid #CCCCCC;
+  font-family: var(--font-corpo);
+  font-size: 14px;
+  color: var(--colore-testo-principale);
+  background-color: var(--colore-bianco);
+  transition: border-color 0.2s ease, outline 0.2s ease;
+  width: 100%; /* Per farlo espandere nel suo contenitore */
+  
+  /* Rimozione stili nativi e cursore */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.selectBase:focus,
+.selectBase:focus-visible {
+  border-color: var(--colore-primario);
+  outline: 2px solid var(--colore-secondario);
+  outline-offset: 1px;
+}
+
+/* Stile per icona dropdown */
+.contenitoreSelectConIcona::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  pointer-events: none; /* L'icona non deve essere cliccabile */
+  color: var(--colore-testo-secondario);
+  font-size: 0.8em; /* O 10px-12px, 0.8em è circa 11.2px se font-size base è 14px */
+}
+
+/* Gestione errore per selectBase (simile a inputBase) */
+/* .inputErrore è già definito e dovrebbe funzionare anche per .selectBase se applicato insieme */
+
+.selectBase:focus.inputErrore,
+.selectBase:focus-visible.inputErrore {
+  outline-color: var(--colore-errore);
+}

@@ -1,0 +1,92 @@
+.container {
+  padding: 20px;
+}
+
+.titoloPagina {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.filtriContainer {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.selectFiltro {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+}
+
+.tabellaRichieste {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden; /* Ensures border-radius is applied to table corners */
+}
+
+.tabellaRichieste th,
+.tabellaRichieste td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tabellaRichieste th {
+  background-color: #f1f3f5; /* Light grey header */
+  font-weight: 600;
+  color: #343a40;
+}
+
+.tabellaRichieste tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabellaRichieste tbody tr:hover {
+  background-color: #f8f9fa; /* Slight hover effect */
+}
+
+.linkDettaglio {
+  text-decoration: none;
+}
+
+/* Badge per lo stato */
+.statoBadge {
+  padding: 5px 10px;
+  border-radius: 12px; /* Pill shape */
+  font-size: 0.85em;
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.statoNuova {
+  background-color: #007bff; /* Blu */
+}
+.statoInviato {
+  background-color: #ffc107; /* Giallo */
+  color: #333;
+}
+.statoAccettato {
+  background-color: #28a745; /* Verde */
+}
+.statoRifiutato {
+  background-color: #dc3545; /* Rosso */
+}
+.statoArchiviata {
+  background-color: #6c757d; /* Grigio */
+}
+
+.nessunaRichiesta {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+}

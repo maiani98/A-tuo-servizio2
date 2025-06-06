@@ -1,0 +1,141 @@
+**Descrizione Testuale: Client Dashboard (F)**
+
+**1. Obiettivo Primario (UX):**
+
+L'obiettivo primario della Client Dashboard è fornire all'utente autenticato un hub centralizzato per gestire le proprie attività sulla piattaforma, incluse le richieste di preventivo, gli appuntamenti, i messaggi con i professionisti, i profili preferiti e le impostazioni del proprio account, in modo chiaro, organizzato e facilmente accessibile.
+
+**2. Elementi Chiave UI e Layout:**
+
+**2.1. Header (Comune a tutta la piattaforma per utenti autenticati):**
+    *   **Scopo:** Accesso rapido alle funzioni principali dell'account e notifiche.
+    *   **Layout Desktop:**
+        *   A sinistra: Logo del brand.
+        *   Al centro o a sinistra (accanto al logo): Titolo della pagina, es. "La Mia Dashboard" o "Il Mio Account".
+        *   A destra:
+            *   Icona Notifiche (es. campanella) con indicatore (badge numerico) per nuove notifiche non lette. Al click, apre un dropdown o un pannello con l'elenco delle notifiche recenti.
+            *   Icona Profilo Utente o Nome Utente: Al click, apre un menu dropdown con opzioni come "Impostazioni Account", "Supporto/FAQ", "Logout".
+    *   **Layout Mobile:**
+        *   A sinistra: Logo del brand.
+        *   A destra: Icona Notifiche e Icona Profilo Utente (spesso un'icona generica tipo "persona" o avatar, che apre un menu con le stesse opzioni del desktop). Il titolo della pagina potrebbe essere omesso per spazio o posizionato sotto l'header.
+
+**2.2. Navigazione Dashboard:**
+    *   **Scopo:** Permettere all'utente di spostarsi facilmente tra le diverse sezioni funzionali della dashboard.
+    *   **Layout Desktop:**
+        *   Tipicamente una **Sidebar Verticale a Sinistra**. Le voci di menu sono testuali, eventualmente con icone a fianco. La voce attiva è evidenziata (es. sfondo diverso, testo più grassetto).
+    *   **Layout Mobile:**
+        *   **Menu Hamburger:** Un'icona hamburger nell'header (o subito sotto) che, al tap, apre un pannello laterale (drawer) con le voci di menu verticali.
+        *   **Tabs in Basso (Bottom Navigation Bar):** Per le 3-5 sezioni più importanti/frequenti. Se le sezioni sono molte, quelle meno usate potrebbero essere raggruppate sotto una voce "Altro" o accessibili solo tramite menu hamburger.
+    *   **Sezioni di Navigazione (Voci di Menu):**
+        *   **Panoramica (Opzionale):** Una landing page per la dashboard che potrebbe mostrare un riepilogo delle attività recenti (es. ultimi messaggi, prossimi appuntamenti, richieste in attesa).
+        *   **Mie Richieste di Preventivo:** Per visualizzare e gestire le richieste inviate.
+        *   **Miei Appuntamenti:** Per visualizzare e gestire gli appuntamenti fissati.
+        *   **Messaggi:** Per accedere alle conversazioni con i professionisti.
+        *   **Professionisti Preferiti:** Per visualizzare i profili salvati.
+        *   **Impostazioni Account:** Per modificare dati personali e preferenze.
+        *   **Supporto/FAQ:** Link a pagine di aiuto o un sistema di ticketing.
+
+**2.3. Area Contenuto Principale (Dinamica in base alla sezione selezionata):**
+
+    *   **2.3.1. Sezione "Mie Richieste di Preventivo":**
+        *   **Titolo Sezione:** "Mie Richieste di Preventivo".
+        *   **Layout Lista (Desktop & Mobile con adattamenti):** Una tabella o una lista di card. Ogni riga/card rappresenta una richiesta e mostra:
+            *   Nome del Professionista/Azienda.
+            *   Servizio Richiesto (es. "Installazione aria condizionata").
+            *   Data di Invio Richiesta.
+            *   Stato della Richiesta (es. "Inviata", "Preventivo Ricevuto", "In Attesa di Risposta", "Accettata", "Rifiutata", "Scaduta"). Lo stato può essere visualizzato con un badge colorato per rapida identificazione.
+            *   **CTA (Call to Action):**
+                *   Pulsante/Link "Visualizza Preventivo" (se lo stato è "Preventivo Ricevuto"). Porta a una pagina di dettaglio del preventivo.
+                *   Pulsante/Link "Invia Messaggio" (per contattare il professionista riguardo quella richiesta).
+                *   (Opzionale) Pulsante/Link "Cancella Richiesta" (se permesso e prima che sia accettata).
+        *   **Filtri/Ordinamento (Opzionale ma utile):** Per stato, per data.
+        *   **Stato Vuoto:** Messaggio tipo "Non hai ancora inviato richieste di preventivo. Cerca un servizio e contatta un professionista!" con un CTA che porta alla ricerca.
+
+    *   **2.3.2. Sezione "Miei Appuntamenti":**
+        *   **Titolo Sezione:** "Miei Appuntamenti".
+        *   **Layout Lista (Desktop & Mobile):** Tabella o lista di card. Ogni riga/card rappresenta un appuntamento e mostra:
+            *   Nome del Professionista/Azienda.
+            *   Servizio (es. "Consulenza Web Design").
+            *   Data e Ora dell'Appuntamento.
+            *   Stato dell'Appuntamento (es. "Confermato", "Da Confermare", "Completato", "Cancellato"). Badge colorati per lo stato.
+            *   (Opzionale) Luogo (se fisico) o link (se virtuale).
+            *   **CTA:**
+                *   Pulsante/Link "Modifica/Ripianifica" (se permesso dalle regole di business e dallo stato dell'appuntamento).
+                *   Pulsante/Link "Cancella Appuntamento" (se permesso).
+                *   Pulsante/Link "Invia Messaggio al Professionista".
+                *   (Opzionale) "Aggiungi al Calendario" (es. iCal, Google Calendar).
+        *   **Visualizzazioni (Opzionale):** Oltre alla lista, potrebbe esserci una vista calendario (mensile/settimanale).
+        *   **Filtri/Ordinamento:** Per data, per stato, per professionista.
+        *   **Stato Vuoto:** Messaggio tipo "Non hai appuntamenti programmati. Trova un professionista e fissa un incontro!" con CTA alla ricerca.
+
+    *   **2.3.3. Sezione "Messaggi":**
+        *   **Titolo Sezione:** "Messaggi" o "Le Mie Conversazioni".
+        *   **Layout Lista Conversazioni (Desktop & Mobile):**
+            *   Lista verticale di anteprime di conversazioni. Ogni anteprima mostra:
+                *   Foto Profilo o Iniziali del Professionista.
+                *   Nome del Professionista/Azienda.
+                *   Anteprima dell'ultimo messaggio ricevuto/inviato (tagliato se troppo lungo).
+                *   Data/Ora dell'ultimo messaggio.
+                *   Indicatore Messaggi Non Letti (es. pallino colorato, numero di messaggi non letti).
+            *   La conversazione attiva (se si adotta un layout master-detail su desktop) è evidenziata.
+        *   **Interfaccia di Chat (quando una conversazione è selezionata):**
+            *   **Desktop:** Spesso un layout a due colonne: a sinistra la lista delle conversazioni, a destra l'area della chat attiva.
+            *   **Mobile:** Selezionando una conversazione dalla lista, si passa a una vista full-screen per la chat.
+            *   **Contenuti Chat:** Cronologia messaggi (con indicazione mittente/destinatario, timestamp), campo di input per nuovo messaggio, pulsante "Invia". Possibilità di allegare file (se supportato).
+        *   **Filtri (Opzionale):** Per messaggi non letti.
+        *   **Stato Vuoto:** Messaggio tipo "Non hai ancora conversazioni. Contatta un professionista per iniziare!" con CTA alla ricerca o ai preferiti.
+
+    *   **2.3.4. Sezione "Professionisti Preferiti":**
+        *   **Titolo Sezione:** "I Miei Professionisti Preferiti".
+        *   **Layout (Desktop & Mobile):**
+            *   **Grid Layout:** Una griglia di card compatte, ognuna rappresentante un professionista preferito.
+            *   **List Layout:** Una lista verticale, simile alle altre sezioni.
+            *   Ogni card/riga mostra:
+                *   Foto Profilo del Professionista.
+                *   Nome del Professionista/Azienda.
+                *   Specializzazione Principale.
+                *   Valutazione Media.
+                *   Link/Pulsante "Vedi Profilo" (che porta alla pagina profilo pubblica del professionista - L).
+                *   Pulsante/Icona "Rimuovi dai Preferiti".
+        *   **Stato Vuoto:** Messaggio tipo "Non hai ancora aggiunto professionisti ai tuoi preferiti. Esplora i profili e salva quelli che ti interessano!" con CTA alla ricerca.
+
+    *   **2.3.5. Sezione "Impostazioni Account":**
+        *   **Titolo Sezione:** "Impostazioni Account".
+        *   **Layout:** Un form diviso in sotto-sezioni (es. "Dati Personali", "Sicurezza", "Preferenze Notifiche").
+            *   **Dati Personali Minimi:**
+                *   Nome, Cognome (modificabili).
+                *   Indirizzo Email (potrebbe essere modificabile con verifica).
+                *   Numero di Telefono (opzionale, modificabile con verifica).
+                *   Avatar/Foto Profilo (opzione per caricare/cambiare).
+            *   **Sicurezza:**
+                *   Pulsante/Link "Cambia Password" (apre campi per vecchia password, nuova password, conferma nuova password).
+                *   (Opzionale) Gestione autenticazione a due fattori.
+            *   **Preferenze Notifiche:**
+                *   Checkbox o toggle per abilitare/disabilitare diversi tipi di notifiche (es. "Nuovi messaggi", "Aggiornamenti preventivi", "Promemoria appuntamenti") via email e/o notifiche push (se app mobile).
+            *   Pulsante "Salva Modifiche" ben visibile per ogni sotto-sezione o unico in fondo alla pagina.
+
+**3. Interazioni Principali (UX):**
+
+*   **Navigare tra le Sezioni:** L'utente clicca sulle voci della navigazione dashboard (sidebar o menu mobile) per visualizzare il contenuto della sezione corrispondente.
+*   **Visualizzare Dettagli:**
+    *   Click su una richiesta di preventivo per vederne i dettagli o il preventivo ricevuto.
+    *   Click su un appuntamento per vederne i dettagli.
+*   **Accedere alle Conversazioni:** Click su un'anteprima di messaggio per aprire la chat completa.
+*   **Inviare Messaggi:** Digitare nel campo di testo e inviare un messaggio all'interno di una conversazione.
+*   **Gestire i Preferiti:**
+    *   Click su "Vedi Profilo" per visitare la pagina del professionista preferito.
+    *   Click su "Rimuovi dai Preferiti" per togliere un professionista dalla lista.
+*   **Modificare Impostazioni Account:**
+    *   Compilare i campi del form e salvare le modifiche per dati personali, password, preferenze di notifica.
+*   **Gestire Richieste/Appuntamenti:** Cliccare sui CTA per visualizzare, modificare (se permesso), o cancellare richieste/appuntamenti.
+*   **Interagire con Notifiche:** Cliccare sull'icona notifiche per vedere le notifiche, cliccare su una notifica specifica per essere reindirizzati alla pagina rilevante (es. un nuovo messaggio, un preventivo ricevuto).
+
+**4. Considerazioni UI/UX Aggiuntive Chiave:**
+
+*   **Chiarezza e Organizzazione:** L'informazione deve essere strutturata in modo logico e facilmente scansionabile. Usare titoli chiari, spaziature adeguate e una gerarchia visiva coerente.
+*   **Notifiche Visive Efficaci:** Gli indicatori di nuovi messaggi o aggiornamenti (badge, highlight) devono essere immediatamente riconoscibili per guidare l'attenzione dell'utente.
+*   **Azioni Contestuali Chiare:** I CTA (pulsanti, link) devono essere chiaramente etichettati e posizionati in modo intuitivo vicino all'elemento a cui si riferiscono.
+*   **Adattamento Mobile Efficace:**
+    *   **Navigazione:** La navigazione su mobile (hamburger menu o bottom tabs) deve essere facile da raggiungere e da usare.
+    *   **Liste e Card:** Le liste di richieste, appuntamenti, messaggi e preferiti devono adattarsi bene a schermi piccoli, mostrando le informazioni essenziali e rendendo i CTA facilmente toccabili. Eventualmente, ridurre il numero di colonne visibili nelle tabelle su mobile, mostrando solo i dati più critici o usando card verticali.
+*   **Feedback Utente:** Fornire feedback immediato per azioni come "Salva Modifiche", "Messaggio Inviato", "Preferito Rimosso".
+*   **Accessibilità (a11y):** Considerare contrasto, navigazione da tastiera, e alternative testuali per garantire l'usabilità a tutti.

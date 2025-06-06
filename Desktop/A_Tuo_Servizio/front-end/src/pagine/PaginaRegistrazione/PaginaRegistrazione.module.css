@@ -1,0 +1,56 @@
+/* src/pagine/PaginaRegistrazione/PaginaRegistrazione.module.css */
+/* Contenuto copiato da src/pagine/PaginaLogin/PaginaLogin.module.css */
+
+.paginaAuthContenitore {
+  max-width: 480px; /* Leggermente più grande per dare respiro */
+  margin: 4rem auto; /* Più margine sopra/sotto */
+  padding: 2rem;
+  background-color: var(--colore-bianco);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titoloAuth {
+  text-align: center;
+  margin-bottom: 2rem; /* Più spazio sotto il titolo */
+  color: var(--colore-primario);
+  /* Il componente Titolo gestisce già font-family, font-weight, font-size.
+     Qui ci concentriamo sull'allineamento e lo spazio. */
+}
+
+.formAuth {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spazio tra i campi e il bottone */
+}
+
+.messaggioErroreGlobale {
+  color: var(--colore-errore);
+  background-color: rgba(217, 83, 79, 0.1); /* Sfondo leggero per l'errore */
+  border: 1px solid var(--colore-errore);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1rem; /* Spazio se l'errore è sopra il form o tra titolo e form */
+}
+
+.linkAlternativo {
+  text-align: center;
+  margin-top: 1.5rem; /* Più spazio sopra */
+  font-size: 0.9rem;
+}
+
+.linkAlternativo a {
+  color: var(--colore-primario);
+  text-decoration: none;
+  font-weight: 500; /* Medium */
+}
+
+.linkAlternativo a:hover {
+  text-decoration: underline;
+}
+
+/* Eventuali stili specifici solo per PaginaRegistrazione possono essere aggiunti qui sotto.
+   Per questo task, non sono richieste modifiche o aggiunte.
+*/

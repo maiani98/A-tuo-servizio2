@@ -1,0 +1,219 @@
+/* Stili per PaginaHomepage */
+
+/* Hero Section */
+.heroSection {
+    background-color: var(--colore-sfondo-hero, #f0f4f8); /* Sfondo leggermente colorato per la hero */
+    padding: 4rem 1rem; /* Ampio padding */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh; /* Altezza minima per occupare buona parte dello schermo */
+}
+
+.titoloHeroHomepage {
+    font-size: 2.8rem; /* Dimensione H1 */
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-hero, var(--colore-testo-principale)); /* Colore testo specifico per hero o default */
+    margin-bottom: 1rem;
+    max-width: 800px; /* Limita larghezza per leggibilità */
+    line-height: 1.3;
+}
+
+.sottotitoloHeroHomepage {
+    font-size: 1.25rem;
+    color: var(--colore-testo-secondario-hero, var(--colore-testo-secondario));
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+/* Barra di ricerca (già esistente, verifica stili) */
+.searchBarWrapper {
+    display: flex;
+    flex-wrap: wrap; /* Per responsività */
+    gap: 1rem;
+    background-color: var(--colore-bianco);
+    padding: 1.5rem;
+    border-radius: var(--bordi-radius-grande);
+    box-shadow: var(--ombreggiatura-media);
+    width: 100%;
+    max-width: 800px; /* Larghezza massima barra di ricerca */
+}
+
+.searchBarWrapper > * { /* Tutti i figli diretti (campi e bottone) */
+    flex-grow: 1;
+}
+
+.campoRicercaHomepage {
+    min-width: 200px; /* Larghezza minima per i campi */
+}
+
+.bottoneRicercaHomepage {
+    flex-grow: 0; /* Non far crescere il bottone come i campi */
+    padding: 0.75rem 1.5rem; /* Padding specifico se necessario */
+}
+
+
+/* Sezioni Comuni */
+.sectionPadding { /* Padding standard per le sezioni della homepage */
+    padding: 3rem 1rem;
+}
+
+.sectionTitle { /* Titolo H2 standard per le sezioni */
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-principale);
+    margin-bottom: 2.5rem;
+}
+
+/* Categorie Popolari */
+.categorieSection {
+    /* Eredita .sectionPadding */
+    background-color: var(--colore-bianco); /* Sfondo bianco per alternare */
+}
+.categorieGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Griglia responsiva */
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.categoriaCard { /* Stile per le card categoria */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--colore-bordo-input-leggero);
+    border-radius: var(--bordi-radius-medio);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.categoriaCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--ombreggiatura-leggera);
+}
+.iconaCategoria {
+    font-size: 2.5rem; /* Dimensione icona placeholder */
+    color: var(--colore-primario);
+    margin-bottom: 0.5rem;
+}
+
+
+/* Come Funziona */
+.comeFunzionaSection {
+    background-color: var(--colore-sfondo-alternativo, #f8f9fa); /* Sfondo diverso */
+}
+.comeFunzionaGrid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.stepComeFunziona {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+}
+.iconaStep {
+    font-size: 3rem;
+    color: var(--colore-secondario); /* O altro colore distintivo */
+    margin-bottom: 1rem;
+}
+.titoloStep {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--colore-testo-principale);
+}
+
+
+/* Professionisti in Evidenza */
+.professionistiEvidenzaSection {
+    background-color: var(--colore-bianco);
+}
+.professionistiGrid { /* O .professionistiCarosello */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; /* Spazio tra le ProfessionalCard */
+    max-width: 1200px; /* Max larghezza per la griglia */
+    margin: 0 auto;
+}
+
+
+/* Testimonianze */
+.testimonianzeSection {
+    background-color: var(--colore-sfondo-alternativo, #f8f9fa);
+}
+/* Stili per le card testimonianza (se non già globali) */
+
+
+/* CTA Professionisti */
+.ctaProfessionistiSection {
+    background-color: var(--colore-primario-scuro, #005f80); /* Sfondo a contrasto */
+    color: var(--colore-bianco);
+    text-align: center;
+}
+.ctaProfessionistiContenitore {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.titoloCtaProfessionisti {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--colore-bianco); /* Assicura contrasto */
+}
+.paragrafoCtaProfessionisti {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--colore-bianco-traslucido, rgba(255,255,255,0.9)); /* Leggermente traslucido */
+}
+.bottoneCtaProfessionisti {
+    /* Il componente Bottone dovrebbe gestire la sua variante.
+       Potrebbe essere necessario sovrascrivere colori per contrasto su sfondo scuro. */
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+}
+
+
+/* Media Queries Generali */
+@media (max-width: 768px) {
+    .titoloHeroHomepage {
+        font-size: 2.2rem;
+    }
+    .sottotitoloHeroHomepage {
+        font-size: 1.1rem;
+    }
+    .searchBarWrapper {
+        flex-direction: column; /* Campi e bottone in colonna */
+        padding: 1rem;
+    }
+    .campoRicercaHomepage, .bottoneRicercaHomepage {
+        width: 100%; /* Piena larghezza in colonna */
+    }
+    .sectionTitle {
+        font-size: 1.8rem;
+    }
+    .comeFunzionaGrid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        padding: 3rem 1rem;
+        min-height: auto; /* Altezza automatica su schermi piccoli */
+    }
+    .titoloHeroHomepage {
+        font-size: 1.8rem;
+    }
+    .sottotitoloHeroHomepage {
+        font-size: 1rem;
+    }
+}

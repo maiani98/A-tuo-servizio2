@@ -1,0 +1,64 @@
+**Wireframe Testuale: Galleria dei Progetti (N) nel Profilo Professionista (L - Visualizzato dal Cliente)**
+
+**1. Contesto:**
+
+*   Questo wireframe descrive la **Galleria dei Progetti (N)**, che è una componente chiave della Sezione Portfolio (M) all'interno della pagina pubblica del "Professional Profile (L - Visualizzato dal Cliente)".
+*   **Posizionamento:** La galleria si trova immediatamente sotto gli elementi introduttivi della Sezione Portfolio (M), che includono il titolo della sezione (es. "Portfolio"), un eventuale testo introduttivo opzionale, e un sottotitolo o un'intestazione per la galleria stessa (es. "Galleria Progetti" o "Scopri alcuni dei miei lavori recenti").
+
+**2. Layout della Galleria (N):**
+
+*   **Tipo di Layout:**
+    *   Una **Griglia (Grid Layout)** di anteprime di progetto.
+    *   **Desktop:** La griglia è organizzata, ad esempio, in **2 o 3 colonne** di larghezza uguale, a seconda dello spazio disponibile e del design generale.
+    *   **Mobile/Tablet:** La griglia si adatta in modo responsivo, passando a **1 o 2 colonne** per garantire una buona visualizzazione e interazione su schermi più piccoli. Le card si espandono per occupare la larghezza disponibile in layout a colonna singola.
+    *   **Spaziatura:** C'è una spaziatura uniforme (gutter) tra le card della griglia, sia orizzontalmente che verticalmente.
+
+*   **Gestione di Progetti Numerosi:**
+    *   Sotto l'ultima riga visibile della griglia di progetti, se ci sono più progetti di quelli inizialmente caricati, è presente un:
+        *   **Pulsante "Carica Altri Progetti"**:
+            *   **Etichetta:** Testo chiaro come "Carica Altri Progetti", "Mostra Altri", o "Vedi Altri Lavori".
+            *   **Stile:** Un pulsante ben visibile, centrato orizzontalmente sotto la griglia.
+            *   **Azione:** Al click, carica un successivo set di anteprime di progetto che vengono aggiunte in fondo alla griglia esistente. Il pulsante potrebbe scomparire se tutti i progetti sono stati caricati, oppure diventare disabilitato.
+    *   **Alternative Menzionate (Concettuale):**
+        *   **Paginazione:** "Come alternativa, potrebbe essere usata una paginazione numerica (1, 2, 3, ... Avanti) sotto la griglia."
+        *   **Scroll Infinito:** "Un'altra alternativa potrebbe essere lo scroll infinito, dove nuovi progetti vengono caricati automaticamente man mano che l'utente scorre verso la fine della pagina." (Per questo wireframe, si privilegia il pulsante "Carica Altri").
+
+**3. Aspetto dell'Anteprima di Ogni Progetto (Card Progetto):**
+
+*   **Contenitore Card:**
+    *   **Forma:** Una card rettangolare con angoli leggermente arrotondati e un bordo sottile o un'ombra discreta per definirne i limiti e separarla dallo sfondo della pagina.
+    *   **Sfondo:** Colore solido (es. bianco o grigio chiaro).
+
+*   **Immagine Principale del Progetto:**
+    *   **Posizione:** Occupa la porzione superiore della card, estendendosi per l'intera larghezza della card.
+    *   **Contenuto (Placeholder):** Un rettangolo grigio chiaro con un'icona generica di "immagine" (es. montagne stilizzate) o l'etichetta "[Immagine Progetto]". Questo rappresenta l'immagine principale che il professionista ha caricato per quel progetto.
+    *   **Importanza:** È l'elemento visivamente più dominante della card.
+
+*   **Titolo del Progetto:**
+    *   **Posizione:** Immediatamente sotto l'immagine principale, all'interno dell'area contenuto della card.
+    *   **Testo (Placeholder):** "[Titolo del Progetto Qui]" (es. "Design Logo Aziendale", "App Mobile per Eventi").
+    *   **Stile:** Testo di dimensioni adeguate (es. H3 o equivalente all'interno della card), ben leggibile, con un buon contrasto rispetto allo sfondo della card. Potrebbe essere in grassetto.
+
+*   **Breve Descrizione o Categoria del Progetto (Opzionale):**
+    *   **Posizione:** Sotto il titolo del progetto.
+    *   **Testo (Placeholder):** "[Breve descrizione (1-2 righe) o Categoria Progetto Qui]" (es. "Sviluppo e UI/UX" o "Un progetto complesso che ha coinvolto...").
+    *   **Stile:** Testo più piccolo rispetto al titolo, per creare gerarchia visiva. Se presente, è molto conciso.
+
+*   **Indicazione Visiva di Interattività:**
+    *   **Hover State:** Al passaggio del mouse (su desktop), l'intera card potrebbe avere un leggero effetto visivo (es. un'ombra più pronunciata, un leggero ingrandimento/sollevamento, o un cambio di colore del bordo) per indicare che è un elemento cliccabile.
+    *   **Cursore:** Il cursore del mouse cambia in "puntatore" (mano) quando si trova sopra la card.
+
+**4. Interazione per Vedere i Dettagli di un Progetto:**
+
+*   **Azione dell'Utente:** L'utente clicca in un punto qualsiasi dell'intera **card del progetto**.
+
+*   **Risultato dell'Azione:**
+    *   Al click, l'utente viene portato alla vista di **"Dettaglio Progetto del Portfolio (O)"**.
+    *   **Modalità di Apertura (come da specifiche generali della piattaforma):**
+        *   "La vista Dettaglio Progetto (O) si apre preferibilmente come un **Modale Overlay (Lightbox)**, sovrapponendosi alla pagina del profilo e oscurando lo sfondo. Questo permette una visualizzazione focalizzata e un facile ritorno alla galleria."
+        *   "Alternative meno probabili, ma possibili, potrebbero essere l'apertura in una nuova pagina dedicata al singolo progetto o un'espansione dei dettagli direttamente sotto la card all'interno della galleria (in-page expansion)." (Per questo wireframe, si assume l'apertura in modale come primaria).
+
+**5. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sulla struttura e sull'aspetto della galleria e delle sue card, non sui contenuti specifici di ogni progetto (che verrebbero caricati dinamicamente).
+*   I dettagli del "Dettaglio Progetto del Portfolio (O)" sono descritti in un wireframe separato.

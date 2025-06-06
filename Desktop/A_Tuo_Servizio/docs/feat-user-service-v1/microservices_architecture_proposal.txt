@@ -1,0 +1,148 @@
+**Proposta Iniziale di Architettura dei Microservizi per "A tuo servizio"**
+
+Questa proposta delinea un'architettura iniziale basata su microservizi per la piattaforma "A tuo servizio". L'obiettivo è promuovere la modularità, la scalabilità indipendente, la manutenibilità e la resilienza del sistema.
+
+---
+
+**1. Servizio Utenti (User Service)**
+
+*   **Responsabilità Principali:**
+    *   Registrazione di nuovi utenti (clienti e professionisti).
+    *   Autenticazione (login, gestione sessioni, token JWT).
+    *   Autorizzazione e gestione dei ruoli.
+    *   Gestione dei dati anagrafici di base comuni (email, password hashata, nome, cognome).
+    *   Gestione delle preferenze dell'account utente (es. cambio password, impostazioni di notifica di base).
+    *   Recupero account (password dimenticata).
+*   **Principali Entità Dati Gestite:**
+    *   Utente (ID, Email, PasswordHash, Nome, Cognome, TipoUtente, DataCreazione, StatoAccount)
+    *   RuoloUtente
+    *   TokenAutenticazione
+
+---
+
+**2. Servizio Profili Professionisti (Professional Profile Service)**
+
+*   **Responsabilità Principali:**
+    *   Gestione completa dei profili pubblici dei professionisti (ragione sociale, P.IVA, indirizzi, contatti pubblici).
+    *   Gestione della descrizione estesa dell'attività ("Chi Sono").
+    *   Gestione delle aree di operatività.
+    *   Gestione delle certificazioni e qualifiche (dettagli, riferimenti a documenti).
+    *   Gestione della disponibilità generale (giorni, orari indicativi).
+*   **Principali Entità Dati Gestite:**
+    *   ProfiloProfessionista (ID, UserID [FK], RagioneSociale, PartitaIVA, IndirizzoSede, TelefoniPubblici, SitoWeb, LinkSocial, DescrizioneEstesa, FotoProfiloURL, ImmagineCopertinaURL)
+    *   AreaOperativita (ID, ProfiloID, TipoArea, ValoreArea)
+    *   Certificazione (ID, ProfiloID, NomeCertificazione, EnteRilasciante, DataConseguimento, DocumentoURL)
+    *   DisponibilitaGenerale (ID, ProfiloID, GiorniLavorativi, Orari, Note)
+
+---
+
+**3. Servizio Portfolio (Portfolio Service)**
+
+*   **Responsabilità Principali:**
+    *   Gestione dei progetti nel portfolio di un professionista.
+    *   Creazione, modifica, eliminazione di progetti.
+    *   Gestione dei contenuti di un progetto (titolo, descrizione, data, categoria, link).
+    *   Associazione dei media (immagini, video) ai progetti (riferimenti URL ai file gestiti dal Servizio Media).
+    *   Ordinamento dei progetti.
+*   **Principali Entità Dati Gestite:**
+    *   ProgettoPortfolio (ID, ProfiloProfessionistaID [FK], Titolo, Descrizione, DataCompletamento, CategoriaLavoro, LinkEsterno, Ordine)
+    *   MediaProgetto (ID, ProgettoPortfolioID, TipoMedia, MediaURL, Didascalia, IsImmaginePrincipale, Ordine)
+
+---
+
+**4. Servizio Ricerca (Search Service)**
+
+*   **Responsabilità Principali:**
+    *   Indicizzazione dei profili dei professionisti e dei loro servizi.
+    *   Fornire API per la ricerca basata su keyword, località, e filtri.
+    *   Implementazione di algoritmi di ranking e rilevanza.
+    *   Gestione dell'autocompletamento per i campi di ricerca.
+*   **Principali Entità Dati Gestite:**
+    *   IndiceRicercaProfessionisti (es. Elasticsearch, Solr - consuma dati da altri servizi).
+    *   Cache dei risultati di ricerca.
+
+---
+
+**5. Servizio Notifiche (Notification Service)**
+
+*   **Responsabilità Principali:**
+    *   Invio di notifiche agli utenti (email, in-app, push).
+    *   Gestione dei template per diverse tipologie di notifiche.
+    *   Tracciamento dello stato delle notifiche.
+    *   Fornire API ad altri servizi per l'invio di notifiche.
+*   **Principali Entità Dati Gestite:**
+    *   Notifica (ID, UserID, TipoNotifica, CanaleInvio, Titolo, Messaggio, DataInvio, StatoLettura)
+    *   TemplateNotifica
+    *   PreferenzaNotificaUtente (UserID, TipoNotifica, Canale, Abilitato)
+
+---
+
+**6. Servizio Messaggistica (Messaging Service)**
+
+*   **Responsabilità Principali:**
+    *   Gestione delle conversazioni uno-a-uno tra clienti e professionisti.
+    *   Invio e ricezione di messaggi testuali e (potenzialmente) allegati.
+    *   Gestione dello stato dei messaggi (inviato, consegnato, letto).
+    *   Archiviazione delle conversazioni.
+*   **Principali Entità Dati Gestite:**
+    *   Conversazione (ID, Partecipante1_UserID, Partecipante2_UserID, DataCreazione)
+    *   Messaggio (ID, ConversazioneID, MittenteUserID, TestoMessaggio, DataInvio, StatoMessaggio)
+    *   AllegatoMessaggio (ID, MessaggioID, MediaURL, NomeFile)
+
+---
+
+**7. Servizio Media (Media Service)**
+
+*   **Responsabilità Principali:**
+    *   Upload, storage, e recupero di file multimediali (immagini, video, documenti).
+    *   Ottimizzazione dei media (compressione, transcodifica).
+    *   Generazione di URL sicuri per l'accesso ai media.
+    *   (Potenziale) Integrazione con CDN.
+*   **Principali Entità Dati Gestite:**
+    *   FileMedia (ID, NomeFileOriginale, TipoMIME, Dimensione, PathStorage/URL_CDN, DataCaricamento, UserID_Caricatore)
+    *   MetadatiMedia (associati a FileMedia)
+
+---
+
+**8. Servizio Richieste e Preventivi (Quote & Request Service)**
+
+*   **Responsabilità Principali:**
+    *   Gestione del flusso di richieste di preventivo dai clienti.
+    *   Creazione e invio di preventivi da parte dei professionisti.
+    *   Tracciamento dello stato delle richieste e dei preventivi.
+*   **Principali Entità Dati Gestite:**
+    *   RichiestaPreventivo (ID, ClienteUserID, ProfessionistaUserID, DescrizioneServizio, DataRichiesta, StatoRichiesta)
+    *   Preventivo (ID, RichiestaPreventivoID, DescrizioneOfferta, PrezzoStimato, DataInvio, StatoPreventivo)
+
+---
+
+**9. Servizio Appuntamenti (Appointment Service)**
+
+*   **Responsabilità Principali:**
+    *   Gestione della richiesta, programmazione, conferma e cancellazione di appuntamenti.
+    *   Integrazione con la disponibilità del professionista.
+    *   Invio di promemoria.
+*   **Principali Entità Dati Gestite:**
+    *   Appuntamento (ID, ClienteUserID, ProfessionistaUserID, DataOraInizio, DataOraFine, Luogo, DescrizioneServizio, StatoAppuntamento)
+
+---
+
+**10. Servizio Recensioni e Valutazioni (Review & Rating Service)**
+
+*   **Responsabilità Principali:**
+    *   Permettere ai clienti di lasciare recensioni e valutazioni.
+    *   Permettere ai professionisti di rispondere alle recensioni (opzionale).
+    *   Calcolo della valutazione media.
+    *   Moderazione delle recensioni (opzionale).
+*   **Principali Entità Dati Gestite:**
+    *   Recensione (ID, ClienteUserID, ProfessionistaUserID, ValutazioneStelle, TestoRecensione, DataRecensione)
+    *   RispostaProfessionista (ID, RecensioneID, TestoRisposta, DataRisposta)
+
+---
+
+**Considerazioni Aggiuntive:**
+
+*   **API Gateway:** Per routing, autenticazione centralizzata, rate limiting.
+*   **Comunicazione tra Servizi:** HTTP/REST sincrona o messaggistica asincrona (es. RabbitMQ, Kafka).
+*   **Database per Microservizio:** Ogni microservizio con il proprio database dedicato.
+*   **Monitoraggio e Logging:** Strumenti centralizzati (es. ELK stack, Prometheus, Grafana).

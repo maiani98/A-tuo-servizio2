@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.pytest_cache/
+.git/
+.gitignore
+Dockerfile
+tests/
+*.db
+*.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db

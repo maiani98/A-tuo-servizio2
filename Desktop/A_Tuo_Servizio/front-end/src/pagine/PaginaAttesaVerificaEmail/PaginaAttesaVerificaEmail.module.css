@@ -1,0 +1,95 @@
+.paginaContenitore {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--colore-bianco);
+    border-radius: var(--bordi-radius-grande);
+    box-shadow: var(--ombreggiatura-leggera);
+}
+
+.iconaPagina {
+    font-size: 4rem; /* Dimensione icona emoji/testo */
+    margin-bottom: 1.5rem;
+    color: var(--colore-primario);
+}
+
+.titoloPagina {
+    margin-bottom: 1rem;
+    color: var(--colore-testo-principale);
+    font-family: var(--font-titoli);
+    font-size: 1.8rem;
+}
+
+.testoInformativo {
+    margin-bottom: 2rem;
+    color: var(--colore-testo-secondario);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.testoInformativo strong {
+    color: var(--colore-testo-principale);
+    font-weight: 600;
+}
+
+.azioniWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--colore-bordo-input-leggero);
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.bottoneAzione {
+    width: 100%;
+    max-width: 300px; /* Limita larghezza bottone reinvia */
+}
+
+.linkAzione {
+    color: var(--colore-primario);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.linkAzione:hover {
+    text-decoration: underline;
+}
+
+.linkTornaLogin {
+    margin-top: 1rem; /* Spazio sopra il link per tornare al login */
+    font-size: 0.95rem;
+}
+
+.linkTornaLogin a {
+    color: var(--colore-testo-secondario); /* Colore meno prominente */
+    text-decoration: none;
+}
+
+.linkTornaLogin a:hover {
+    color: var(--colore-primario);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .paginaContenitore {
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+    }
+
+    .titoloPagina {
+        font-size: 1.6rem;
+    }
+
+    .testoInformativo {
+        font-size: 0.95rem;
+    }
+
+    .iconaPagina {
+        font-size: 3.5rem;
+    }
+}

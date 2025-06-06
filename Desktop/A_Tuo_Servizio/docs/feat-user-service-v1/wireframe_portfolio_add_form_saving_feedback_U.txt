@@ -1,0 +1,75 @@
+**Wireframe Testuale: Flusso di Salvataggio e Feedback del Form "Aggiungi Nuovo Progetto" (Sezione Portfolio U)**
+
+**1. Contesto:**
+
+*   Questo wireframe descrive il flusso di interazioni e feedback che inizia quando l'utente clicca sul pulsante "Salva Progetto" all'interno del modale del form "Aggiungi Nuovo Progetto".
+*   Si assume che il modale sia aperto, con i campi compilati dall'utente, inclusa l'area di caricamento media che potrebbe aver già processato i file.
+*   L'header del modale (titolo, pulsante "X") e il footer (pulsanti "Annulla" e "Salva Progetto") sono presenti come definiti precedentemente.
+
+**2. Azione di Innesco:**
+
+*   L'utente clicca sul pulsante con etichetta **"Salva Progetto"** posizionato nel footer del modale "Aggiungi Nuovo Progetto".
+
+**3. Stato del Pulsante "Salva Progetto" al Click:**
+
+*   Si assume che il pulsante "Salva Progetto" sia **attivo** (cioè non disabilitato) al momento del click, indicando che tutti i campi obbligatori (come "Titolo Progetto", "Descrizione", "Immagini/Video") sono stati compilati dall'utente.
+
+**4. Processo di Validazione dei Campi (Concettuale):**
+
+*   **Avvio Validazione:** Immediatamente dopo il click su "Salva Progetto", viene eseguita una validazione client-side dei dati inseriti nei campi del form.
+
+*   **Scenario: Validazione Fallita:**
+    *   **Modale Rimane Aperto:** Il modale "Aggiungi Nuovo Progetto" non si chiude.
+    *   **Evidenziazione Campi Errati:** I campi che non superano la validazione vengono evidenziati visivamente (es. bordo del campo di input diventa rosso).
+    *   **Messaggi di Errore Specifici per Campo:**
+        *   Sotto o accanto a ogni campo errato, appare un breve messaggio di errore testuale che spiega il problema (es. "Questo campo è obbligatorio", "Il titolo non può superare i 100 caratteri", "È necessario caricare almeno un'immagine").
+        *   (Non è necessario dettagliare ogni singolo messaggio, ma il concetto della loro apparizione contestuale).
+    *   **Pulsante "Salva Progetto":** Torna immediatamente al suo stato attivo/normale, permettendo all'utente di correggere gli errori e tentare nuovamente il salvataggio.
+
+**5. Processo di Salvataggio (Se Validazione ha Successo):**
+
+*   **Feedback Visivo Durante il Salvataggio:**
+    *   **Modifica Stato Pulsante "Salva Progetto":**
+        *   L'etichetta del pulsante cambia da "Salva Progetto" a **"Salvataggio in corso..."**.
+        *   Accanto all'etichetta (o al posto di essa), appare un'**icona spinner** (rotante) per indicare attività.
+        *   Il pulsante diventa **visivamente disabilitato** per prevenire click multipli.
+    *   **Interattività Form:** Tutti i campi all'interno del modale (inclusi il pulsante "Annulla" e il pulsante "X" di chiusura) diventano **temporaneamente non interagibili** (es. appaiono leggermente oscurati o un overlay trasparente impedisce il click).
+
+**6. Feedback Visivo di Avvenuto Salvataggio (Scenario di Successo):**
+
+*   **Chiusura del Modale:** Una volta che il server conferma l'avvenuto salvataggio del progetto:
+    *   Il modale "Aggiungi Nuovo Progetto" **si chiude automaticamente**.
+*   **Attivazione Pagina Sottostante:**
+    *   La pagina principale "Modifica Profilo Professionista (T)", con la sezione "Portfolio (U)", torna pienamente **visibile e interagibile**. Lo sfondo oscurato scompare.
+*   **Aggiornamento della Vista Principale della Sezione Portfolio (U):**
+    *   La griglia o lista dei progetti esistenti nella sezione "Portfolio (U)" **si aggiorna dinamicamente** per includere il nuovo progetto appena aggiunto.
+    *   **Visualizzazione Nuova Card Progetto:**
+        *   Una nuova card progetto appare, tipicamente come primo elemento della lista/griglia o in base all'ordinamento predefinito.
+        *   La card mostra i dati principali inseriti:
+            *   **Miniatura Immagine:** L'immagine selezionata come "principale" durante il caricamento media (o la prima immagine caricata) viene visualizzata come miniatura.
+            *   **Titolo del Progetto:** Il titolo inserito nel form.
+            *   I pulsanti "Modifica" ed "Elimina" sono presenti sulla nuova card, come per le altre.
+*   **Messaggio di Successo Globale (Opzionale ma Consigliato):**
+    *   **Tipo:** Una notifica "toast" (un piccolo banner non invasivo) o un banner temporaneo.
+    *   **Posizione:** Appare tipicamente in un angolo dello schermo (es. in alto a destra o in basso al centro) sopra la pagina "Modifica Profilo Professionista (T)".
+    *   **Contenuto:** Messaggio testuale breve e chiaro, ad esempio: "Progetto '[Nome Progetto Inserito]' aggiunto con successo!" (con un'icona di spunta verde).
+    *   **Durata:** Il messaggio scompare automaticamente dopo alcuni secondi (es. 3-5 secondi).
+
+**7. Gestione Errori di Salvataggio (Errori Server/Rete - Scenario di Fallimento Salvataggio):**
+
+*   Se, nonostante la validazione client-side positiva, si verifica un errore durante la comunicazione con il server o un errore del server stesso durante il tentativo di salvataggio:
+    *   **Modale Rimane Aperto:** Il modale "Aggiungi Nuovo Progetto" non si chiude.
+    *   **Messaggio di Errore Generale:**
+        *   All'interno del modale, appare un messaggio di errore generale (es. in un'area dedicata sopra il footer o sotto l'header del modale).
+        *   Testo: "Si è verificato un errore durante il salvataggio del progetto. Riprova più tardi." (con un'icona di errore rossa).
+    *   **Pulsante "Salva Progetto":**
+        *   L'etichetta torna a "Salva Progetto".
+        *   Lo spinner scompare.
+        *   Il pulsante torna **attivo e interagibile**, permettendo all'utente di tentare nuovamente il salvataggio.
+    *   **Interattività Form:** I campi del form tornano interagibili.
+
+**8. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sul feedback visivo e sul flusso di interazione post-validazione.
+*   I dettagli specifici dei messaggi di errore di validazione per campo sono concettuali.
+*   L'aspetto esatto delle notifiche "toast" o degli spinner può variare in base al design system generale.

@@ -1,0 +1,71 @@
+**Wireframe Testuale: Flusso di "Elimina Progetto Esistente" nel Portfolio (U)**
+
+**1. Contesto e Azione di Innesco:**
+
+*   **Schermata di Partenza:** Vista principale della sezione "Portfolio (U)" all'interno della schermata "Modifica Profilo Professionista (T)". Questa vista mostra una griglia o lista di card di progetti esistenti.
+*   **Azione dell'Utente:** L'utente clicca sul pulsante con etichetta **"Elimina"** (o icona a forma di cestino) presente su una specifica card di un progetto esistente (es. la card mostra "[Nome Progetto Specifico]").
+
+**2. Apertura del Modale di Conferma Eliminazione:**
+
+*   **Apparizione del Modale:**
+    *   Immediatamente dopo il click sul pulsante "Elimina" della card, un **Modale Overlay** appare, sovrapponendosi al contenuto della pagina "Modifica Profilo Professionista (T)".
+*   **Sfondo della Pagina Sottostante:**
+    *   Lo sfondo della pagina principale (l'area di modifica del profilo con la sezione Portfolio) diventa **visivamente oscurato** (es. tramite un layer semi-trasparente di colore grigio scuro o nero), per dare focus al modale di conferma.
+    *   Gli elementi della pagina sottostante non sono interagibili finché il modale è aperto.
+*   **Contenitore del Modale di Conferma:**
+    *   **Forma:** Rettangolare, con angoli leggermente arrotondati.
+    *   **Dimensioni:** Più piccolo rispetto al modale di aggiunta/modifica progetto, ma sufficientemente grande per contenere il messaggio e i pulsanti in modo chiaro (es. 40-50% della larghezza e 25-35% dell'altezza su desktop, adattandosi su mobile).
+    *   **Posizionamento:** Centrato verticalmente e orizzontalmente nella viewport.
+    *   **Sfondo:** Colore solido (es. bianco o grigio molto chiaro).
+
+*   **Contenuto del Modale di Conferma:**
+    *   **Icona di Avviso (Opzionale ma Consigliata):**
+        *   **Posizione:** In cima al contenuto del modale, sopra il titolo, o a sinistra del titolo.
+        *   **Aspetto (Placeholder):** Un'icona standard di "avviso" o "attenzione" (es. un triangolo con un punto esclamativo, spesso di colore giallo o rosso).
+    *   **Titolo del Modale:**
+        *   **Testo:** "Conferma Eliminazione Progetto" o "Sei Sicuro?".
+        *   **Stile:** Testo grande e chiaro (es. H2 o H3 all'interno del modale), centrato o allineato a sinistra.
+    *   **Messaggio di Avviso/Conferma:**
+        *   **Posizione:** Sotto il titolo.
+        *   **Testo (Placeholder):** "Sei sicuro di voler eliminare definitivamente il progetto **'[Nome Progetto Specifico]'**? L'azione è irreversibile e tutti i dati e i media associati a questo progetto verranno rimossi." (Il nome del progetto specifico viene inserito dinamicamente nel messaggio).
+        *   **Stile:** Testo di dimensioni standard per la lettura, chiaramente leggibile.
+    *   **Pulsanti di Azione (nel Footer del Modale o sotto il messaggio):**
+        *   **Layout:** Tipicamente due pulsanti affiancati, con il pulsante di azione distruttiva che attira maggiormente l'attenzione.
+        *   **Pulsante "Annulla":**
+            *   **Etichetta:** "Annulla" o "No, mantieni".
+            *   **Stile:** Pulsante secondario (es. sfondo grigio chiaro, solo bordo, o colore neutro).
+            *   **Azione:** Al click, chiude il modale di conferma senza eseguire alcuna azione di eliminazione.
+        *   **Pulsante "Elimina Definitivamente":**
+            *   **Etichetta:** "Elimina Definitivamente", "Sì, Elimina", o "Conferma Eliminazione".
+            *   **Stile:** Pulsante primario ma con uno **stile che indica azione distruttiva** (es. colore di sfondo rosso acceso, testo bianco).
+            *   **Azione:** Al click, avvia il processo di eliminazione del progetto.
+
+**3. Feedback di Avvenuta Eliminazione (se l'utente clicca "Elimina Definitivamente"):**
+
+*   **Feedback Visivo Durante l'Eliminazione (Opzionale, per operazioni potenzialmente lente):**
+    *   Il pulsante "Elimina Definitivamente" potrebbe cambiare etichetta in "Eliminazione in corso..." e mostrare uno spinner, e i pulsanti del modale potrebbero diventare temporaneamente non interagibili.
+*   **Chiusura del Modale di Conferma:**
+    *   Una volta che il server conferma l'avvenuta eliminazione, il modale di conferma **si chiude automaticamente**.
+*   **Attivazione Pagina Sottostante:**
+    *   La pagina principale "Modifica Profilo Professionista (T)", con la sezione "Portfolio (U)", torna pienamente **visibile e interagibile**. Lo sfondo oscurato scompare.
+*   **Rimozione Dinamica della Card del Progetto:**
+    *   La card del progetto che è stato eliminato **scompare immediatamente** dalla griglia o lista dei progetti nella sezione "Portfolio (U)". L'interfaccia si riadatta per colmare lo spazio lasciato vuoto.
+*   **Notifica "Toast" di Successo (Opzionale ma Consigliata):**
+    *   **Tipo:** Una notifica "toast" non invasiva.
+    *   **Posizione:** Appare tipicamente in un angolo dello schermo (es. in alto a destra) sopra la pagina "Modifica Profilo Professionista (T)".
+    *   **Contenuto (Placeholder):** Messaggio testuale breve e chiaro, ad esempio: "Il progetto '[Nome Progetto Specifico]' è stato eliminato con successo." (con un'icona di spunta o di informazione).
+    *   **Durata:** Il messaggio scompare automaticamente dopo alcuni secondi (es. 3-5 secondi).
+
+**4. Annullamento dell'Eliminazione (se l'utente clicca "Annulla"):**
+
+*   **Azione dell'Utente:** L'utente clicca sul pulsante **"Annulla"** (o "No, mantieni") nel modale di conferma.
+*   **Risultato:**
+    *   Il modale di conferma eliminazione **si chiude immediatamente**.
+    *   **Nessuna modifica** viene apportata. La card del progetto rimane visibile e inalterata nella sezione "Portfolio (U)".
+    *   Nessuna notifica di successo o fallimento viene mostrata.
+
+**5. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sul flusso di conferma e sul feedback visivo dell'operazione di eliminazione.
+*   L'aspetto esatto del modale e delle notifiche può variare in base al design system generale.
+*   La gestione di eventuali errori server durante l'eliminazione (meno comune per un'operazione di delete confermata) potrebbe seguire un pattern simile a quello degli errori di salvataggio (mantenendo il modale aperto e mostrando un errore generico).

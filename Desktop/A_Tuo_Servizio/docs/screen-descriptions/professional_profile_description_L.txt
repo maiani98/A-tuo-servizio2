@@ -1,0 +1,127 @@
+**Descrizione Testuale: Professional Profile (L) (Visualizzato dal Cliente)**
+
+**1. Obiettivo Primario (UX):**
+
+L'obiettivo primario della pagina Profilo Professionista è fornire al cliente una visione completa, affidabile e dettagliata del professionista o dell'azienda, permettendogli di valutare competenze, esperienze passate (tramite portfolio e recensioni) e servizi offerti, al fine di prendere una decisione informata e procedere con un contatto o una richiesta.
+
+**2. Elementi Chiave UI e Layout:**
+
+**2.1. Header Profilo:**
+    *   **Scopo:** Presentare immediatamente l'identità e la credibilità del professionista.
+    *   **Layout Desktop & Mobile (con adattamenti per lo spazio):**
+        *   **Immagine di Copertina (Opzionale):** Immagine orizzontale ampia che può rappresentare il brand, il settore o un lavoro significativo. Su mobile, potrebbe essere ridotta in altezza o non mostrata per risparmiare spazio verticale.
+        *   **Foto Profilo:** Immagine del professionista o logo aziendale, di dimensioni generose, chiara e professionale. Spesso sovrapposta parzialmente all'immagine di copertina o posizionata subito sotto.
+        *   **Nome Professionista/Azienda:** Testo grande, H1 o equivalente, ben evidente.
+        *   **Titolo/Specializzazione:** Es. "Idraulico Specializzato", "Web Designer & Developer Full Stack". Posizionato sotto il nome.
+        *   **Valutazione Media e Numero Recensioni:** Es. "★★★★☆ (120 recensioni)". Le stelle e il numero di recensioni sono cliccabili e portano direttamente alla sezione "Recensioni" della pagina.
+        *   **Località Generale:** Es. "Milano, Lombardia" o "Operativo in tutta Italia".
+        *   **Badge (Opzionale):** Icone o piccoli testi che indicano verifiche, certificazioni chiave, o status ("Super Pro", "Top Rated"). Posizionati vicino al nome o al titolo.
+
+**2.2. Barra Azioni Principali (CTA - Call To Action):**
+    *   **Scopo:** Facilitare il contatto diretto e altre azioni chiave da parte del cliente.
+    *   **Posizionamento Desktop:** Generalmente posizionata sotto l'header del profilo, ben visibile. Potrebbe diventare "sticky" (fissa in alto) se l'header del profilo scorre via.
+    *   **Posizionamento Mobile:** Per massimizzare l'accessibilità, questa barra è tipicamente "sticky" (fissa) nella parte inferiore dello schermo, garantendo che i CTA siano sempre a portata di tap.
+    *   **Pulsanti (Desktop e Mobile):**
+        *   **"Invia Messaggio" (P):** Apre un form di contatto o una finestra di chat modale per comunicazione diretta.
+        *   **"Richiedi Preventivo" (Q):** Apre un form specifico per la richiesta di preventivo, che potrebbe includere campi guidati per dettagliare la richiesta.
+        *   **"Richiedi Appuntamento" (R) (Opzionale):** Se pertinente per il tipo di servizio, apre un sistema di scheduling o un form per richiedere una data/ora.
+        *   **"Salva Preferiti":** Icona a forma di cuore o stella che permette all'utente di salvare il profilo nella sua lista di preferiti. Lo stato attivo (salvato) deve essere chiaramente indicato (es. icona piena vs. vuota).
+
+**2.3. Navigazione Interna al Profilo:**
+    *   **Scopo:** Organizzare i contenuti del profilo in sezioni facilmente accessibili e navigabili.
+    *   **Implementazione Comune (Desktop):**
+        *   **Tabs:** Una barra di tab orizzontali posizionata sotto la Barra Azioni Principali. Ogni tab corrisponde a una sezione del profilo (Descrizione, Portfolio, Servizi, Recensioni, ecc.). La tab attiva è evidenziata.
+    *   **Implementazione Comune (Mobile):**
+        *   **Tabs Scorrevoli Orizzontalmente:** Se il numero di sezioni è limitato, le tabs possono scorrere orizzontalmente.
+        *   **Dropdown Menu:** Un pulsante "Menu Sezione" o simile che apre un menu a tendina con i link alle varie sezioni per risparmiare spazio.
+        *   **Pagina Lunga con Scroll Spy:** L'intera pagina è un lungo scroll, e la navigazione (se presente, magari in un header secondario fisso) evidenzia la sezione corrente mentre l'utente scorre.
+    *   **Sezioni del Profilo da Dettagliare:**
+
+        *   **2.3.1. Descrizione / Chi Sono:**
+            *   **Contenuto:** Un'area di testo libero dove il professionista può presentarsi, descrivere la sua filosofia lavorativa, la sua esperienza in modo narrativo, e i suoi punti di forza. Può includere la storia dell'azienda.
+            *   **Layout:** Testo ben formattato, con paragrafi, elenchi puntati se necessario, per facilitare la lettura.
+
+        *   **2.3.2. Portfolio (M):**
+            *   **Scopo:** Mostrare esempi concreti dei lavori passati del professionista.
+            *   **Galleria di Progetti (N):**
+                *   **Layout (Desktop):** Tipicamente una griglia (es. 2-3 colonne) di anteprime di progetto. Ogni anteprima è una card.
+                *   **Layout (Mobile):** Griglia a 1 o 2 colonne, o un carousel orizzontale se i progetti sono molti e si vuole risparmiare spazio verticale.
+                *   **Anteprima Progetto (Card):**
+                    *   Immagine rappresentativa del progetto.
+                    *   Titolo del Progetto.
+                    *   (Opzionale) Breve descrizione o categoria.
+                *   L'intera card è cliccabile per aprire il Dettaglio Progetto (O).
+            *   **Dettaglio Progetto (O):**
+                *   **Apertura:**
+                    *   **Modale (Lightbox):** Soluzione comune per gallerie di immagini/video, permette di visualizzare i dettagli senza lasciare la pagina del profilo.
+                    *   **Sezione Espansa In-Page:** Meno comune, potrebbe espandere i dettagli sotto l'anteprima.
+                    *   **Nuova Pagina Dedicata al Progetto:** Se i progetti sono molto complessi e richiedono molto spazio.
+                *   **Contenuti del Dettaglio Progetto:**
+                    *   **Titolo del Progetto.**
+                    *   **Galleria Immagini/Video:** Carousel o slider per visualizzare multiple immagini e/o video del progetto.
+                    *   **Descrizione Dettagliata:** Testo che spiega gli obiettivi del progetto, le sfide, le soluzioni adottate, e il ruolo del professionista.
+                    *   **Data di Completamento (Opzionale):** Es. "Marzo 2023".
+                    *   **Categoria/Tipo di Lavoro (Opzionale):** Es. "Ristrutturazione Bagno", "Sviluppo E-commerce".
+                    *   **Link Esterno (Opzionale):** Se il progetto è un sito web o ha una risorsa online.
+
+        *   **2.3.3. Servizi Offerti:**
+            *   **Scopo:** Elencare e descrivere i specifici servizi forniti dal professionista.
+            *   **Layout:**
+                *   Lista di servizi, ognuno con:
+                    *   Nome del Servizio (chiaro e specifico).
+                    *   Breve Descrizione del Servizio: Cosa include, come viene erogato.
+                    *   **Range di Prezzo Indicativo (Opzionale e se applicabile):** Es. "A partire da X €", "X € - Y € per ora/progetto". Questo aumenta la trasparenza ma dipende dalla politica del professionista.
+                *   I servizi possono essere raggruppati per categorie se numerosi.
+
+        *   **2.3.4. Recensioni:**
+            *   **Scopo:** Fornire prova sociale e feedback da clienti precedenti.
+            *   **Layout:**
+                *   **Riepilogo Valutazioni:** In cima alla sezione, un riassunto grafico delle valutazioni (es. numero di recensioni a 5 stelle, 4 stelle, ecc., e la media generale).
+                *   **Lista di Recensioni Individuali:** Ogni recensione mostra:
+                    *   Nome del Cliente (potrebbe essere parzialmente anonimizzato per privacy, es. "Mario R.").
+                    *   Data della Recensione.
+                    *   Valutazione in Stelle (es. ★★★★☆).
+                    *   Testo della Recensione.
+                    *   (Opzionale) Risposta del Professionista alla recensione.
+                *   **Filtri/Ordinamento (Opzionale ma utile):**
+                    *   Ordina per: Data (più recente/meno recente), Valutazione (più alta/più bassa).
+                    *   Filtra per: Numero di stelle.
+
+        *   **2.3.5. Certificazioni e Qualifiche:**
+            *   **Scopo:** Dimostrare competenze formali e accreditamenti.
+            *   **Layout:**
+                *   Elenco testuale di certificazioni, titoli di studio, corsi frequentati.
+                *   Visualizzazione di badge digitali o immagini scannerizzate di certificati (se la piattaforma lo permette e sono verificabili).
+                *   Per ogni voce: Nome certificazione/qualifica, ente erogatore, data conseguimento.
+
+        *   **2.3.6. Aree di Operatività:**
+            *   **Scopo:** Indicare chiaramente dove il professionista offre i suoi servizi.
+            *   **Layout:**
+                *   **Mappa Interattiva (Opzionale):** Una mappa (es. Google Maps embed) con un'area evidenziata o pin che mostrano le zone servite.
+                *   **Lista Testuale:** Un elenco di città, province, regioni o una descrizione (es. "Tutta la provincia di Roma", "Online in tutta Italia").
+
+**3. Interazioni Principali (UX):**
+
+*   **Navigare tra le Sezioni del Profilo:** L'utente clicca sulle tabs o sui link di navigazione interna per passare da una sezione all'altra (Descrizione, Portfolio, Recensioni, ecc.).
+*   **Visualizzare Galleria Portfolio (N):** L'utente scorre o naviga tra le anteprime dei progetti nella galleria.
+*   **Visualizzare Dettaglio Progetto (O):** L'utente clicca su un'anteprima di progetto per aprire la vista dettagliata (modale o altra forma), dove può scorrere immagini/video e leggere la descrizione completa del progetto.
+*   **Leggere e Filtrare Recensioni:** L'utente scorre la lista delle recensioni, utilizza i filtri (se disponibili) per data o valutazione.
+*   **Cliccare sui Pulsanti CTA:**
+    *   "Invia Messaggio": Apre interfaccia di messaggistica.
+    *   "Richiedi Preventivo": Apre form di richiesta preventivo.
+    *   "Richiedi Appuntamento": Apre interfaccia di scheduling.
+*   **Salvare/Rimuovere dai Preferiti:** L'utente clicca sull'icona "Salva Preferiti" per aggiungere/rimuovere il profilo dalla sua lista. L'icona cambia stato per dare feedback.
+*   **Cliccare su Link Valutazione/Numero Recensioni (nell'Header):** Porta direttamente alla sezione "Recensioni".
+
+**4. Considerazioni UI/UX Aggiuntive Chiave:**
+
+*   **Gerarchia Visiva Chiara:** Le informazioni più importanti (nome, specializzazione, valutazione, CTA principali) devono emergere visivamente. Utilizzare dimensioni dei font, spaziature e colori in modo strategico.
+*   **Portfolio Efficace e Coinvolgente:** La sezione portfolio è cruciale. Le immagini devono essere di alta qualità. La navigazione nella galleria e nei dettagli del progetto deve essere intuitiva.
+*   **Prova Sociale Forte (Recensioni):** Le recensioni devono essere ben visibili, facili da leggere e, se possibile, con opzioni di filtraggio/ordinamento per aumentare la fiducia.
+*   **Trasparenza e Completezza:** Un profilo completo (descrizione dettagliata, servizi chiari, aree di operatività definite) ispira maggiore fiducia. Incoraggiare i professionisti a compilare tutte le sezioni.
+*   **Adattamento Mobile Ottimale:**
+    *   **Leggibilità:** Testi e contenuti devono essere facilmente leggibili su schermi piccoli.
+    *   **CTA Accessibili:** La barra azioni su mobile (sticky in basso) è fondamentale per la conversione.
+    *   **Navigazione Semplice:** La navigazione tra le sezioni del profilo deve essere agevole su mobile.
+    *   **Performance Immagini:** Ottimizzare le immagini del portfolio e della copertina per un caricamento rapido su mobile.
+*   **Punti di Contatto Multipli:** Offrire diversi modi per contattare il professionista (messaggio, preventivo, appuntamento) risponde a diverse esigenze degli utenti.

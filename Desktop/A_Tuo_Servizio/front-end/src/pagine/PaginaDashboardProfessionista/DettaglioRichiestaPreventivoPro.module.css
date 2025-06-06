@@ -1,0 +1,115 @@
+.container {
+  padding: 20px;
+  max-width: 900px; /* Max width for better readability on large screens */
+  margin: 0 auto;  /* Center the content */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.titoloPagina {
+  color: #333;
+  margin: 0;
+}
+
+.statoBadge {
+  padding: 6px 12px;
+  border-radius: 15px; /* Pill shape */
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+/* Copia degli stili per lo stato dalla lista, assicurati che siano consistenti */
+.statoNuova { background-color: #007bff; }
+.statoInviato { background-color: #ffc107; color: #333; }
+.statoAccettato { background-color: #28a745; }
+.statoRifiutato { background-color: #dc3545; }
+.statoArchiviata { background-color: #6c757d; }
+
+
+.dettagliGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Due colonne */
+  gap: 20px; /* Spazio tra gli item */
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.dettaglioItem {
+  padding: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.dettaglioItem strong {
+  color: #333;
+  margin-right: 8px;
+  display: block; /* Makes the strong tag take its own line for clarity */
+  margin-bottom: 4px;
+}
+
+.dettaglioItem a {
+  color: #007bff;
+  text-decoration: none;
+}
+.dettaglioItem a:hover {
+  text-decoration: underline;
+}
+
+.fullWidth {
+  grid-column: 1 / -1; /* L'item occupa tutta la larghezza */
+}
+
+.descrizione {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+  white-space: pre-wrap; /* Mantiene la formattazione del testo */
+  color: #333;
+  margin-top: 5px;
+}
+
+.listaAllegati {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 5px;
+}
+
+.listaAllegati li a {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  color: #007bff;
+}
+.listaAllegati li a:hover {
+  background-color: #dee2e6;
+}
+
+.azioniContainer {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  gap: 15px; /* Spazio tra i bottoni */
+  flex-wrap: wrap; /* Permette ai bottoni di andare a capo su schermi piccoli */
+}
+
+.linkIndietro {
+  display: inline-block; /* Per permettere margin-top */
+  margin-top: 20px;
+}

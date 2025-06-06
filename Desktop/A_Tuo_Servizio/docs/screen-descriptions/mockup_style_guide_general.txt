@@ -1,0 +1,90 @@
+**Stile Visivo Generale: Piattaforma "A tuo servizio"**
+
+**1. Mood Generale e Aggettivi Chiave:**
+
+L'identità visiva e l'esperienza utente della piattaforma "A tuo servizio" mirano a comunicare:
+
+*   **Professionale:** L'aspetto deve infondere competenza e serietà.
+*   **Affidabile:** Gli utenti devono percepire la piattaforma come sicura e degna di fiducia.
+*   **Moderno:** Un design contemporaneo, pulito e al passo con le attuali tendenze UI/UX.
+*   **Intuitivo:** La navigazione e l'interazione devono essere semplici e immediate.
+*   **Accogliente:** Nonostante la professionalità, la piattaforma deve risultare accessibile e amichevole.
+
+**2. Palette Colori:**
+
+*   **Colore Primario:**
+    *   **Scelta:** Blu Profondo.
+    *   **Esadecimale Indicativo:** `#2B4E72`
+    *   **Motivazione:** Il blu è universalmente associato alla competenza, all'affidabilità e alla calma, qualità essenziali per una piattaforma che mette in contatto clienti e professionisti.
+
+*   **Colore Secondario:**
+    *   **Scelta:** Verde Acqua Chiaro / Turchese Morbido.
+    *   **Esadecimale Indicativo:** `#6AC0B2`
+    *   **Motivazione:** Complementa il blu primario aggiungendo un tocco di freschezza, modernità e positività. Può essere usato per Call to Action (CTA) importanti che non siano primari, o per elementi grafici di supporto.
+
+*   **Colori Neutri:**
+    *   **Grigio Scuro (Testo Principale):** `#333333` (Per la maggior parte del corpo del testo).
+    *   **Grigio Medio (Testo Secondario/Bordi):** `#888888` (Per etichette, didascalie, placeholder, bordi sottili).
+    *   **Grigio Chiaro (Sfondi/Separatori):** `#F4F6F8` (Per sfondi di sezioni, card).
+    *   **Bianco Puro:** `#FFFFFF` (Per sfondi principali e testo su sfondi scuri).
+
+*   **Colori di Accento/Feedback:**
+    *   **Successo/Conferma:** Verde Brillante.
+        *   **Esadecimale Indicativo:** `#4CAF50` (Per messaggi di successo, icone di conferma).
+    *   **Errore/Attenzione:** Rosso Vivace.
+        *   **Esadecimale Indicativo:** `#D9534F` (Per messaggi di errore, avvisi critici).
+    *   **Warning (Opzionale):** Arancione Ambrato.
+        *   **Esadecimale Indicativo:** `#F0AD4E` (Per avvertimenti non critici).
+
+**3. Tipografia:**
+
+*   **Font per Titoli (Headings):**
+    *   **Famiglia Font (Suggerimento):** Montserrat (o Poppins).
+    *   **Pesi Principali da Utilizzare:** H1: Bold (700), H2: Semibold (600), H3: Medium (500) o Semibold (600).
+
+*   **Font per Corpo del Testo (Body):**
+    *   **Famiglia Font (Suggerimento):** Open Sans (o Roboto, Lato).
+    *   **Pesi Principali da Utilizzare:** Regular (400) per il corpo del testo, Medium (500) per enfasi leggere.
+
+*   **Gerarchia Tipografica (Indicativa):**
+    *   **H1 (Titoli Pagina):** ~28-36px, Bold.
+    *   **H2 (Titoli Sezione):** ~22-28px, Semibold.
+    *   **H3 (Sottotitoli/Titoli Card):** ~18-22px, Medium/Semibold.
+    *   **Corpo Testo:** ~14-16px, Regular.
+    *   **Testo Piccolo/Didascalie:** ~12-14px, Regular.
+    *   Line-height: ~1.5 - 1.7.
+
+**4. Iconografia:**
+
+*   **Stile Generale:** Lineare Arrotondato (Line Icons with Rounded Caps/Joins).
+    *   **Descrizione:** Icone definite da linee singole, con angoli e terminazioni arrotondate.
+*   **Peso e Dettaglio:** Linee di spessore ~1.5px - 2px. Design pulito e facilmente comprensibile.
+*   **Esempi di Librerie (Opzionale):** Ispirazione da Feather Icons, Phosphor Icons (Thin/Light), o Heroicons (Outline).
+
+**5. Spaziatura e Layout:**
+
+*   **Principio Generale:** Uso generoso dello spazio bianco ("negative space").
+*   **Griglia (Concettuale):** Sistema di griglia consistente (es. basato su multipli di 8pt).
+*   **Angoli Arrotondati:** Uso coerente per un aspetto morbido e moderno.
+    *   Bottoni/Input: `border-radius: 4px` o `6px`.
+    *   Card/Modali: `border-radius: 8px` o `12px`.
+
+**6. Stile Generale dei Bottoni e Controlli UI:**
+
+*   **Bottoni Primari (CTA Principali):**
+    *   **Aspetto:** Sfondo pieno con Colore Primario (`#2B4E72`), testo bianco (`#FFFFFF`), angoli arrotondati.
+    *   **Hover/Focus:** Leggero scurimento/schiarimento del colore di sfondo; outline visibile al focus.
+*   **Bottoni Secondari:**
+    *   **Aspetto:** Bordo sottile nel Colore Primario, testo Colore Primario, sfondo trasparente/bianco, angoli arrotondati.
+    *   **Hover/Focus:** Sfondo leggermente riempito o testo/bordo scurito; outline visibile al focus.
+*   **Bottoni Distruttivi (es. Elimina):**
+    *   **Aspetto:** Sfondo pieno con Colore Errore (`#D9534F`), testo bianco, angoli arrotondati.
+*   **Input Fields (Campi di Testo, Select, Textarea):**
+    *   **Aspetto:** Bordo sottile Grigio Medio (`#888888` o `#CCCCCC`), sfondo bianco, angoli arrotondati. Testo interno Grigio Scuro (`#333333`), placeholder Grigio Medio.
+    *   **Focus:** Bordo più spesso e/o Colore Primario (`#2B4E72`).
+
+**7. Immagini e Media:**
+
+*   **Qualità:** Alta qualità, nitide e professionali.
+*   **Stile Fotografico (Suggerimento):** Luminose, chiare, autentiche, positive e professionali.
+*   **Placeholder:** Discreti e ben disegnati.

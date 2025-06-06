@@ -1,0 +1,130 @@
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Occupa tutta l'altezza del genitore .colonnaChatAttiva */
+}
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #f8f9fa; /* Sfondo leggermente diverso per l'header della chat */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.fotoClienteHeader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.nomeClienteHeader {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.areaMessaggi {
+  flex-grow: 1; /* Occupa lo spazio disponibile */
+  overflow-y: auto; /* Scroll per i messaggi */
+  padding: 15px;
+  background-color: #e9ecef; /* Sfondo dell'area messaggi */
+}
+
+.rigaMessaggio {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.rigaMessaggio.inviato {
+  justify-content: flex-end; /* Messaggi inviati a destra */
+}
+
+.rigaMessaggio.ricevuto {
+  justify-content: flex-start; /* Messaggi ricevuti a sinistra */
+}
+
+.bollaMessaggio {
+  max-width: 70%; /* Larghezza massima della bolla */
+  padding: 10px 15px;
+  border-radius: 18px; /* Bolle più arrotondate */
+  position: relative; /* Per il timestamp, se si vuole posizionarlo in modo più complesso */
+}
+
+.rigaMessaggio.inviato .bollaMessaggio {
+  background-color: #007bff; /* Blu per i messaggi inviati */
+  color: white;
+  border-bottom-right-radius: 5px; /* Coda stilizzata */
+}
+
+.rigaMessaggio.ricevuto .bollaMessaggio {
+  background-color: #ffffff; /* Bianco per i messaggi ricevuti */
+  color: #333;
+  border: 1px solid #d1d9e0;
+  border-bottom-left-radius: 5px; /* Coda stilizzata */
+}
+
+.testoMessaggio {
+  margin: 0 0 5px 0; /* Spazio sotto il testo prima del timestamp */
+  white-space: pre-wrap; /* Mantiene gli a capo e gli spazi */
+  word-break: break-word; /* Va a capo se le parole sono troppo lunghe */
+}
+
+.timestampMessaggio {
+  font-size: 0.7rem;
+  color: inherit; /* Eredita colore dalla bolla, ma potrebbe essere sovrascritto */
+  opacity: 0.8;
+  display: block; /* Per metterlo sotto il testo */
+  text-align: right; /* Timestamp a destra nella bolla */
+}
+
+.rigaMessaggio.inviato .timestampMessaggio {
+  color: #e0e7ff; /* Timestamp più chiaro su sfondo blu */
+}
+.rigaMessaggio.ricevuto .timestampMessaggio {
+  color: #6c757d; /* Timestamp grigio su sfondo bianco */
+}
+
+
+.inputArea {
+  display: flex;
+  padding: 10px 15px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f8f9fa; /* Sfondo dell'area di input */
+}
+
+.campoInputMessaggio {
+  flex-grow: 1;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 20px; /* Input arrotondato */
+  margin-right: 10px;
+  font-size: 0.95rem;
+  resize: none; /* Se fosse una textarea */
+}
+.campoInputMessaggio:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.bottoneInvia {
+  padding: 0 20px; /* Più padding orizzontale per il testo "Invia" */
+  border-radius: 20px; /* Coerente con l'input */
+  font-weight: 600;
+}
+
+/* Stili per futuro bottone allegato */
+.bottoneAllegato {
+  margin-right: 8px;
+  align-self: center;
+}
+.infoFileAllegato {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 5px 15px 0;
+  padding-bottom: 5px; /* Per non farlo attaccare al bordo se l'area input ha padding */
+}

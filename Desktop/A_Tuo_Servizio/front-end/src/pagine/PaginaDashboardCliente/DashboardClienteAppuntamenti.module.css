@@ -1,0 +1,183 @@
+/* Stili per DashboardClienteAppuntamenti */
+
+.containerAppuntamenti {
+    /* Eventuale padding se non già gestito da .contenutoPrincipaleDashboard */
+}
+
+.titoloSezioneDashboard { /* Può essere ereditato/condiviso */
+    font-size: 1.6rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-forte);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.controlliAppuntamenti {
+    display: flex;
+    justify-content: space-between; /* Spinge il toggle vista a destra */
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filtriAppuntamenti { /* Wrapper per i filtri select/date */
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.filtroGruppo { /* Stesso di Richieste, potrebbe essere globale */
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.filtroGruppo label {
+    font-size: 0.85rem;
+    color: var(--colore-testo-secondario);
+    margin-bottom: 0.2rem;
+}
+
+.filtroGruppo select,
+.filtroGruppo input[type="date"] {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--colore-bordo-input);
+    border-radius: var(--bordi-radius-medio);
+    font-size: 0.95rem;
+    min-width: 180px;
+}
+
+.toggleVistaAppuntamenti { /* Simile a .toggleVista in RisultatiRicerca */
+    display: flex;
+    border: 1px solid var(--colore-primario);
+    border-radius: var(--bordi-radius-medio);
+    overflow: hidden;
+}
+
+.toggleVistaAppuntamenti button {
+    background-color: var(--colore-bianco);
+    color: var(--colore-primario);
+    border: none;
+    padding: 0.6rem 1rem; /* Leggermente più alto per coerenza con i filtri */
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.toggleVistaAppuntamenti button.attivo {
+    background-color: var(--colore-primario);
+    color: var(--colore-bianco);
+}
+
+.toggleVistaAppuntamenti button:not(.attivo):hover {
+    background-color: var(--colore-primario-trasparente-10);
+}
+
+.toggleVistaAppuntamenti button:first-child {
+    border-right: 1px solid var(--colore-primario);
+}
+
+
+/* Lista Appuntamenti (layout a card) */
+.listaAppuntamenti {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); /* Card responsive */
+    gap: 1.5rem;
+}
+
+.cardAppuntamento {
+    background-color: var(--colore-bianco);
+    border-radius: var(--bordi-radius-medio);
+    box-shadow: var(--ombreggiatura-molto-leggera);
+    border: 1px solid var(--colore-bordo-input-leggero);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Spazio tra gli elementi interni alla card */
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.25rem;
+}
+
+.dataOraAppuntamento {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--colore-testo-forte);
+}
+
+.statoAppuntamento { /* Badge di stato */
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--bordi-radius-badge, 12px);
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Stili per stati appuntamento (esempio, adattare colori) */
+.statoRichiesto { background-color: #e7f3fe; color: #0c5460; border: 1px solid #b8daff; }
+.statoConfermato { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.statoCompletato { background-color: #e9ecef; color: #495057; border: 1px solid #ced4da; }
+.statoAnnullatoDalCliente, .statoAnnullatoDalProfessionista { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+
+.dettagliAppuntamento {
+    font-size: 0.95rem;
+    color: var(--colore-testo-secondario);
+}
+.dettagliAppuntamento strong {
+    color: var(--colore-testo-principale);
+}
+.dettagliAppuntamento a {
+    color: var(--colore-primario);
+    text-decoration: none;
+}
+.dettagliAppuntamento a:hover {
+    text-decoration: underline;
+}
+
+.azioniAppuntamento {
+    margin-top: 0.5rem; /* Spazio sopra i bottoni */
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+.azioniAppuntamento a { /* Per i Link che wrappano Bottone */
+    text-decoration: none;
+}
+
+
+/* Placeholder Calendario */
+.calendarioPlaceholder {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colore-sfondo-grigio-molto-chiaro, #f8f9fa);
+    border: 2px dashed var(--colore-bordo-grigio-chiaro, #dee2e6);
+    border-radius: var(--bordi-radius-grande, 8px);
+    padding: 2rem;
+    text-align: center;
+    color: var(--colore-testo-secondario);
+}
+.iconaCalendarioPlaceholder {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--colore-secondario-leggero);
+}
+
+
+.messaggioNessunAppuntamento {
+    text-align: center;
+    padding: 2rem;
+    color: var(--colore-testo-secondario);
+    font-style: italic;
+}

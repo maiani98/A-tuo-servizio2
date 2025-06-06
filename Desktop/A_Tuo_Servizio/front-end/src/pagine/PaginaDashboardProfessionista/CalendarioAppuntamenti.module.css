@@ -1,0 +1,118 @@
+.container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.titoloPagina {
+  color: #333;
+  margin: 0;
+}
+
+/* Mock Calendar View Styles */
+.calendarViewMock {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.calendarTitle {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #007bff;
+  text-align: center;
+}
+
+.calendarDateBlock {
+  margin-bottom: 15px;
+}
+
+.calendarDate {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.calendarViewMock ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.calendarEvent {
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+.calendarEvent a {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+/* Event type specific styles for mock calendar */
+.confermato { background-color: #d4edda; color: #155724; border-left: 3px solid #28a745; } /* Greenish */
+.completato { background-color: #e2e3e5; color: #383d41; border-left: 3px solid #6c757d; } /* Greyish */
+
+
+.listeContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.listaAppuntamenti {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.titoloLista {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #343a40;
+}
+
+.listaAppuntamenti ul {
+  list-style: none;
+  padding: 0;
+}
+
+.appuntamentoItem {
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow actions to wrap on smaller screens */
+}
+
+.appuntamentoItem:last-child {
+  border-bottom: none;
+}
+
+.appuntamentoItem span {
+  flex-grow: 1;
+  margin-right: 10px; /* Space before action buttons */
+}
+
+.azioniLista {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0; /* Prevent buttons from shrinking too much */
+}
+
+.azioniLista button,
+.azioniLista a button { /* If Bottone is wrapped in Link */
+  white-space: nowrap; /* Prevent button text from wrapping */
+}

@@ -1,0 +1,56 @@
+.messaggiLayout {
+  display: flex;
+  height: calc(100vh - 120px); /* Esempio: altezza viewport meno header/footer dashboard */
+  /* Se la sidebar della dashboard è persistente, potrebbe essere necessario sottrarre anche la sua altezza/padding */
+  /* Assicurati che il contenitore genitore (mainContent in PaginaDashboardProfessionista) permetta questa altezza */
+  background-color: #f4f6f8; /* Sfondo generale per la pagina messaggi */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden; /* Per contenere le colonne */
+}
+
+.colonnaListaConversazioni {
+  width: 300px; /* Larghezza fissa per la lista */
+  border-right: 1px solid #d1d9e0; /* Separatore tra le colonne */
+  background-color: #ffffff;
+  overflow-y: auto; /* Scroll se la lista è lunga */
+  display: flex;
+  flex-direction: column;
+}
+
+.colonnaChatAttiva {
+  flex-grow: 1; /* La chat occupa lo spazio rimanente */
+  display: flex; /* Per permettere a ChatAttivaProfessionista di riempire lo spazio */
+  flex-direction: column; /* ChatAttiva avrà header, corpo messaggi, input */
+  background-color: #ffffff;
+}
+
+.noChatSelected {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: #777;
+  padding: 20px;
+}
+
+/* Responsive Design: su schermi piccoli, potremmo voler nascondere la lista
+   e mostrare solo la chat attiva, o viceversa, con un toggle.
+   Per ora, semplice layout affiancato.
+*/
+@media (max-width: 768px) {
+  .colonnaListaConversazioni {
+    width: 100%; /* Occupa tutta la larghezza */
+    /* In uno scenario reale, qui si gestirebbe la logica per mostrare solo la lista
+       o solo la chat, magari con un pulsante per switchare.
+       Se conversazioneAttivaId è null, mostra la lista, altrimenti mostra la chat.
+    */
+  }
+  .colonnaChatAttiva {
+     /* In uno scenario reale, questa colonna potrebbe essere nascosta se la lista è visibile
+        su mobile e nessuna chat è attiva, o occupare tutta la larghezza se una chat è attiva. */
+  }
+  /*  .messaggiLayout { flex-direction: column; } se si volesse stackare */
+}

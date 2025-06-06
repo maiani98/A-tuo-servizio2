@@ -1,0 +1,19 @@
+**User Stories per il Flusso di Registrazione e Onboarding del Professionista**
+
+**1. User Story: Registrazione Iniziale**
+
+*   **Come** un nuovo professionista che desidera iscriversi alla piattaforma "A tuo servizio",
+*   **Voglio** poter creare un account in modo rapido e semplice fornendo solo le informazioni minime necessarie (come indirizzo email, password e tipologia di attività principale),
+*   **Così che** possa accedere rapidamente alla piattaforma e iniziare a familiarizzare con l'ambiente e le funzionalità disponibili per i professionisti.
+
+**2. User Story: Completamento Guidato delle Informazioni di Base del Profilo**
+
+*   **Come** un professionista che ha appena creato il suo account,
+*   **Voglio** essere guidato attraverso un processo di onboarding chiaro e strutturato per inserire le informazioni fondamentali del mio profilo (es. nome completo/ragione sociale, numero di telefono, località principale di operatività, una breve descrizione della mia attività e una foto profilo),
+*   **Così che** il mio profilo pubblico sia presentabile, affidabile e inizi a costruire fiducia nei potenziali clienti.
+
+**3. User Story: Primo Passo Guidato verso la Valorizzazione del Profilo**
+
+*   **Come** un professionista che ha completato le informazioni di base del profilo durante l'onboarding,
+*   **Voglio** ricevere un suggerimento contestuale e un invito evidente a compiere un'azione successiva per arricchire il mio profilo (ad esempio, "Aggiungi il tuo primo progetto al portfolio per mostrare i tuoi lavori" oppure "Definisci i servizi che offri per farti trovare più facilmente"), con un accesso diretto alla relativa sezione di modifica,
+*   **Così che** possa comprendere immediatamente come migliorare l'efficacia del mio profilo e aumentare le mie possibilità di attrarre clienti.

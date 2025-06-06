@@ -1,0 +1,158 @@
+.schermoBenvenuto {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Immagine di placeholder, sostituire con una reale se disponibile */
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Necessario per il posizionamento dell'overlay */
+    text-align: center;
+    padding: 2rem; /* Padding per evitare che il contenuto tocchi i bordi su schermi piccoli */
+    color: var(--colore-bianco); /* Colore testo default per contrasto con overlay scuro */
+}
+
+.schermoBenvenuto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay scuro per leggibilità testo */
+    z-index: 1; /* Assicura che l'overlay sia sopra l'immagine di sfondo ma sotto il contenuto */
+}
+
+.contenutoSovrapposto {
+    position: relative; /* Per assicurare che sia sopra l'overlay */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem; /* Spazio tra gli elementi principali */
+    max-width: 900px; /* Limita la larghezza massima del contenuto per leggibilità */
+    width: 100%;
+}
+
+.logoBenvenuto {
+    font-size: 2.8rem; /* Dimensione font per il logo */
+    font-weight: bold;
+    font-family: var(--font-titoli); /* Utilizza il font definito per i titoli */
+    margin-bottom: 0.5rem; /* Spazio ridotto, gap del flex container gestisce il resto */
+    color: var(--colore-primario-chiaro); /* Un colore che risalti, es. primario chiaro */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.titoloBenvenuto {
+    /* Utilizza le classi base del componente Titolo e aggiunge/sovrascrive se necessario */
+    /* La dimensione del font è già gestita dal componente Titolo livello={1} */
+    /* Potremmo voler sovrascrivere il colore o aggiungere text-shadow se non già presente */
+    font-weight: 700; /* Assicura grassetto forte */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+}
+
+.taglineBenvenuto {
+    /* Utilizza le classi base del componente Paragrafo */
+    font-size: 1.3rem; /* Dimensione leggermente più grande per la tagline */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 2.5rem; /* Spazio prima dei CTA */
+    max-width: 700px; /* Limita larghezza per migliore leggibilità */
+    line-height: 1.6;
+}
+
+.ctaWrapperPrimario {
+    display: flex;
+    gap: 1.5rem; /* Spazio tra i bottoni */
+    flex-wrap: wrap; /* Permette ai bottoni di andare a capo su schermi piccoli */
+    justify-content: center;
+    margin-bottom: 2rem; /* Spazio prima del link secondario */
+}
+
+.bottoneBenvenuto {
+    /* Stile aggiuntivo per i bottoni se necessario, es. padding o font-size */
+    /* Il componente Bottone ha già stili di base e varianti */
+    padding: 0.9rem 2.2rem; /* Padding leggermente aumentato per importanza */
+    font-size: 1.1rem; /* Dimensione font per i bottoni */
+    min-width: 250px; /* Larghezza minima per i bottoni */
+}
+
+.linkSecondarioWrapper {
+    margin-top: 1rem; /* Spazio sopra il link di accesso */
+}
+
+.linkAccedi {
+    color: var(--colore-bianco);
+    text-decoration: none; /* Rimuove sottolineatura di default */
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--bordi-radius-medio);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.linkAccedi:hover {
+    color: var(--colore-primario-chiaro); /* Colore al hover */
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo leggero al hover */
+}
+
+/* Media Query per responsività */
+@media (max-width: 768px) {
+    .contenutoSovrapposto {
+        gap: 1.5rem; /* Riduci gap su schermi piccoli */
+    }
+
+    .logoBenvenuto {
+        font-size: 2.2rem;
+    }
+
+    .titoloBenvenuto {
+        font-size: 2rem; /* Riduci dimensione font per il titolo */
+         /* Il componente Titolo dovrebbe gestire la sua dimensione base,
+           ma possiamo sovrascrivere qui se Titolo non è abbastanza flessibile
+           o se vogliamo un cambiamento specifico per questa pagina */
+    }
+
+    .taglineBenvenuto {
+        font-size: 1.1rem; /* Riduci dimensione font per la tagline */
+        margin-bottom: 2rem;
+    }
+
+    .ctaWrapperPrimario {
+        flex-direction: column; /* Bottoni in colonna */
+        align-items: center; /* Centra i bottoni in colonna */
+        gap: 1rem;
+        width: 100%; /* Occupa tutta la larghezza disponibile per i bottoni */
+    }
+
+    .bottoneBenvenuto {
+        width: 100%; /* Bottoni a piena larghezza */
+        max-width: 320px; /* Ma con una larghezza massima */
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .linkAccedi {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schermoBenvenuto {
+        padding: 1rem; /* Meno padding su schermi molto piccoli */
+    }
+    .logoBenvenuto {
+        font-size: 2rem;
+    }
+    .titoloBenvenuto {
+        font-size: 1.8rem;
+    }
+    .taglineBenvenuto {
+        font-size: 1rem;
+    }
+}

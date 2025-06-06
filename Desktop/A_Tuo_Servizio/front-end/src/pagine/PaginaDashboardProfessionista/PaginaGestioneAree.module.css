@@ -1,0 +1,110 @@
+/* src/pagine/PaginaDashboardProfessionista/PaginaGestioneAree.module.css */
+
+.contenitoreGestione {
+  padding: 1.5rem;
+  background-color: var(--colore-bianco);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.titoloSezione {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--colore-primario);
+}
+
+.infoSezione {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--colore-testo-secondario);
+  line-height: 1.6;
+}
+
+.formAggiungiArea {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start; /* Allinea l'etichetta (se sopra) e l'input/bottone */
+  margin-bottom: 1rem; /* Spazio prima di eventuale messaggio di errore */
+}
+
+.campoNuovaArea { /* Classe applicata al CampoTesto per farlo espandere */
+  flex-grow: 1;
+}
+
+/* Il bottone Aggiungi Area eredita gli stili dal componente Bottone.
+   Se necessario, si può aggiungere una classe per override:
+.bottoneAggiungi {
+  padding-top: 10px; 
+  padding-bottom: 10px;
+}
+*/
+
+.messaggioErroreForm {
+  color: var(--colore-errore);
+  background-color: rgba(217, 83, 79, 0.08);
+  border: 1px solid rgba(217, 83, 79, 0.5);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1.5rem; 
+}
+
+.elencoAree {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chipArea {
+  background-color: var(--colore-secondario);
+  color: var(--colore-bianco);
+  padding: 0.5rem 1rem;
+  border-radius: 100px; /* Pill shape */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.bottoneEliminaChip {
+  background: none;
+  border: none;
+  color: var(--colore-bianco);
+  opacity: 0.7;
+  cursor: pointer;
+  font-size: 1.1rem; /* Rende la 'X' leggermente più grande */
+  padding: 0 0.25rem; /* Leggero padding per facilitare il click */
+  margin-left: 0.25rem; /* Spazio tra testo e X */
+  line-height: 1; /* Per un migliore allineamento verticale della X */
+}
+
+.bottoneEliminaChip:hover {
+  opacity: 1;
+  color: var(--colore-errore); /* Opzionale: cambia colore in rosso su hover */
+}
+
+.messaggioNessunaArea {
+  text-align: left; /* O center, a seconda del design */
+  padding: 1rem 0; /* Meno padding verticale rispetto a .messaggioErroreForm */
+  color: var(--colore-testo-secondario);
+  /* background-color: var(--colore-sfondo-chiaro); */ /* Opzionale: se si vuole uno sfondo */
+  /* border-radius: 8px; */ /* Opzionale */
+  font-style: italic;
+}
+
+/* Media query per il form su schermi piccoli */
+@media (max-width: 600px) {
+  .formAggiungiArea {
+    flex-direction: column;
+    align-items: stretch; /* Fa sì che input e bottone occupino tutta la larghezza */
+  }
+  .campoNuovaArea {
+    width: 100%;
+  }
+  .bottoneAggiungi {
+    width: 100%;
+  }
+}

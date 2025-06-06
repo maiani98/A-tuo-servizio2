@@ -1,0 +1,66 @@
+.sidebar {
+  width: 260px;
+  background-color: #343a40; /* Dark sidebar background */
+  color: #f8f9fa; /* Light text color */
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Full height */
+}
+
+.sidebarHeader {
+  padding: 0 20px 20px 20px;
+  border-bottom: 1px solid #495057; /* Separator line */
+  margin-bottom: 20px;
+}
+
+.sidebarHeader h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.sidebarNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Pushes footer to bottom */
+}
+
+.sidebarNav li {
+  padding: 0; /* Remove padding if NavLink has its own */
+}
+
+.navLink {
+  display: block;
+  padding: 12px 20px;
+  color: #adb5bd; /* Subdued link color */
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.navLink:hover,
+.navLink.active { /* Assuming 'active' class for active links via NavLink */
+  background-color: #495057; /* Darker background on hover/active */
+  color: #ffffff; /* Brighter text on hover/active */
+}
+
+.sidebarFooter {
+  padding: 20px;
+  border-top: 1px solid #495057; /* Separator line */
+}
+
+.logoutButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.logoutButton:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}

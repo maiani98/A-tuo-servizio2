@@ -1,0 +1,83 @@
+**Wireframe Testuale: Funzionalità di Ricerca sulla Client Homepage (G)**
+
+**1. Contesto della Hero Section:**
+
+*   **Posizionamento:** La funzionalità di ricerca è l'elemento centrale della Hero Section della Client Homepage (G).
+*   **Elementi Sovrastanti (Placeholder):**
+    *   **Titolo Principale (H1):** Testo placeholder "[Titolo Principale della Hero Section Qui]" (es. "Trova il professionista giusto per te").
+    *   **Sottotitolo/Testo di Supporto:** Testo placeholder "[Sottotitolo o testo di supporto qui]" (es. "Confronta preventivi e scegli l'esperto ideale in pochi click.").
+    *   Questi elementi sono posizionati sopra la barra di ricerca.
+
+**2. Barra di Ricerca Prominente:**
+
+*   **Layout Generale (Desktop):** I campi "Che servizio cerchi?", "Dove?" e il pulsante "Cerca" sono disposti orizzontalmente, in linea, per massima visibilità e facilità d'uso.
+*   **Sfondo e Contenitore:** La barra di ricerca potrebbe avere un leggero sfondo a contrasto o un bordo per raggruppare visivamente i suoi componenti.
+
+*   **2.1. Campo "Che servizio cerchi?":**
+    *   **Posizione:** Primo elemento da sinistra nella barra di ricerca.
+    *   **Aspetto:** Un campo di input testuale rettangolare standard.
+    *   **Etichetta (Visibile o Implicita):** L'etichetta potrebbe essere visibile sopra il campo o implicita attraverso il testo placeholder.
+    *   **Placeholder (all'interno del campo):** Testo grigio chiaro "Es. Idraulico, Elettricista, Web Designer".
+    *   **Interazione Autocompletamento Servizio:**
+        *   **Trigger:** L'utente inizia a digitare (es. dopo 2-3 caratteri) all'interno del campo "Che servizio cerchi?".
+        *   **Risultato Visivo:**
+            *   Immediatamente sotto il campo di input, appare un **pannello dropdown (o lista)** che si estende per l'intera larghezza del campo di input o leggermente oltre.
+            *   Questo pannello mostra una lista verticale di **suggerimenti di servizi** pertinenti al testo digitato (es. se l'utente digita "idr", i suggerimenti potrebbero essere "Idraulico", "Idraulico per urgenze", "Riparazioni idrauliche").
+            *   Ogni suggerimento nella lista è cliccabile.
+            *   Se non ci sono suggerimenti, il pannello non appare o mostra un messaggio tipo "Nessun servizio trovato".
+        *   **Interazione con i Suggerimenti:**
+            *   L'utente può continuare a digitare per affinare i suggerimenti.
+            *   L'utente può usare i tasti freccia (su/giù) per navigare tra i suggerimenti, con il suggerimento attivo evidenziato visivamente.
+            *   L'utente può cliccare su un suggerimento o premere "Invio" su un suggerimento evidenziato per selezionarlo. La selezione popola il campo di input "Che servizio cerchi?" con il testo del suggerimento scelto, e il pannello dropdown scompare.
+
+*   **2.2. Campo "Dove?":**
+    *   **Posizione:** Secondo elemento da sinistra (o a destra del campo "Che servizio cerchi?").
+    *   **Aspetto:** Un campo di input testuale rettangolare standard.
+    *   **Etichetta (Visibile o Implicita):** Come per il campo servizio.
+    *   **Placeholder (all'interno del campo):** Testo grigio chiaro "Es. Milano, Roma, CAP...".
+    *   **Icona Geolocalizzazione:**
+        *   **Aspetto:** Una piccola icona standard di "geolocalizzazione" (es. un mirino stilizzato o un pin di mappa).
+        *   **Posizione:** Posizionata all'interno del campo "Dove?", allineata a destra.
+        *   **Interazione Geolocalizzazione:**
+            *   **Trigger:** L'utente clicca sull'icona di geolocalizzazione.
+            *   **Risultato Visivo/Comportamento:**
+                *   **Richiesta di Permesso:** Il browser mostra una richiesta nativa all'utente per consentire l'accesso alla sua posizione attuale (testo tipo "[NomeSito] vuole conoscere la tua posizione").
+                *   **Se l'utente concede il permesso:** Il campo "Dove?" viene **automaticamente popolato** con la località rilevata (es. "Milano, Italia"). Potrebbe apparire un breve messaggio di conferma o un'icona di caricamento durante il rilevamento.
+                *   **Se l'utente nega il permesso o la geolocalizzazione fallisce:** Il campo "Dove?" rimane vuoto o mostra un breve messaggio di errore discreto vicino all'icona o sotto il campo (es. "Impossibile rilevare la posizione" o "Geolocalizzazione negata").
+    *   **Interazione Autocompletamento Località:**
+        *   **Trigger:** L'utente inizia a digitare (es. dopo 2-3 caratteri) all'interno del campo "Dove?".
+        *   **Risultato Visivo:**
+            *   Simile all'autocompletamento del servizio, appare un **pannello dropdown** sotto il campo "Dove?".
+            *   Questo pannello mostra una lista verticale di **suggerimenti di località** (città, regioni, CAP) pertinenti al testo digitato.
+            *   Ogni suggerimento è cliccabile.
+            *   Se non ci sono suggerimenti, il pannello non appare o mostra un messaggio tipo "Nessuna località trovata".
+        *   **Interazione con i Suggerimenti:** Funziona come per l'autocompletamento del servizio (digitazione, navigazione con frecce, click o Invio per selezionare). La selezione popola il campo "Dove?" e il pannello scompare.
+
+*   **2.3. Pulsante "Cerca":**
+    *   **Posizione:** Elemento più a destra nella barra di ricerca.
+    *   **Aspetto:** Un pulsante rettangolare standard, visivamente prominente (es. con un colore di sfondo primario del brand).
+    *   **Etichetta:** Testo chiaro e conciso, come "Cerca" o un'icona di lente d'ingrandimento (o entrambi).
+    *   **Stato:** Abilitato per default.
+
+**3. Interazione Pulsante "Cerca":**
+
+*   **Azione dell'Utente:** L'utente clicca sul pulsante "Cerca".
+*   **Prerequisiti Impliciti:** L'utente ha tipicamente compilato almeno il campo "Che servizio cerchi?". La ricerca potrebbe funzionare anche solo con la località, o con entrambi i campi vuoti (portando a una pagina di ricerca generale o mostrando un errore/prompt, a seconda delle regole di business - non dettagliato qui).
+*   **Risultato dell'Azione:**
+    *   Il click sul pulsante "Cerca" avvia l'azione di ricerca.
+    *   L'utente viene **reindirizzato alla Pagina dei Risultati di Ricerca (Schermata J)**.
+    *   I parametri inseriti nei campi "Che servizio cerchi?" e "Dove?" vengono passati alla pagina dei risultati per filtrare e visualizzare i professionisti pertinenti.
+
+**4. Adattamento Mobile della Barra di Ricerca:**
+
+*   **Layout:**
+    *   Come richiamato nella descrizione generale della Client Homepage (G), su dispositivi mobili, per ottimizzare lo spazio verticale e migliorare l'usabilità:
+        *   Il campo "Che servizio cerchi?" e il campo "Dove?" sono **impilati verticalmente** (uno sopra l'altro).
+        *   Il pulsante "Cerca" si trova sotto entrambi i campi, tipicamente estendendosi per quasi tutta la larghezza disponibile per essere facilmente toccabile.
+*   **Interazioni di Autocompletamento e Geolocalizzazione:** Le funzionalità di autocompletamento (con i pannelli dropdown) e l'interazione con l'icona di geolocalizzazione rimangono concettualmente le stesse, adattandosi al layout verticale. I pannelli dropdown appaiono sotto il rispettivo campo.
+
+**5. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sugli elementi interattivi della funzionalità di ricerca e sul feedback visivo immediato (come i pannelli di autocompletamento).
+*   Non dettaglia gli algoritmi di suggerimento o la logica di business esatta della ricerca.
+*   L'aspetto visivo specifico (colori, font, stile esatto delle icone e dei dropdown) dipenderà dal design system complessivo della piattaforma.

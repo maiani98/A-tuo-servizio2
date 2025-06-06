@@ -1,0 +1,54 @@
+**Wireframe Testuale: Panoramica della Sezione Portfolio (M) nel Profilo Professionista (L - Visualizzato dal Cliente)**
+
+**1. Contesto Generale della Pagina "Professional Profile (L)":**
+
+*   **Header del Profilo Professionista:**
+    *   **Posizione:** In cima alla pagina del profilo pubblico.
+    *   **Elementi Visibili (Placeholder):**
+        *   Area per Immagine di Copertina (rettangolo largo).
+        *   Area per Foto Profilo del Professionista (cerchio o quadrato sovrapposto/sottostante alla copertina).
+        *   Testo placeholder per "Nome Professionista/Azienda" (grande e prominente).
+        *   Testo placeholder per "Titolo/Specializzazione".
+        *   Placeholder per "Valutazione Media (es. stelle)" e "Numero Recensioni".
+        *   Placeholder per "Località Generale".
+        *   Area per Pulsanti di Azione Principale (CTA) come "Invia Messaggio", "Richiedi Preventivo" (rettangoli distinti).
+
+*   **Navigazione Interna al Profilo:**
+    *   **Posizione:** Sotto l'header del profilo.
+    *   **Implementazione (Placeholder):** Una barra orizzontale contenente etichette testuali (Tabs) come "Descrizione", "Portfolio", "Servizi", "Recensioni".
+    *   **Stato Attivo:** La tab "Portfolio" è visivamente evidenziata (es. sottolineatura, colore di sfondo diverso, testo più grassetto) per indicare che il contenuto sottostante si riferisce a questa sezione. In alternativa, se la pagina è un lungo scroll, questa sezione è il punto di ancoraggio corrente della visualizzazione.
+
+**2. Area Contenuto Specifica della Sezione "Portfolio (M)":**
+
+*   **Posizione:** Sotto la barra di navigazione interna al profilo, occupando l'area principale della pagina dedicata a questa sezione.
+
+*   **Titolo della Sezione Portfolio:**
+    *   **Testo:** "Portfolio" (o "I Miei Lavori").
+    *   **Stile:** Testo grande (es. H2 o equivalente), chiaramente leggibile, allineato a sinistra.
+
+*   **Testo Introduttivo al Portfolio (Opzionale - Placeholder):**
+    *   **Posizione:** Sotto il titolo della sezione.
+    *   **Contenuto (Placeholder):** Un blocco di testo lorem ipsum di 2-3 righe, a rappresentare uno spazio dove il professionista può inserire una breve descrizione generale del suo approccio al lavoro, dei tipi di progetti che realizza, o della sua filosofia.
+    *   **Testo Esplicativo (per il wireframe):** Etichetta discreta "[Testo introduttivo opzionale del professionista sul suo portfolio]".
+
+*   **Introduzione/Sottotitolo per la Galleria Progetti (N):**
+    *   **Posizione:** Sotto l'eventuale testo introduttivo, o direttamente sotto il titolo della sezione se il testo introduttivo non è presente. Serve come stacco prima della visualizzazione delle anteprime dei progetti.
+    *   **Testo (Placeholder):** "Galleria Progetti" o "Scopri alcuni dei miei lavori recenti" o "Esplora i miei progetti".
+    *   **Stile:** Testo di dimensioni leggermente inferiori rispetto al titolo principale della sezione, ma comunque ben distinguibile.
+
+*   **Controlli a Livello Galleria (Opzionale - Omissione per Semplicità):**
+    *   **Considerazione:** In questa fase del wireframe per la panoramica, non vengono visualizzati controlli di filtro o ordinamento specifici per l'intera galleria (es. filtri per categoria di progetto, anno, ecc.). La galleria presenterà i progetti in un ordine predefinito dal professionista.
+    *   **Nota (per il wireframe):** "[Eventuali filtri o controlli a livello di galleria sono omessi in questa vista panoramica per semplicità. La galleria progetti (N) seguirà direttamente.]"
+
+**3. Area Galleria Progetti (N) - Placeholder Concettuale:**
+
+*   **Posizione:** Subito sotto l'introduzione/sottotitolo per la galleria.
+*   **Contenuto (Placeholder):**
+    *   Un grande rettangolo con l'etichetta testuale "[Qui verrà visualizzata la Galleria Progetti (N) come una griglia di anteprime cliccabili dei singoli progetti]".
+    *   Questo indica che il dettaglio della galleria (con le singole card progetto) è definito in un wireframe separato (come "Professional Profile Project Gallery (N)").
+
+**4. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sulla struttura e sulla disposizione degli elementi introduttivi della sezione Portfolio (M) nel profilo pubblico.
+*   Non include i dettagli delle singole anteprime di progetto (che appartengono alla descrizione della Galleria Progetti N).
+*   L'obiettivo è definire l'aspetto generale e l'introduzione alla sezione portfolio che il cliente visualizza.

@@ -1,0 +1,166 @@
+**Descrizione Testuale: Professional Profile Editing (T)**
+
+**1. Obiettivo Primario (UX):**
+
+L'obiettivo primario della schermata "Modifica Profilo Professionista" è fornire al professionista un'interfaccia intuitiva, efficiente e completa per inserire, aggiornare e gestire tutte le informazioni del proprio profilo pubblico, garantendo che possa presentarsi al meglio ai potenziali clienti.
+
+**2. Elementi Chiave UI e Layout:**
+
+**2.1. Header dell'Area di Editing:**
+    *   **Scopo:** Fornire un titolo chiaro per la sezione, accesso alle azioni di salvataggio e anteprima.
+    *   **Layout Desktop & Mobile:**
+        *   **Titolo:** Testo grande e chiaro, "Modifica Profilo".
+        *   **Pulsante "Salva Modifiche":**
+            *   Posizionato in modo prominente (es. in alto a destra).
+            *   **Stati:**
+                *   **Disabilitato:** Default, quando non ci sono modifiche non salvate.
+                *   **Abilitato:** Quando l'utente ha apportato modifiche ai dati del profilo.
+            *   Al click, salva tutte le modifiche apportate nelle varie sezioni.
+        *   **Link/Pulsante "Anteprima Profilo Pubblico":**
+            *   Posizionato vicino al pulsante "Salva Modifiche".
+            *   Apre una nuova tab o una modale che mostra come il profilo apparirà ai clienti, includendo le modifiche non ancora salvate (o le ultime salvate, a seconda della complessità di implementazione dell'anteprima "live").
+
+**2.2. Navigazione Sezioni Profilo da Modificare:**
+    *   **Scopo:** Permettere al professionista di navigare facilmente tra le diverse parti del profilo da compilare o aggiornare.
+    *   **Layout Desktop:**
+        *   **Sidebar Verticale a Sinistra:** Elenco testuale delle sezioni modificabili. La sezione attiva è evidenziata (es. sfondo diverso, testo più grassetto, bordo colorato).
+    *   **Layout Mobile:**
+        *   **Tabs Orizzontali Scorrevoli (sotto l'Header dell'Area di Editing):** Se il numero di sezioni è contenuto. La tab attiva è evidenziata.
+        *   **Menu Hamburger o Dropdown:** Se le sezioni sono numerose, un'icona hamburger o un pulsante apre un menu a tendina/laterale con l'elenco delle sezioni.
+    *   **Sezioni Incluse:**
+        *   Informazioni di Base
+        *   Descrizione/Chi Sono
+        *   Portfolio (U)
+        *   Servizi Offerti
+        *   Aree di Operatività
+        *   Certificazioni e Qualifiche
+        *   Disponibilità/Calendario (Base)
+
+**2.3. Area Contenuto Modifica (Dinamica in base alla sezione selezionata):**
+
+    *   **2.3.1. Informazioni di Base:**
+        *   **Titolo Sezione:** "Informazioni di Base".
+        *   **Form Layout:** Campi input ben etichettati.
+            *   **Nome Attività/Professionista:** Campo di testo.
+            *   **Partita IVA/Codice Fiscale:** Campo di testo.
+            *   **Indirizzo Sede (Opzionale):** Campi per via, città, CAP, provincia.
+            *   **Contatti Pubblici:**
+                *   Telefono: Campo di testo (con validazione formato).
+                *   Email Pubblica (diversa da quella di login, se necessario): Campo di testo (con validazione formato).
+                *   Sito Web (Opzionale): Campo di testo (con validazione URL).
+                *   Link Profili Social (Opzionale): Campi ripetibili per URL social.
+            *   **Foto Profilo:**
+                *   Uploader file (accetta JPG, PNG).
+                *   Anteprima dell'immagine corrente.
+                *   Indicazioni su dimensioni/formato consigliati.
+                *   Opzione per rimuovere/cambiare foto.
+            *   **Immagine di Copertina:**
+                *   Uploader file.
+                *   Anteprima dell'immagine corrente.
+                *   Indicazioni su dimensioni/formato consigliati.
+                *   Opzione per rimuovere/cambiare immagine.
+
+    *   **2.3.2. Descrizione/Chi Sono:**
+        *   **Titolo Sezione:** "Descrizione / Chi Sono".
+        *   **Editor di Testo Ricco (Rich Text Editor):**
+            *   **WYSIWYG (What You See Is What You Get):** Con controlli per formattazione base (grassetto, corsivo, elenchi puntati/numerati, link).
+            *   **Alternativa Markdown:** Per utenti più tecnici, con anteprima live.
+            *   Area di testo ampia per inserire la descrizione.
+
+    *   **2.3.3. Portfolio (U):**
+        *   **Titolo Sezione:** "Portfolio".
+        *   **Visualizzazione Progetti Esistenti:**
+            *   **Layout:** Griglia o lista di card compatte. Ogni card mostra:
+                *   Miniatura dell'immagine principale del progetto.
+                *   Titolo del Progetto.
+                *   Pulsanti Azione: "Modifica", "Elimina".
+            *   Opzione per riordinare i progetti (es. drag and drop).
+        *   **Pulsante "Aggiungi Nuovo Progetto":** Ben visibile, per aprire il form di aggiunta.
+        *   **Form di Aggiunta/Modifica Progetto (può aprirsi in una Modale o espandersi Inline):**
+            *   **Titolo Progetto:** Campo di testo.
+            *   **Descrizione Progetto:** Area di testo (semplice o con opzioni di formattazione base).
+            *   **Caricamento Media (Multi-Immagine/Video):**
+                *   Uploader che permette di selezionare più file immagine (JPG, PNG) e/o video (MP4, MOV - con indicazioni sui limiti di dimensione/durata).
+                *   Anteprime delle immagini/video caricati.
+                *   Possibilità di riordinare i media, impostare un'immagine principale, aggiungere didascalie.
+            *   **Data di Completamento (Opzionale):** Selezionatore data.
+            *   **Categoria/Tipo di Lavoro (Opzionale):** Campo di testo con suggerimenti o dropdown predefinite.
+            *   **Link Esterno al Progetto (Opzionale):** Campo URL.
+            *   Pulsanti "Salva Progetto" e "Annulla" (o "Chiudi") nel form.
+
+    *   **2.3.4. Servizi Offerti:**
+        *   **Titolo Sezione:** "Servizi Offerti".
+        *   **Interfaccia Dinamica per Lista Servizi:**
+            *   Visualizzazione dei servizi esistenti (ognuno con nome, descrizione, range prezzo).
+            *   Pulsanti "Modifica", "Elimina" per ogni servizio.
+            *   Opzione per riordinare i servizi (drag and drop).
+        *   **Pulsante "Aggiungi Nuovo Servizio".**
+        *   **Form di Aggiunta/Modifica Servizio (Modale o Inline):**
+            *   **Nome Servizio:** Campo di testo.
+            *   **Descrizione Servizio:** Area di testo.
+            *   **Range di Prezzo (Opzionale):** Campi per "Prezzo Min" / "Prezzo Max", oppure un campo testuale per descrizioni tipo "A partire da...", "Su preventivo". Unità di misura (es. "all'ora", "a progetto").
+            *   Pulsanti "Salva Servizio" e "Annulla".
+
+    *   **2.3.5. Aree di Operatività:**
+        *   **Titolo Sezione:** "Aree di Operatività".
+        *   **Opzioni di Input:**
+            *   **Lista di CAP/Città/Province:** Campo di testo con auto-completamento/suggerimenti. Possibilità di aggiungere più aree. Le aree aggiunte vengono visualizzate come "tag" eliminabili.
+            *   **Interfaccia Mappa (Avanzata):** Mappa interattiva dove il professionista può disegnare poligoni o impostare un raggio d'azione attorno a un indirizzo base.
+            *   **Opzione Testuale:** Un campo di testo per descrivere l'area (es. "Online in tutta Italia", "Regione Lombardia e Canton Ticino").
+
+    *   **2.3.6. Certificazioni e Qualifiche:**
+        *   **Titolo Sezione:** "Certificazioni e Qualifiche".
+        *   **Interfaccia per Lista Certificazioni:**
+            *   Visualizzazione delle certificazioni esistenti (nome, ente, data, file).
+            *   Pulsanti "Modifica", "Elimina".
+        *   **Pulsante "Aggiungi Certificazione".**
+        *   **Form di Aggiunta/Modifica Certificazione (Modale o Inline):**
+            *   **Nome Certificazione/Qualifica:** Campo di testo.
+            *   **Ente Rilasciante:** Campo di testo.
+            *   **Data Conseguimento:** Selezionatore data.
+            *   **Data Scadenza (Opzionale):** Selezionatore data.
+            *   **Caricamento Documento (PDF, JPG, PNG):** Uploader per il file del certificato. Anteprima del nome file o icona.
+            *   Pulsanti "Salva Certificazione" e "Annulla".
+
+    *   **2.3.7. Disponibilità/Calendario (Base):**
+        *   **Titolo Sezione:** "Disponibilità Generale".
+        *   **Controlli Semplici:**
+            *   **Giorni Lavorativi:** Checkbox per i giorni della settimana (Lun, Mar, Mer, Gio, Ven, Sab, Dom).
+            *   **Orari Indicativi:** Campi di testo per "Dalle ore..." "Alle ore..." per mattina e pomeriggio, o una descrizione testuale (es. "Generalmente 9-18, flessibile su appuntamento").
+            *   **Note sulla Disponibilità:** Area di testo per specifiche (es. "Disponibile per urgenze", "Non disponibile ad Agosto").
+        *   **Link a Gestione Avanzata (se prevista):** Un link tipo "Vai alla gestione avanzata del calendario" se esiste una sezione più dettagliata per bloccare giorni specifici, impostare fasce orarie per servizi, ecc.
+
+**2.4. Feedback e Validazione:**
+    *   **Messaggi di Errore Inline:** Visualizzati vicino ai campi che non superano la validazione (es. "Campo obbligatorio", "Formato email non valido").
+    *   **Messaggi di Successo/Errore Globali:** Un banner o "toast notification" in alto nella pagina dopo il tentativo di salvataggio (es. "Profilo salvato con successo!", "Errore durante il salvataggio. Controlla i campi evidenziati.").
+
+**2.5. Suggerimenti/Aiuto Contestuale:**
+    *   **Icone "Info" (i) o Tooltip:** Posizionate vicino a campi complessi o opzioni che richiedono spiegazioni aggiuntive. Al passaggio del mouse o al click, mostrano un breve testo di aiuto.
+
+**3. Interazioni Principali (UX):**
+
+*   **Navigare tra le Sezioni di Modifica:** Click sulle voci della navigazione (sidebar/tabs/menu) per caricare il form della sezione corrispondente.
+*   **Compilare i Form:** Inserire e modificare testo nei campi input, text area, selezionare opzioni dai dropdown.
+*   **Caricare Media:**
+    *   Utilizzare gli uploader per selezionare foto profilo, immagine di copertina.
+    *   Caricare immagini/video per i progetti del portfolio.
+    *   Caricare documenti per le certificazioni.
+*   **Gestire Elementi Dinamici (Portfolio, Servizi, Certificazioni):**
+    *   Aggiungere nuovi item (progetti, servizi, certificazioni) tramite i rispettivi pulsanti "Aggiungi".
+    *   Modificare item esistenti cliccando "Modifica".
+    *   Eliminare item esistenti cliccando "Elimina" (con richiesta di conferma).
+    *   Riordinare item (se supportato, es. drag and drop).
+*   **Salvare le Modifiche:** Cliccare sul pulsante "Salva Modifiche" (che si attiva solo se ci sono cambiamenti).
+*   **Visualizzare Anteprima:** Cliccare su "Anteprima Profilo Pubblico" per vedere come le modifiche appariranno ai clienti.
+*   **Interagire con Editor Rich Text:** Usare i controlli di formattazione per la descrizione.
+
+**4. Considerazioni UI/UX Aggiuntive Chiave:**
+
+*   **Semplicità d'Uso e Chiarezza:** L'interfaccia deve essere intuitiva anche per utenti meno esperti. Etichette chiare, raggruppamento logico dei campi, istruzioni concise.
+*   **Guida e Supporto all'Utente:** Oltre ai tooltip, considerare link a FAQ o guide dettagliate per la compilazione del profilo. Messaggi che indicano l'importanza di ogni sezione.
+*   **Meccanismo di Salvataggio Chiaro:** L'utente deve capire chiaramente quando le modifiche sono state salvate e se ci sono modifiche non salvate. Lo stato del pulsante "Salva Modifiche" è cruciale.
+    *   **Autosave (Opzionale/Avanzato):** Si potrebbe considerare un meccanismo di autosave per singole sezioni o campi, con indicazione chiara dello stato (es. "Salvato automaticamente alle HH:MM").
+*   **Anteprima Realistica e Accessibile:** L'anteprima deve riflettere fedelmente il profilo pubblico e essere facilmente accessibile durante il processo di modifica.
+*   **Gestione Media Intuitiva:** Il caricamento e la gestione di immagini/video/documenti devono essere semplici, con feedback sullo stato del caricamento, anteprime chiare e gestione degli errori (es. file troppo grande, formato non supportato).
+*   **Adattamento Mobile Completo:** Tutti i form, i campi input, gli uploader e gli editor devono essere perfettamente utilizzabili su dispositivi mobili, con controlli touch-friendly e layout che evitano lo scroll orizzontale eccessivo.
+*   **Performance:** La pagina e le interazioni (specialmente il caricamento di media e il salvataggio) devono essere reattive.

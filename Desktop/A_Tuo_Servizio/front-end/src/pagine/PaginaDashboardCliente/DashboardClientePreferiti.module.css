@@ -1,0 +1,89 @@
+/* Stili per DashboardClientePreferiti */
+
+.containerPreferiti {
+    /* Eventuale padding se non già gestito da .contenutoPrincipaleDashboard */
+}
+
+.titoloSezioneDashboard { /* Può essere ereditato/condiviso */
+    font-size: 1.6rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-forte);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.grigliaPreferiti {
+    display: grid;
+    /* Adatta minmax per la larghezza desiderata delle ProfessionalCard */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); 
+    gap: 1.5rem; /* Spazio tra le card */
+    margin-top: 1rem; /* Spazio dal titolo o da eventuali filtri */
+}
+
+.preferitoItemWrapper {
+    display: flex;
+    flex-direction: column;
+    /* background-color: var(--colore-bianco); */ /* La card stessa dovrebbe avere il suo sfondo */
+    /* border-radius: var(--bordi-radius-medio); */
+    /* box-shadow: var(--ombreggiatura-molto-leggera); */
+    /* border: 1px solid var(--colore-bordo-input-leggero); */
+    /* Questi stili sono meglio applicati direttamente alla ProfessionalCard o a un wrapper se necessario,
+       ma .preferitoItemWrapper può gestire lo spazio per le azioni sotto. */
+}
+
+.azioniPreferitoCard {
+    display: flex;
+    gap: 0.75rem; /* Spazio tra i bottoni di azione */
+    flex-wrap: wrap; /* Per andare a capo se non c'è spazio */
+    padding: 0.75rem 0 0.25rem 0; /* Padding sopra i bottoni, dentro il wrapper */
+    margin-top: 0.5rem; /* Spazio tra la ProfessionalCard e i bottoni di azione */
+    border-top: 1px solid var(--colore-bordo-input-molto-leggero); /* Separatore leggero */
+}
+
+.azioniPreferitoCard button,
+.azioniPreferitoCard a button { /* Se Bottone è wrappato da Link */
+    /* La prop size="small" sul componente Bottone dovrebbe gestire il padding.
+       Potrebbe essere utile flex-grow per farli espandere o mantenere la larghezza auto. */
+    flex-grow: 1; /* Fa sì che i bottoni dividano lo spazio */
+    min-width: 120px; /* Larghezza minima per i bottoni */
+}
+.azioniPreferitoCard a {
+    text-decoration: none;
+    display: flex; /* Per far funzionare flex-grow sul bottone interno */
+    flex-grow: 1;
+}
+
+
+.messaggioNessunPreferito {
+    text-align: center;
+    padding: 2rem;
+    color: var(--colore-testo-secondario);
+    font-style: italic;
+    background-color: var(--colore-sfondo-widget);
+    border-radius: var(--bordi-radius-medio);
+    border: 1px dashed var(--colore-bordo-grigio-chiaro);
+}
+
+.messaggioNessunPreferito a {
+    color: var(--colore-primario);
+    font-weight: 500;
+    text-decoration: none;
+}
+.messaggioNessunPreferito a:hover {
+    text-decoration: underline;
+}
+
+/* Assicurati che ProfessionalCard abbia uno stile che si adatti bene alla griglia.
+   Se ProfessionalCard ha margini propri, potrebbero interferire con il gap della griglia. */
+
+@media (max-width: 768px) {
+    .grigliaPreferiti {
+        /* Su schermi più piccoli, minmax(min(100%, 320px), 1fr) farà sì che le card
+           occupino tutta la larghezza e vadano in una singola colonna se necessario. */
+    }
+    .azioniPreferitoCard button,
+    .azioniPreferitoCard a button {
+        min-width: 100px; /* Riduci larghezza minima bottoni su mobile */
+    }
+}

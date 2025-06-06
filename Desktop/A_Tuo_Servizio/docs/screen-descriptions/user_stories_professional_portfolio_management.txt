@@ -1,0 +1,19 @@
+**User Stories per il Flusso di Gestione del Portfolio da parte del Professionista (Schermata T)**
+
+**1. User Story: Aggiunta di un Nuovo Progetto al Portfolio**
+
+*   **Come** un professionista che gestisce il proprio profilo sulla piattaforma "A tuo servizio",
+*   **Voglio** poter aggiungere un nuovo progetto al mio portfolio in modo semplice e guidato, fornendo dettagli come titolo, descrizione, immagini o video, data di completamento (opzionale) e categoria (opzionale),
+*   **Così che** possa arricchire la mia galleria di lavori, dimostrare la mia esperienza e la qualità del mio operato ai potenziali clienti.
+
+**2. User Story: Modifica di un Progetto Esistente nel Portfolio**
+
+*   **Come** un professionista che gestisce il proprio profilo sulla piattaforma "A tuo servizio",
+*   **Voglio** poter modificare facilmente i dettagli di un progetto esistente nel mio portfolio, inclusa la possibilità di aggiornare testi, aggiungere o rimuovere immagini/video, e cambiare l'immagine principale,
+*   **Così che** il mio portfolio sia sempre accurato, aggiornato con le informazioni più recenti e rappresenti al meglio i miei lavori e le mie competenze attuali.
+
+**3. User Story: Eliminazione di un Progetto dal Portfolio**
+
+*   **Come** un professionista che gestisce il proprio profilo sulla piattaforma "A tuo servizio",
+*   **Voglio** poter eliminare un progetto dal mio portfolio in modo sicuro, attraverso una richiesta di conferma,
+*   **Così che** possa rimuovere lavori non più rilevanti, obsoleti o che non desidero più mostrare, mantenendo il mio portfolio focalizzato e di alta qualità per i potenziali clienti.

@@ -1,0 +1,104 @@
+/* src/componenti/layout/Header/Header.module.css */
+
+.headerFisso {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--colore-bianco);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Ombra più leggera */
+  z-index: 900; /* Inferiore a un modale (es. 1000) ma sopra il resto */
+  padding: 0.75rem 0; /* Padding verticale interno all'header */
+}
+
+.contenitoreHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Il padding orizzontale e max-width sono gestiti dal componente Contenitore.
+     Non è necessario sovrascrivere il padding qui a meno che non si voglia
+     un padding diverso specificamente per l'header rispetto al default del Contenitore.
+     In questo caso, la prop padding del Contenitore in Header.tsx potrebbe essere
+     impostata a "0 var(--spaziatura-orizzontale-pagina)" se il padding verticale
+     è già gestito da .headerFisso.
+     Per ora, lasciamo che Contenitore gestisca il suo padding.
+  */
+}
+
+.logoPlaceholder a {
+  /* Stile del link placeholder definito in Header.tsx è già abbastanza specifico.
+     Questa classe è qui se servissero stili aggiuntivi al contenitore del logo.
+     Per ora, lo stile del link stesso è nel TSX.
+     Se si volesse forzarlo da qui, si potrebbe fare:
+  */
+  text-decoration: none;
+  color: var(--colore-primario); /* O var(--colore-testo-principale) per coerenza */
+  font-weight: bold;
+  font-size: 1.5rem; /* Esempio 24px */
+}
+
+.navigazioneDestra {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Spazio tra i bottoni/link, es. 12px */
+}
+
+.bottoneHeader {
+  /* Questa classe può essere usata per dare ai bottoni nell'header uno stile leggermente diverso
+     dal componente Bottone standard, se necessario. Ad esempio, padding più piccoli. */
+  /* padding: 0.5rem 0.8rem; */ /* Esempio di padding più piccolo */
+  /* font-size: 0.9rem; */ /* Testo leggermente più piccolo se necessario */
+
+  /* Se il design dei bottoni standard va bene, questa classe potrebbe non essere usata
+     o essere usata solo per margini specifici se il gap non è sufficiente.
+  */
+}
+
+.menuIconaMobile {
+  display: none; /* Nascosto di default, visibile solo su mobile */
+  cursor: pointer;
+  /* Qui si potrebbero aggiungere gli stili per le 3 linee dell'hamburger icon,
+     ad esempio usando pseudo-elementi ::before, ::after e una barra centrale.
+     Esempio molto basilare:
+  */
+  /*
+  width: 30px;
+  height: 22px;
+  position: relative;
+  */
+}
+
+/*
+.menuIconaMobile span,
+.menuIconaMobile::before,
+.menuIconaMobile::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--colore-testo-principale);
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.menuIconaMobile::before { top: 0; }
+.menuIconaMobile span { top: 50%; transform: translateY(-50%); }
+.menuIconaMobile::after { bottom: 0; }
+*/
+
+@media (max-width: 768px) { /* Esempio di breakpoint per mobile */
+  .menuIconaMobile {
+    display: block; /* Mostra l'icona hamburger su mobile */
+    /* Qui si potrebbe aggiungere la logica per posizionare l'icona, es. ordine flex se necessario */
+  }
+
+  .navigazioneDestra {
+    /* Questo è un modo per nascondere la navigazione desktop su mobile.
+       La logica per mostrare il menu mobile quando l'hamburger è cliccato
+       richiederebbe JavaScript (stato nel componente Header.tsx).
+    */
+    display: none;
+  }
+}

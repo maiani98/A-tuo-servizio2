@@ -1,0 +1,60 @@
+**Wireframe Testuale: Vista Principale Sezione Portfolio (U) in "Modifica Profilo Professionista (T)"**
+
+**1. Contesto Generale della Schermata "Modifica Profilo (T)":**
+
+*   **Header Globale dell'Area di Editing:**
+    *   **Posizione:** In cima all'intera area di modifica del profilo.
+    *   **Elementi:**
+        *   A sinistra: Titolo testuale "Modifica Profilo".
+        *   A destra:
+            *   Pulsante con etichetta "Anteprima Profilo Pubblico".
+            *   Pulsante con etichetta "Salva Modifiche" (visualmente disabilitato se non ci sono modifiche pendenti, abilitato altrimenti).
+
+*   **Navigazione Principale dell'Area di Editing:**
+    *   **Posizione:** Sidebar verticale sul lato sinistro dello schermo.
+    *   **Elementi:** Lista di link testuali per le varie sezioni del profilo modificabile (es. "Informazioni di Base", "Descrizione", "Portfolio", "Servizi Offerti", ecc.).
+    *   **Stato Attivo:** La voce di menu "Portfolio" è evidenziata visivamente (es. sfondo diverso, testo in grassetto) per indicare che è la sezione attualmente visualizzata nell'area contenuto.
+
+**2. Area Contenuto Specifica della Sezione "Portfolio (U)":**
+
+*   **Posizione:** A destra della sidebar di navigazione, occupando l'area principale della pagina.
+
+*   **Header della Sezione Portfolio:**
+    *   **Titolo Sezione:** Testo "Portfolio" in grande, posizionato in alto a sinistra dell'area contenuto specifica.
+    *   **Pulsante Azione Primaria:**
+        *   **Etichetta:** "+ Aggiungi Nuovo Progetto".
+        *   **Posizione:** Allineato a destra, sulla stessa linea del titolo "Portfolio" o leggermente sotto. Visivamente prominente.
+
+*   **Area Visualizzazione Progetti Esistenti:**
+    *   **Layout Generale:** Una griglia di card (es. 2 o 3 colonne su desktop, 1 o 2 su tablet/mobile) che si estende sotto l'header della sezione Portfolio.
+    *   **Indicazione Funzionalità di Riordino:**
+        *   Testo esplicativo discreto sopra la griglia dei progetti: "Trascina le card per riordinare i progetti nel tuo portfolio." (Oppure, un'icona generica di "riordino" o "drag handles" su ogni card).
+
+    *   **Card Progetto Semplificata (Struttura ripetuta per ogni progetto esistente):**
+        *   **Contenitore:** Una card rettangolare con bordi definiti.
+        *   **Miniatura Immagine (Placeholder):**
+            *   Un rettangolo grigio chiaro nella parte superiore della card.
+            *   Al centro del rettangolo, un'icona generica di "immagine" (es. montagne stilizzate) o il testo "Anteprima Immagine".
+        *   **Titolo del Progetto (Placeholder):**
+            *   Sotto la miniatura, testo placeholder come "[Nome Progetto Qui]" (es. "Ristrutturazione Cucina Moderna" o "Sito Web E-commerce").
+        *   **Azioni sulla Card:**
+            *   Posizionate nella parte inferiore della card o al passaggio del mouse (hover).
+            *   **Pulsante "Modifica":**
+                *   Etichetta: "Modifica" (o icona a forma di matita).
+                *   Azione: Al click, apre il form/modale per la modifica del progetto specifico (non descritto in questo wireframe).
+            *   **Pulsante "Elimina":**
+                *   Etichetta: "Elimina" (o icona a forma di cestino).
+                *   Azione: Al click, avvia un flusso di conferma per l'eliminazione del progetto (es. modale "Sei sicuro di voler eliminare questo progetto?").
+
+*   **Stato Vuoto (Se non ci sono progetti aggiunti):**
+    *   **Visibilità:** Al posto della griglia dei progetti.
+    *   **Messaggio Centrale:** Testo tipo "Nessun progetto aggiunto al tuo portfolio." o "Inizia a costruire il tuo portfolio mostrando i tuoi lavori migliori."
+    *   **Enfasi sul Pulsante "Aggiungi Nuovo Progetto":**
+        *   Il pulsante "+ Aggiungi Nuovo Progetto" (descritto sopra) rimane visibile e potrebbe essere centrato o accompagnato da una freccia o un'indicazione grafica per guidare l'utente alla prima azione.
+        *   In alternativa, una versione più grande del pulsante "Aggiungi il tuo primo progetto" al centro dell'area.
+
+**3. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sulla struttura e sulla disposizione degli elementi principali, non sui dettagli di stile grafico.
+*   I placeholder indicano dove andranno i contenuti reali.
+*   Le interazioni specifiche (come il drag and drop per il riordino o l'apertura del modale di modifica) sono solo menzionate concettualmente.

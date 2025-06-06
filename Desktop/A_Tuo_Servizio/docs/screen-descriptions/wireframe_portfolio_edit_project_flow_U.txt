@@ -1,0 +1,81 @@
+**Wireframe Testuale: Flusso di "Modifica Progetto Esistente" nel Portfolio (U)**
+
+**1. Contesto e Azione di Innesco:**
+
+*   **Schermata di Partenza:** Vista principale della sezione "Portfolio (U)" all'interno della schermata "Modifica Profilo Professionista (T)". Questa vista mostra una griglia o lista di card di progetti esistenti.
+*   **Azione dell'Utente:** L'utente clicca sul pulsante con etichetta **"Modifica"** (o icona a forma di matita) presente su una specifica card di un progetto esistente.
+
+**2. Apertura del Form di Modifica:**
+
+*   **Riutilizzo del Modale Esistente:**
+    *   Viene riutilizzata la stessa **struttura del modale overlay** precedentemente definita per il form "Aggiungi Nuovo Progetto".
+    *   Il modale appare sovrapponendosi alla pagina "Modifica Profilo Professionista (T)", e lo sfondo della pagina sottostante viene oscurato.
+*   **Titolo del Modale:**
+    *   L'header del modale mostra un titolo come **"Modifica Progetto"** (invece di "Aggiungi Nuovo Progetto"). Il pulsante di chiusura "X" è presente.
+*   **Pre-compilazione dei Campi del Form:**
+    *   Tutti i campi del form sono **automaticamente pre-compilati** con i dati esistenti del progetto selezionato per la modifica:
+        *   **Titolo Progetto:** Il campo di testo mostra il titolo attuale del progetto.
+        *   **Descrizione Progetto:** L'area di testo multi-linea mostra la descrizione attuale.
+        *   **Caricamento Media:**
+            *   L'area "Immagini/Video del Progetto" visualizza le **anteprime dei media (immagini/video) già associati** a quel progetto. Ogni anteprima di media esistente ha gli stessi controlli descritti per il caricamento (es. nome file, icona/pulsante "Elimina" (X) per rimuovere quel singolo media, e l'opzione per designare un'immagine come "Principale").
+        *   **Data di Completamento:** Il campo mostra la data precedentemente inserita (se presente).
+        *   **Categoria/Tipo di Lavoro:** Il campo mostra la categoria precedentemente inserita (se presente).
+        *   **Link Esterno al Progetto:** Il campo mostra il link precedentemente inserito (se presente).
+*   **Footer del Modale:**
+    *   Il footer del modale contiene i pulsanti:
+        *   "Annulla".
+        *   **"Salva Modifiche"** (o "Aggiorna Progetto") - questo pulsante sostituisce l'etichetta "Salva Progetto" del flusso di aggiunta. Inizialmente, potrebbe essere disabilitato finché non viene apportata una modifica.
+
+**3. Interazioni per Modificare i Campi:**
+
+*   **Modifica Campi Testuali:**
+    *   L'utente può cliccare in qualsiasi campo testuale (Titolo, Descrizione, Data, Categoria, Link) e **modificare il testo esistente** o cancellarlo e riscriverlo.
+    *   Le note/vincoli (es. max caratteri) rimangono valide.
+*   **Gestione Media Esistenti:**
+    *   **Eliminare un Media Esistente:**
+        *   L'utente clicca sull'icona/pulsante **"Elimina" (X)** presente sull'anteprima di un singolo media (immagine o video) già caricato.
+        *   **Conferma (Opzionale ma Consigliata):** Potrebbe apparire un piccolo pop-up di conferma "Sei sicuro di voler eliminare questo media?".
+        *   Risultato: L'anteprima del media scompare dalla lista nell'area di caricamento.
+    *   **Cambiare l'Immagine Principale (se più immagini sono presenti):**
+        *   L'utente può selezionare un'altra immagine caricata come "Immagine Principale" utilizzando l'apposito controllo (es. checkbox o icona a stella) sulla sua anteprima. La precedente immagine principale perde tale stato.
+    *   **Aggiungere Nuovi Media:**
+        *   L'utente può utilizzare il pulsante **"Clicca per Selezionare File"** o la funzionalità di **drag and drop** (come definito nel wireframe del caricamento media) per aggiungere nuove immagini o video al progetto.
+        *   Le nuove anteprime appaiono insieme a quelle esistenti, con gli stessi controlli (progresso caricamento, elimina, ecc.).
+        *   I limiti sul numero totale di file (es. max 5 file) e sulla dimensione dei file rimangono validi.
+
+**4. Flusso di Salvataggio Modifiche:**
+
+*   **Azione di Innesco:** L'utente clicca sul pulsante **"Salva Modifiche"** (o "Aggiorna Progetto") nel footer del modale. Si assume che il pulsante sia attivo (cioè almeno una modifica è stata apportata).
+*   **Processo di Validazione:**
+    *   Viene eseguita una validazione client-side dei dati modificati (similmente al flusso di aggiunta).
+    *   **Validazione Fallita:** Il modale rimane aperto, i campi errati vengono evidenziati con messaggi di errore specifici. Il pulsante "Salva Modifiche" torna attivo.
+*   **Processo di Salvataggio (Se Validazione ha Successo):**
+    *   **Feedback Visivo Durante il Salvataggio:**
+        *   Il pulsante "Salva Modifiche" cambia etichetta in **"Salvataggio in corso..."** (o simile) e mostra un'**icona spinner**.
+        *   Il pulsante e i campi del form diventano temporaneamente non interagibili.
+*   **Feedback di Successo (Avvenuta Modifica):**
+    *   **Chiusura del Modale:** Il modale "Modifica Progetto" si chiude automaticamente.
+    *   **Attivazione Pagina Sottostante:** La pagina "Modifica Profilo Professionista (T)" con la sezione "Portfolio (U)" torna pienamente visibile e interagibile.
+    *   **Aggiornamento della Card Progetto nella Vista Principale (U):**
+        *   La card del progetto che è stato modificato **si aggiorna dinamicamente** nella griglia/lista per riflettere le modifiche apportate.
+        *   Ad esempio, se il titolo è stato cambiato, il nuovo titolo appare sulla card. Se l'immagine principale è stata cambiata, la nuova miniatura viene visualizzata.
+    *   **Messaggio di Successo Globale (Opzionale ma Consigliato):**
+        *   Una notifica "toast" o un banner temporaneo appare (es. in alto a destra): "Progetto '[Nome Progetto Modificato]' aggiornato con successo!" (con icona di spunta). Scompare automaticamente.
+*   **Gestione Errori di Salvataggio (Errori Server/Rete):**
+    *   Se si verifica un errore durante il tentativo di salvataggio delle modifiche:
+        *   Il modale rimane aperto.
+        *   Appare un messaggio di errore generale all'interno del modale (es. "Si è verificato un errore durante l'aggiornamento del progetto. Riprova più tardi.").
+        *   Il pulsante "Salva Modifiche" torna attivo e i campi interagibili.
+
+**5. Pulsante "Annulla":**
+
+*   **Azione dell'Utente:** L'utente clicca sul pulsante **"Annulla"** nel footer del modale.
+*   **Risultato:**
+    *   Il modale "Modifica Progetto" si chiude immediatamente.
+    *   **Nessuna delle modifiche** apportate durante la sessione corrente di editing viene salvata. I dati del progetto rimangono come erano prima dell'apertura del modale di modifica.
+    *   La vista principale della sezione Portfolio (U) non subisce aggiornamenti.
+
+**6. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si basa sul riutilizzo e l'adattamento dei flussi e degli elementi già definiti per "Aggiungi Nuovo Progetto", evidenziando le differenze chiave come la pre-compilazione e la gestione dei media esistenti.
+*   L'interfaccia utente è pensata per essere consistente tra le operazioni di aggiunta e modifica.

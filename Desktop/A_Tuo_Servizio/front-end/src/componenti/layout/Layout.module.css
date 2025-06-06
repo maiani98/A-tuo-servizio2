@@ -1,0 +1,59 @@
+/* src/componenti/layout/Layout.module.css */
+
+/* Stili per il componente Contenitore */
+.contenitore {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* Valori di default per padding e max-width, possono essere sovrascritti dalle props
+     o da classi specifiche se si decide di implementare varianti predefinite.
+     Per ora, le props 'maxWidth' e 'padding' nel componente Layout.tsx
+     applicano questi stili inline, quindi queste variabili CSS qui potrebbero
+     essere usate come fallback o se le props non sono fornite e si vuole
+     un comportamento di default direttamente da CSS.
+  */
+  padding: var(--spaziatura-verticale-pagina, 2rem) var(--spaziatura-orizzontale-pagina, 1rem);
+  max-width: var(--max-larghezza-contenuto, 1140px);
+  box-sizing: border-box; /* Assicura che padding e border non aumentino la larghezza totale */
+}
+
+/* Stili per il componente Griglia */
+.grigliaBase {
+  display: grid; /* Questo è anche applicato inline dal componente Griglia.tsx */
+  /* gap: 1rem; */ /* Il gap è applicato inline dalla prop 'gap' nel componente Griglia.tsx, 
+                     ma potrebbe essere un fallback se la prop non è fornita.
+                     Tuttavia, Griglia.tsx ha un default '1rem' per la prop 'gap'.
+                  */
+}
+
+/* Esempio di come si potrebbe gestire la responsività per la griglia
+   se non si volesse fare tutto con le props per breakpoint specifici.
+   Per ora, il numero di colonne è gestito dalla prop 'colonne' e applicato inline.
+   Questo significa che la responsività dovrebbe essere gestita a livello di utilizzo
+   del componente (passando props diverse per breakpoint diversi, se necessario)
+   o aggiungendo logica più complessa al componente Griglia.
+*/
+/*
+@media (max-width: 768px) { // Esempio per tablet
+  .grigliaBase {
+    // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // Esempio di griglia responsiva
+    // Oppure, se si vuole forzare una colonna:
+    // grid-template-columns: 1fr;
+  }
+}
+*/
+
+/* Se si volessero varianti predefinite per le colonne, si potrebbero creare classi come: */
+/*
+.griglia2colonne {
+  grid-template-columns: repeat(2, 1fr);
+}
+.griglia3colonne {
+  grid-template-columns: repeat(3, 1fr);
+}
+*/
+
+/* Per ora, l'approccio con stile inline per grid-template-columns e gap
+   nel componente Griglia.tsx offre buona flessibilità.
+   Quindi .grigliaBase rimane minimale.
+*/

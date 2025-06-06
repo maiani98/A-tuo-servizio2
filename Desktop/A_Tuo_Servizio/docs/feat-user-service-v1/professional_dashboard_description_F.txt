@@ -1,0 +1,172 @@
+**Descrizione Testuale: Professional Dashboard (F)**
+
+**1. Obiettivo Primario (UX):**
+
+L'obiettivo primario della Professional Dashboard è fornire al professionista un centro di controllo efficiente e intuitivo per gestire tutte le sue attività sulla piattaforma: monitorare nuove opportunità (richieste di preventivo, messaggi), gestire appuntamenti e comunicazioni con i clienti, analizzare le proprie performance e aggiornare le informazioni del profilo e dell'account.
+
+**2. Elementi Chiave UI e Layout:**
+
+**2.1. Header (Comune a tutta la piattaforma per professionisti autenticati):**
+    *   **Scopo:** Accesso rapido al brand, titolo pagina, notifiche specifiche e funzioni dell'account.
+    *   **Layout Desktop:**
+        *   A sinistra: Logo del brand.
+        *   Al centro o a sinistra (accanto al logo): Titolo della pagina, es. "La Mia Dashboard".
+        *   A destra:
+            *   **Icona Notifiche:** (es. campanella) con indicatore (badge numerico) per nuove notifiche specifiche per il professionista (es. nuova richiesta di preventivo, nuovo messaggio, appuntamento confermato/cancellato dal cliente, nuova recensione). Al click, apre un dropdown o un pannello con l'elenco delle notifiche recenti.
+            *   **Icona Profilo Utente o Nome Utente/Attività:** Al click, apre un menu dropdown con opzioni come:
+                *   "Modifica Profilo Pubblico" (link diretto alla schermata T).
+                *   "Impostazioni Account" (link diretto alla sezione Impostazioni Account della dashboard).
+                *   "Supporto/FAQ".
+                *   "Logout".
+    *   **Layout Mobile:**
+        *   A sinistra: Logo del brand.
+        *   A destra: Icona Notifiche e Icona Profilo Utente (spesso un'icona generica tipo "utente" o avatar, che apre un menu con le stesse opzioni del desktop). Il titolo della pagina potrebbe essere omesso per spazio o posizionato sotto l'header.
+
+**2.2. Sezione Panoramica/Riepilogo (in cima all'area contenuto principale della sezione "Panoramica"):**
+    *   **Scopo:** Fornire una visione d'insieme immediata delle attività più importanti e delle performance.
+    *   **Layout Desktop & Mobile (con adattamento card/widget):**
+        *   **Card/Widget Metriche Chiave (Cliccabili):**
+            *   **"X Nuove Richieste di Preventivo" (V):** Mostra il numero di richieste non ancora visualizzate o in attesa di un'azione. Cliccando, porta direttamente alla sezione "Richieste di Preventivo" filtrata per "Nuove".
+            *   **"X Appuntamenti Imminenti" (W):** Mostra il numero di appuntamenti programmati per oggi o nei prossimi giorni (es. 2-3 giorni). Cliccando, porta alla sezione "Calendario/Appuntamenti" focalizzata su tali date.
+            *   **"X Messaggi Non Letti" (X):** Mostra il numero di conversazioni con messaggi non letti. Cliccando, porta alla sezione "Messaggi" filtrata per "Non Letti".
+        *   **Statistiche Base (Visualizzazione Rapida):**
+            *   **Visualizzazioni Profilo:** Numero di volte che il profilo pubblico è stato visualizzato in un periodo recente (es. ultimi 7/30 giorni).
+            *   **Tasso di Risposta:** Percentuale di richieste/messaggi a cui il professionista ha risposto entro un tempo target (es. 24 ore). (Opzionale, se tracciato).
+            *   (Opzionale) **Valutazione Media:** Se applicabile e visibile internamente.
+
+**2.3. Navigazione Dashboard:**
+    *   **Scopo:** Permettere al professionista di spostarsi tra le diverse aree funzionali della sua dashboard.
+    *   **Layout Desktop:**
+        *   Tipicamente una **Sidebar Verticale a Sinistra**. Le voci di menu sono testuali, eventualmente con icone a fianco. La voce attiva è evidenziata.
+    *   **Layout Mobile:**
+        *   **Menu Hamburger:** Un'icona hamburger nell'header (o subito sotto) che, al tap, apre un pannello laterale (drawer) con le voci di menu verticali.
+        *   **Tabs in Basso (Bottom Navigation Bar):** Per le 3-5 sezioni più importanti/frequenti (es. Panoramica, Richieste, Calendario, Messaggi).
+    *   **Sezioni di Navigazione (Voci di Menu):**
+        *   **Panoramica:** (Default) Include la Sezione Panoramica/Riepilogo descritta sopra e potrebbe avere anche un feed di attività recenti.
+        *   **Richieste di Preventivo (V):** Per visualizzare e gestire le richieste ricevute dai clienti.
+        *   **Calendario/Appuntamenti (W):** Per gestire la propria disponibilità e gli appuntamenti.
+        *   **Messaggi (X):** Per comunicare con i clienti.
+        *   **Le Mie Recensioni:** Per leggere e gestire le recensioni ricevute.
+        *   **Gestione Profilo (T):** Link diretto alla schermata di modifica del profilo pubblico (T).
+        *   **Statistiche (Opzionale, più dettagliata):** Accesso a un'area con analisi più approfondite delle performance.
+        *   **Impostazioni Account:** Per dati fiscali, fatturazione, preferenze di notifica specifiche del professionista.
+
+**2.4. Area Contenuto Principale (Dinamica in base alla sezione selezionata):**
+    *(Escludendo Panoramica (già coperta in 2.2) e Gestione Profilo T (pagina separata))*
+
+    *   **2.4.1. Sezione "Richieste di Preventivo" (V):**
+        *   **Titolo Sezione:** "Richieste di Preventivo".
+        *   **Filtri (in cima alla lista):**
+            *   Per Stato: "Tutte", "Nuove/Da Leggere", "In Attesa di Preventivo", "Preventivo Inviato", "Accettate", "Rifiutate/Scadute".
+            *   Per Data (Opzionale): Range di date.
+        *   **Layout Lista (Desktop & Mobile con adattamenti):** Tabella o lista di card. Ogni riga/card rappresenta una richiesta e mostra:
+            *   Nome Cliente (o identificativo cliente).
+            *   Servizio Richiesto.
+            *   Data Ricezione Richiesta.
+            *   Stato Richiesta (con badge colorato).
+            *   **CTA:**
+                *   **"Visualizza Richiesta/Dettaglio":** Porta a una vista dettagliata della richiesta del cliente. Da qui, il professionista può:
+                    *   Vedere tutti i dettagli forniti dal cliente.
+                    *   **Creare/Inviare Preventivo:** Un form per comporre il preventivo (descrizione servizi offerti, costi, tempi, validità, termini e condizioni) e inviarlo al cliente.
+                    *   **Richiedere Maggiori Informazioni:** Inviare un messaggio al cliente per chiarimenti.
+                *   **"Invia Messaggio":** Link diretto alla conversazione con il cliente.
+        *   **Stato Vuoto:** Messaggio tipo "Nessuna richiesta di preventivo per i filtri selezionati." o "Non hai ancora ricevuto richieste."
+
+    *   **2.4.2. Sezione "Calendario/Appuntamenti" (W):**
+        *   **Titolo Sezione:** "Calendario e Appuntamenti".
+        *   **Viste Calendario:**
+            *   Toggle per selezionare vista: Giornaliera, Settimanale, Mensile.
+            *   Navigazione per periodo (es. frecce per settimana/mese precedente/successivo).
+            *   Gli appuntamenti confermati sono visualizzati come blocchi nel calendario, con orario, nome cliente (o tipo appuntamento) e servizio. Cliccando sull'appuntamento si apre un dettaglio/modale.
+        *   **Lista Richieste di Appuntamento Pendenti (se la funzionalità di richiesta appuntamento è separata dalla conferma diretta):**
+            *   Visualizzata accanto o sotto il calendario (su desktop) o in una tab separata (su mobile).
+            *   Ogni richiesta mostra: Nome cliente, servizio proposto, data/ora proposta.
+            *   **CTA per ogni richiesta pendente:** "Conferma", "Rifiuta" (con opzione per messaggio), "Proponi Altro Orario" (apre un'interfaccia per suggerire alternative).
+        *   **Opzione "Aggiungi Blocco di Indisponibilità":**
+            *   Pulsante per aprire un form/modale dove il professionista può selezionare date/orari in cui non è disponibile (es. ferie, impegni personali). Questi blocchi appaiono nel calendario e prevengono prenotazioni.
+        *   **Stato Vuoto (per appuntamenti/richieste):** Messaggi appropriati.
+
+    *   **2.4.3. Sezione "Messaggi" (X):**
+        *   **Titolo Sezione:** "Messaggi".
+        *   **Layout Lista Conversazioni (Desktop & Mobile):**
+            *   Simile alla dashboard cliente: lista verticale di anteprime di conversazioni (Foto o iniziali cliente, Nome Cliente, anteprima ultimo messaggio, data/ora, indicatore non letti).
+            *   La conversazione attiva è evidenziata (su desktop con layout master-detail).
+        *   **Interfaccia di Chat:**
+            *   Come per il cliente: cronologia messaggi, campo input, invio. Possibilità di allegare file (es. bozze, documenti rilevanti) se supportato.
+        *   **Filtri (Opzionale):** Per messaggi non letti.
+        *   **Stato Vuoto:** "Nessuna conversazione attiva."
+
+    *   **2.4.4. Sezione "Le Mie Recensioni":**
+        *   **Titolo Sezione:** "Le Mie Recensioni".
+        *   **Riepilogo Valutazioni (in cima):** Media valutazione generale, numero totale recensioni, distribuzione per stelle.
+        *   **Layout Lista Recensioni (Desktop & Mobile):** Ogni recensione mostra:
+            *   Nome Cliente (o come visualizzato pubblicamente).
+            *   Data Recensione.
+            *   Valutazione in Stelle.
+            *   Testo della Recensione.
+            *   **Opzione "Rispondi" (se la piattaforma lo permette):** Apre un campo di testo per scrivere una risposta pubblica alla recensione. La risposta sarà visibile sotto la recensione del cliente nel profilo pubblico.
+        *   **Filtri (Opzionale):** Per valutazione, per data, per recensioni a cui non si è risposto.
+        *   **Stato Vuoto:** "Non hai ancora ricevuto recensioni."
+
+    *   **2.4.5. Sezione "Statistiche (Dettagliata)" (Opzionale):**
+        *   **Titolo Sezione:** "Statistiche Dettagliate".
+        *   **Layout:**
+            *   Selettore Periodo: Per visualizzare dati per settimana, mese, trimestre, anno o range personalizzato.
+            *   **Grafici e Dati:**
+                *   Andamento Visualizzazioni Profilo.
+                *   Numero di Richieste di Preventivo Ricevute (e loro evoluzione).
+                *   Tasso di Conversione Richieste in Preventivi Inviati / Lavori Accettati.
+                *   Fonti di Traffico al Profilo (se tracciabili, es. da ricerca interna, da categorie).
+                *   Performance dei singoli servizi (se i dati lo permettono).
+            *   Possibilità di esportare dati (es. CSV) potrebbe essere considerata.
+
+    *   **2.4.6. Sezione "Impostazioni Account (Specifiche Professionista)":**
+        *   **Titolo Sezione:** "Impostazioni Account".
+        *   **Form Layout diviso in sotto-sezioni:**
+            *   **Dati Fiscali e Fatturazione:**
+                *   Partita IVA / Codice Fiscale (se non già in "Informazioni di Base" della modifica profilo T e se rilevante per la piattaforma).
+                *   Dati per la fatturazione da parte della piattaforma al professionista (se la piattaforma addebita commissioni o abbonamenti): Ragione Sociale, indirizzo di fatturazione, metodo di pagamento per la piattaforma.
+                *   Preferenze per la ricezione di fatture dalla piattaforma.
+            *   **Preferenze Notifiche (Specifiche del Professionista):**
+                *   Checkbox o toggle per abilitare/disabilitare notifiche via email e/o push (se app mobile) per:
+                    *   Nuova richiesta di preventivo.
+                    *   Nuovo messaggio da cliente.
+                    *   Promemoria appuntamenti.
+                    *   Conferma/cancellazione appuntamento da parte del cliente.
+                    *   Nuova recensione ricevuta.
+                    *   Aggiornamenti dalla piattaforma.
+            *   Pulsante "Salva Modifiche".
+
+**2.5. Notifiche e Azioni Rapide (Elementi UI per Attività Urgenti):**
+    *   Oltre ai widget nella panoramica, considerare:
+        *   **Badge su Voci di Menu:** Un piccolo badge numerico sulle voci di menu della navigazione (es. "Richieste", "Messaggi") per indicare nuovi item non letti/non gestiti in quella sezione.
+        *   **Evidenziazione Visiva:** Richieste o messaggi particolarmente urgenti (es. richieste di intervento rapido) potrebbero avere un'icona o un bordo distintivo nella lista.
+
+**3. Interazioni Principali (UX):**
+
+*   **Visualizzare Panoramica:** Accedere rapidamente a metriche chiave e statistiche di base.
+*   **Navigare tra le Sezioni:** Utilizzare la navigazione (sidebar/menu) per accedere alle diverse aree funzionali.
+*   **Gestire Richieste di Preventivo:**
+    *   Visualizzare l'elenco e i dettagli delle richieste.
+    *   Filtrare le richieste per stato.
+    *   Creare e inviare preventivi dettagliati.
+    *   Comunicare con il cliente per chiarimenti.
+*   **Gestire Calendario/Appuntamenti:**
+    *   Visualizzare il calendario (giornaliero/settimanale/mensile).
+    *   Confermare, rifiutare o riprogrammare richieste di appuntamento.
+    *   Aggiungere blocchi di indisponibilità.
+    *   Visualizzare dettagli degli appuntamenti confermati.
+*   **Comunicare con i Clienti:** Leggere e rispondere ai messaggi nelle conversazioni.
+*   **Leggere/Rispondere alle Recensioni:** Visualizzare le recensioni ricevute e rispondere pubblicamente (se abilitato).
+*   **Accedere a Modifica Profilo Pubblico:** Navigare facilmente alla schermata (T) per aggiornare le informazioni visibili ai clienti.
+*   **Accedere/Modificare Impostazioni Account:** Aggiornare dati fiscali, preferenze di fatturazione e notifiche.
+*   **Analizzare Statistiche (se presente):** Controllare le performance del profilo e delle attività.
+
+**4. Considerazioni UI/UX Aggiuntive Chiave:**
+
+*   **Efficienza e Rapidità d'Azione:** La dashboard deve permettere al professionista di gestire le attività rapidamente. I workflow (es. da richiesta a preventivo) devono essere fluidi.
+*   **Prioritizzazione delle Informazioni Urgenti:** Nuove richieste, messaggi non letti, appuntamenti imminenti devono essere immediatamente visibili e accessibili.
+*   **Notifiche Chiare e Non Intrusive:** Le notifiche (in-app e via email/push) devono essere tempestive e rilevanti, con facile accesso all'elemento notificato.
+*   **Workflow Semplificati:** Per esempio, la creazione di un preventivo dovrebbe essere un processo guidato e semplice. La gestione della disponibilità sul calendario intuitiva.
+*   **Adattamento Mobile Completo (Gestione in Mobilità):** Il professionista deve poter eseguire le azioni principali (rispondere a messaggi, gestire richieste base, vedere appuntamenti) anche da dispositivo mobile, con un'esperienza utente ottimizzata.
+*   **Feedback Utente Immediato:** Conferma visiva per azioni come "Preventivo Inviato", "Appuntamento Confermato", "Impostazioni Salvate".

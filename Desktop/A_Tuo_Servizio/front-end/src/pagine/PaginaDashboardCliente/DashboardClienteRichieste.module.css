@@ -1,0 +1,171 @@
+/* Stili per DashboardClienteRichieste */
+
+.containerRichieste {
+    /* Eventuale padding se non già gestito da .contenutoPrincipaleDashboard */
+}
+
+.titoloSezioneDashboard { /* Può essere ereditato/condiviso da Panoramica */
+    font-size: 1.6rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-forte);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.filtriRichieste {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-end; /* Allinea i label e select/input */
+    flex-wrap: wrap; /* Per responsività */
+}
+
+.filtroGruppo { /* Wrapper per label + select/input */
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.filtroGruppo label {
+    font-size: 0.85rem;
+    color: var(--colore-testo-secondario);
+    margin-bottom: 0.2rem;
+}
+
+.filtroGruppo select,
+.filtroGruppo input[type="date"] {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--colore-bordo-input);
+    border-radius: var(--bordi-radius-medio);
+    font-size: 0.95rem;
+    min-width: 180px; /* Larghezza minima per i filtri */
+}
+
+/* Tabella Richieste */
+.tabellaRichiesteContainer {
+    overflow-x: auto; /* Permette scroll orizzontale su mobile se la tabella è troppo larga */
+    background-color: var(--colore-bianco);
+    border-radius: var(--bordi-radius-medio);
+    box-shadow: var(--ombreggiatura-molto-leggera);
+    border: 1px solid var(--colore-bordo-tabella, var(--colore-bordo-input-leggero));
+}
+
+.tabellaRichieste {
+    width: 100%;
+    border-collapse: collapse; /* Bordi singoli */
+}
+
+.tabellaRichieste th,
+.tabellaRichieste td {
+    padding: 0.9rem 1rem; /* Padding celle */
+    text-align: left;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+    font-size: 0.95rem;
+}
+
+.tabellaRichieste th {
+    background-color: var(--colore-sfondo-header-tabella, #f8f9fa);
+    font-weight: 600;
+    color: var(--colore-testo-forte);
+    white-space: nowrap; /* Evita che i titoli header vadano a capo */
+}
+
+.tabellaRichieste tbody tr:last-child td {
+    border-bottom: none; /* Rimuovi bordo per l'ultima riga */
+}
+
+.tabellaRichieste tbody tr:hover {
+    background-color: var(--colore-sfondo-hover-riga, #f1f3f5);
+}
+
+.linkProfiloProfessionista {
+    color: var(--colore-primario);
+    text-decoration: none;
+    font-weight: 500;
+}
+.linkProfiloProfessionista:hover {
+    text-decoration: underline;
+}
+
+.statoRichiesta {
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--bordi-radius-badge, 12px);
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block; /* Per far funzionare padding e allineamento */
+}
+
+/* Esempi di stili per stati specifici */
+.statoInviata {
+    background-color: var(--colore-info-sfondo, #e7f3fe);
+    color: var(--colore-info-testo, #0c5460);
+    border: 1px solid var(--colore-info-bordo, #b8daff);
+}
+.statoVisualizzata {
+    background-color: var(--colore-attenzione-sfondo, #fff3cd);
+    color: var(--colore-attenzione-testo, #856404);
+    border: 1px solid var(--colore-attenzione-bordo, #ffeeba);
+}
+.statoPreventivoRicevuto {
+    background-color: var(--colore-successo-sfondo-leggero, #d4edda);
+    color: var(--colore-successo-testo, #155724);
+    border: 1px solid var(--colore-successo-bordo, #c3e6cb);
+}
+.statoAccettato {
+    background-color: var(--colore-successo-forte-sfondo, #a3d9a5);
+    color: var(--colore-successo-forte-testo, #004000);
+    border: 1px solid var(--colore-successo-forte-bordo, #77bb77);
+}
+.statoRifiutato, .statoCompletato {
+    background-color: var(--colore-grigio-chiaro-sfondo, #e9ecef);
+    color: var(--colore-grigio-chiaro-testo, #495057);
+    border: 1px solid var(--colore-grigio-chiaro-bordo, #ced4da);
+}
+
+
+.azioniRichiesta button,
+.azioniRichiesta a button { /* Se il bottone è wrappato da Link */
+    /* La prop size="small" dovrebbe gestire il padding.
+       Eventuali altri aggiustamenti qui. */
+    margin-right: 0.5rem; /* Spazio tra bottoni se ce ne sono più di uno */
+}
+.azioniRichiesta a {
+    text-decoration: none;
+}
+
+.messaggioNessunaRichiesta {
+    text-align: center;
+    padding: 2rem;
+    color: var(--colore-testo-secondario);
+    font-style: italic;
+}
+
+.bottoneNuovaRicerca {
+    display: inline-block; /* Per far funzionare margin-top */
+    margin-top: 1.5rem;
+}
+
+/* Responsive per la tabella */
+@media (max-width: 768px) {
+    /* Su schermi piccoli, la tabella potrebbe diventare troppo compressa.
+       .tabellaRichiesteContainer con overflow-x: auto gestisce lo scroll.
+       In alternativa, si potrebbe passare a un layout a card.
+       Per ora, manteniamo la tabella scrollabile. */
+    .tabellaRichieste th,
+    .tabellaRichieste td {
+        font-size: 0.9rem; /* Riduci leggermente il font per guadagnare spazio */
+        padding: 0.75rem 0.8rem;
+    }
+
+    .filtriRichieste {
+        flex-direction: column;
+        align-items: stretch; /* Filtri a piena larghezza */
+    }
+    .filtriRichieste .filtroGruppo select,
+    .filtriRichieste .filtroGruppo input[type="date"] {
+        width: 100%; /* Filtri a piena larghezza */
+    }
+}

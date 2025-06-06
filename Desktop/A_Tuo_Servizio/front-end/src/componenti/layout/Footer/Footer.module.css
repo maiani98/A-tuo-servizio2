@@ -1,0 +1,74 @@
+/* src/componenti/layout/Footer/Footer.module.css */
+
+.footerPrincipale {
+  background-color: var(--colore-sfondo-chiaro); /* Esempio: #F4F6F8 */
+  color: var(--colore-testo-secondario); /* Esempio: #888888 */
+  padding: 2.5rem 0;
+  margin-top: auto; /* Spinge il footer in basso se il contenuto della pagina è corto */
+}
+
+.contenitoreFooter {
+  /* Generalmente non servono stili specifici qui, poiché il componente Contenitore 
+     gestisce già max-width e padding orizzontale. 
+     Si può usare questa classe se si necessitano sovrascritture specifiche per il footer.
+     Ad esempio, se si volesse un padding verticale diverso da quello di default del Contenitore:
+     padding-top: 0;
+     padding-bottom: 0;
+  */
+}
+
+.linkSezioni {
+  display: flex;
+  flex-wrap: wrap; /* Permette alle colonne di andare a capo su schermi piccoli */
+  justify-content: space-between; /* Distribuisce lo spazio tra le colonne */
+  gap: 2rem; /* Spazio tra le colonne */
+  margin-bottom: 2rem; /* Spazio prima dell'area copyright */
+}
+
+.colonnaLink {
+  flex: 1; /* Permette alle colonne di crescere e restringersi in modo flessibile */
+  min-width: 200px; /* Larghezza minima per colonna prima di andare a capo */
+}
+
+/* Stili per i titoli h4 all'interno delle colonne dei link */
+.colonnaLink h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--colore-testo-principale); /* Colore più scuro per i titoli delle sezioni */
+  font-family: var(--font-titoli);
+  font-size: 1.1rem; /* Esempio: circa 17.6px se la base è 16px */
+  font-weight: 600; /* Semibold */
+}
+
+.listaLink {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listaLink li {
+  margin-bottom: 0.65rem; /* Spazio tra i link */
+}
+
+.listaLink a {
+  color: inherit; /* Eredita il colore da .footerPrincipale (var(--colore-testo-secondario)) */
+  text-decoration: none;
+  transition: color 0.2s ease; /* Transizione per l'hover */
+}
+
+.listaLink a:hover {
+  text-decoration: underline;
+  color: var(--colore-primario); /* Cambia colore al passaggio del mouse */
+}
+
+.copyrightArea {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E0E0E0; /* Linea separatrice, un grigio chiaro */
+  font-size: 0.875em; /* Testo più piccolo per il copyright, es. 14px se la base è 16px */
+  color: var(--colore-testo-secondario); /* Assicura che il colore sia quello giusto */
+}
+
+.copyrightArea p {
+  margin: 0.3rem 0; /* Spaziatura tra le righe del copyright */
+}

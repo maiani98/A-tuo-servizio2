@@ -1,0 +1,89 @@
+/* src/componenti/comuni/Modale/Modale.module.css */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px; /* Aggiunto per dare respiro su schermi piccoli */
+}
+
+.contenitoreModale {
+  background-color: var(--colore-bianco);
+  padding: 24px;
+  border-radius: 12px; /* Da guida stile */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 100%; /* Per usare la larghezza passata via prop */
+  max-height: calc(100vh - 40px); /* 100vh meno il padding dell'overlay */
+  overflow-y: auto;
+  position: relative;
+}
+
+.headerModale {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px; /* Aumentato per più spazio */
+  border-bottom: 1px solid var(--colore-sfondo-chiaro); /* O un grigio come #E0E0E0 */
+}
+
+.titoloModale {
+  margin-bottom: 0;
+  font-family: var(--font-titoli);
+  font-size: 20px; /* Assicurati che il componente Titolo lo applichi o definisci qui */
+  font-weight: 600;
+  color: var(--colore-testo-principale);
+  /* Se il componente Titolo applica già questi stili, queste regole potrebbero essere ridondanti,
+     ma è bene averle come riferimento o per sovrascrittura se necessario. */
+}
+
+/* Stili per il bottone di chiusura.
+   Il Modale.tsx usa il componente Bottone, quindi questi stili servono
+   principalmente a posizionarlo o a dare override minimi se la variante 'secondario' non è perfetta.
+   Se il componente Bottone non è usato per la X, allora servono stili più completi come quelli commentati.
+*/
+.bottoneChiudi {
+  /* Se si usa il <Bottone variante="secondario">, molti stili sono ereditati.
+     Potrebbe essere necessario solo per sovrascrivere/adattare il padding o il margine.
+     La dimensione del font per la 'X' (&times;) può essere gestita qui se necessario.
+  */
+  padding: 4px 8px; /* Padding più piccolo per un bottone icona */
+  font-size: 1.5rem; /* Per rendere la 'X' più grande, se il testo del Bottone non lo fa */
+  line-height: 1;
+  /* Se il Bottone componente non ha una variante puramente icona, si potrebbe
+     creare una classe per azzerare lo sfondo/bordo e colorare solo il testo.
+     Esempio:
+     background-color: transparent;
+     border-color: transparent;
+     color: var(--colore-testo-secondario);
+  */
+}
+
+/* Se si usa un bottone custom solo per la X (non il componente Bottone): */
+/*
+.bottoneChiudi {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--colore-testo-secondario);
+  padding: 0.25rem 0.5rem;
+}
+.bottoneChiudi:hover {
+  color: var(--colore-testo-principale);
+}
+*/
+
+.corpoModale {
+  padding-top: 8px; /* Leggero spazio se l'header ha già un padding-bottom */
+  /* Nessun altro stile specifico necessario inizialmente */
+}

@@ -1,0 +1,122 @@
+/* Stili per PaginaDashboardCliente */
+
+.dashboardLayout {
+    padding: 1.5rem; /* Padding generale per la pagina dashboard */
+    background-color: var(--colore-sfondo-pagina-grigio, #f8f9fa); /* Sfondo grigio chiaro per l'intera area dashboard */
+    min-height: calc(100vh - var(--altezza-header, 60px)); /* Assicura che occupi l'altezza della pagina meno l'header */
+}
+
+.titoloDashboard {
+    font-size: 2rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-principale);
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem; /* Leggero padding se non si usa un Contenitore per il titolo */
+}
+
+.dashboardContenutoWrapper {
+    display: flex;
+    gap: 1.5rem; /* Spazio tra sidebar e contenuto principale */
+    align-items: flex-start; /* Allinea gli elementi all'inizio */
+}
+
+.sidebarNavigazione {
+    flex: 0 0 260px; /* Larghezza fissa per la sidebar, leggermente aumentata */
+    background-color: var(--colore-bianco);
+    padding: 1.25rem;
+    border-radius: var(--bordi-radius-grande, 8px);
+    box-shadow: var(--ombreggiatura-leggera, 0 2px 5px rgba(0,0,0,0.05));
+}
+
+.sidebarNavigazione ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebarNavigazione li {
+    margin-bottom: 0.4rem; /* Spazio ridotto tra i link */
+}
+
+/* Stili per NavLink (da usare nel componente) */
+.navLink {
+    display: flex; /* Per allineare icona (se presente) e testo */
+    align-items: center;
+    gap: 0.75rem; /* Spazio tra icona e testo */
+    text-decoration: none;
+    color: var(--colore-testo-secondario-scuro, #495057); /* Colore testo più scuro per leggibilità */
+    padding: 0.8rem 1rem; /* Padding interno ai link */
+    border-radius: var(--bordi-radius-medio, 6px);
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent; /* Bordo trasparente per mantenere dimensioni al hover/active */
+}
+
+.navLink:hover {
+    background-color: var(--colore-primario-trasparente-10, rgba(0, 123, 255, 0.07));
+    color: var(--colore-primario);
+    border-color: var(--colore-primario-trasparente-30, rgba(0, 123, 255, 0.2));
+}
+
+.navLinkActive {
+    background-color: var(--colore-primario);
+    color: var(--colore-bianco) !important; /* Important per sovrascrivere hover se necessario */
+    font-weight: 600;
+    box-shadow: var(--ombreggiatura-elemento-attivo, 0 2px 8px rgba(0, 123, 255, 0.3));
+    border-color: var(--colore-primario);
+}
+
+.navLinkIcona { /* Se si usano icone SVG o font icon */
+    width: 18px;
+    height: 18px;
+    /* fill: currentColor; o color: currentColor; */
+}
+
+.contenutoPrincipaleDashboard {
+    flex-grow: 1; /* Occupa lo spazio rimanente */
+    background-color: var(--colore-bianco);
+    padding: 1.5rem; /* Padding interno all'area contenuto */
+    border-radius: var(--bordi-radius-grande, 8px);
+    box-shadow: var(--ombreggiatura-leggera, 0 2px 5px rgba(0,0,0,0.05));
+    min-height: 500px; /* Altezza minima per dare struttura */
+}
+
+/* Bottone Esci (se stilizzato specificamente) */
+.bottoneEsciSidebar {
+    margin-top: 1.5rem; /* Spazio sopra il bottone Esci */
+    padding-top: 1rem;
+    border-top: 1px solid var(--colore-bordo-input-leggero);
+}
+.bottoneEsciSidebar button { /* Se si usa un Bottone componente */
+    width: 100%;
+    /* Stili specifici se la variante outline/secondario non è sufficiente */
+}
+
+
+/* Media Queries */
+@media (max-width: 992px) { /* Tablet e inferiori */
+    .dashboardContenutoWrapper {
+        flex-direction: column;
+    }
+    .sidebarNavigazione {
+        width: 100%; /* Sidebar a piena larghezza */
+        flex-basis: auto; /* Rimuovi larghezza fissa */
+        margin-bottom: 1.5rem; /* Spazio se impilata sopra */
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboardLayout {
+        padding: 1rem; /* Riduci padding generale su mobile */
+    }
+    .titoloDashboard {
+        font-size: 1.6rem; /* Riduci dimensione titolo */
+        margin-bottom: 1rem;
+    }
+    .sidebarNavigazione, .contenutoPrincipaleDashboard {
+        padding: 1rem; /* Riduci padding interno dei box */
+    }
+    .navLink {
+        padding: 0.7rem 0.9rem; /* Padding leggermente ridotto per i link */
+    }
+}

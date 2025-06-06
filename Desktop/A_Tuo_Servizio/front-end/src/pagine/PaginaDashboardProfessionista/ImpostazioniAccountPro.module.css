@@ -1,0 +1,209 @@
+.containerImpostazioni {
+  padding: 20px;
+  max-width: 1000px; /* Limita larghezza per leggibilità */
+  margin: 0 auto;
+}
+
+.titoloPagina {
+  color: #333;
+  margin-bottom: 25px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.layoutImpostazioni {
+  display: flex;
+  gap: 25px;
+}
+
+.navTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 220px; /* Larghezza fissa per la navigazione a tab/sidebar */
+  flex-shrink: 0;
+}
+
+.navTabs button {
+  width: 100%;
+  padding: 12px 15px;
+  text-align: left;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #343a40;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navTabs button:hover {
+  background-color: #e9ecef;
+  color: #0056b3;
+}
+
+.navTabs button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  border-color: #007bff;
+}
+
+.contenutoTab {
+  flex-grow: 1;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.formSezione {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldset { /* Stile aggiuntivo per fieldset, se necessario */
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.legend { /* Stile aggiuntivo per legend, se necessario */
+  font-weight: bold;
+  color: #333;
+  padding: 0 5px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+.col { flex: 1; }
+.colShort { flex-basis: 120px; flex-grow: 0; } /* Per CAP e Provincia */
+
+
+.checkboxGroup {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  background-color: #fdfdfd;
+}
+.checkboxGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #454545;
+}
+.checkboxGroup label:last-child {
+  margin-bottom: 0;
+}
+.checkboxGroup input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.05);
+}
+
+.sezioneContenuto { /* Per tab non-form come Abbonamento e Privacy */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.sezioneContenuto h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #0056b3;
+}
+.notaPiccola {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 5px;
+}
+.hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 20px 0;
+}
+.bottonePrivacy {
+  align-self: flex-start; /* Allinea i bottoni di privacy a sinistra */
+}
+
+.bottoneSalva {
+  align-self: flex-end; /* Posiziona il bottone Salva a destra */
+  margin-top: 10px;
+}
+
+.feedbackMessage {
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.feedbackMessage.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+.feedbackMessage.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+
+/* Modal per conferma eliminazione account */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Assicura che sia sopra gli altri contenuti */
+}
+
+.modalConferma {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+.modalConferma h3 {
+  margin-top: 0;
+  color: #dc3545; /* Rosso per avviso */
+}
+.azioniModal {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Responsive Tab Navigation */
+@media (max-width: 768px) {
+  .layoutImpostazioni {
+    flex-direction: column;
+  }
+  .navTabs {
+    width: 100%;
+    flex-direction: row; /* Tab orizzontali su mobile */
+    overflow-x: auto; /* Scrollabile orizzontalmente */
+    padding-bottom: 5px; /* Spazio per scrollbar se appare */
+  }
+  .navTabs button {
+    flex-shrink: 0; /* Non far restringere i bottoni */
+    white-space: nowrap; /* Testo su una riga */
+  }
+  .contenutoTab {
+    padding: 20px; /* Riduci padding su mobile */
+  }
+}

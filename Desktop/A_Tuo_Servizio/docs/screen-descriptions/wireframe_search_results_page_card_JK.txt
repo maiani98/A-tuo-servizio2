@@ -1,0 +1,98 @@
+**Wireframe Testuale: Struttura Pagina Risultati Ricerca Cliente (J) e Professional Card (K)**
+
+**1. Contesto Generale della Pagina "Client Search Results (J)":**
+
+*   **Header Pagina (Fisso/Sticky):**
+    *   **Posizione:** Striscia orizzontale in cima alla pagina, rimane visibile durante lo scroll.
+    *   **Elementi (da sinistra a destra - layout desktop):**
+        *   **Logo Brand:** Placeholder "[Logo Brand]".
+        *   **Barra di Ricerca (Centrale, Prominente):**
+            *   **Campo "Che servizio cerchi?":** Rettangolo input con testo pre-compilato "[Servizio Cercato dall'Utente]". Il testo è modificabile.
+            *   **Campo "Dove?":** Rettangolo input con testo pre-compilato "[Località Cercata dall'Utente]". Il testo è modificabile. Include un'icona di geolocalizzazione all'interno, a destra.
+            *   **Pulsante "Cerca":** Etichetta "Cerca" o icona lente d'ingrandimento.
+        *   **Link "Il Mio Account" (o "Accedi/Registrati"):** Allineato a destra. Placeholder "[Link Account Utente]".
+
+*   **Area Titolo Risultati e Controlli:**
+    *   **Posizione:** Sotto l'header della pagina.
+    *   **Layout (Desktop):** Elementi distribuiti orizzontalmente.
+        *   **Testo Risultati (a sinistra):** Testo placeholder "Trovati [X] professionisti per '[Servizio Cercato]' in '[Località Cercata]'".
+        *   **Controlli (a destra):**
+            *   **Pulsante "Filtri (I)":**
+                *   Aspetto: Pulsante con etichetta "Filtri" e/o un'icona standard di filtri (es. imbuto).
+                *   Azione: Al click, apre il pannello/modale dei Filtri (I) (non descritto in dettaglio in questo wireframe).
+            *   **Dropdown "Ordina per":**
+                *   Aspetto: Un campo rettangolare che assomiglia a un input, con un'etichetta implicita "Ordina per:" e un valore predefinito visibile (es. "Rilevanza"). Un'icona a forma di freccia verso il basso (chevron) è presente a destra.
+                *   Azione: Al click, apre un menu a tendina con opzioni di ordinamento (es. "Rilevanza", "Valutazione (dal più alto)", "Distanza (dal più vicino)").
+            *   **Toggle Visualizzazione Lista(J)/Mappa(H):**
+                *   Aspetto: Due segmenti di un pulsante o due icone affiancate.
+                    *   Segmento "Lista": Etichetta "Lista" e/o icona di lista. È visivamente **attivo/selezionato** (es. sfondo più scuro, testo più grassetto).
+                    *   Segmento "Mappa": Etichetta "Mappa" e/o icona di mappa. È visivamente inattivo.
+                *   Azione: Cliccando su "Mappa", la vista cambierebbe (non descritto qui).
+
+**2. Area Risultati (List View - J):**
+
+*   **Posizione:** Sotto l'Area Titolo Risultati e Controlli.
+*   **Layout:** Una **lista verticale** di `Professional Card (K)`. Ogni card è separata da una piccola spaziatura verticale.
+
+*   **2.1. Struttura e Contenuto della `Professional Card (K)` (Ripetuta per ogni professionista nei risultati):**
+    *   **Contenitore Card:**
+        *   **Forma:** Rettangolare, con angoli leggermente arrotondati e un bordo sottile o un'ombra discreta per definirne i limiti.
+        *   **Sfondo:** Colore solido (es. bianco).
+
+    *   **Layout Interno Card (Desktop - Es. Orizzontale o a Griglia Interna):**
+        *   La card è idealmente divisa in sezioni per una chiara leggibilità, ad esempio una colonna a sinistra per la foto e una colonna a destra per le informazioni testuali, oppure un layout più integrato.
+
+        *   **Area Foto Profilo (a sinistra o in alto):**
+            *   **Contenuto:** Un placeholder quadrato o circolare per l'immagine del professionista/azienda.
+            *   **Placeholder:** Rettangolo/Cerchio grigio chiaro con un'icona generica di "utente" o "fotocamera", oppure l'etichetta "[Foto Profilo]".
+
+        *   **Area Informazioni Principali (a destra della foto o sotto di essa):**
+            *   **Nome Professionista/Azienda:**
+                *   Testo (Placeholder): "[Nome Professionista/Azienda]".
+                *   Stile: Testo più grande e in grassetto all'interno della card (es. H3 o H4).
+            *   **Specializzazione Principale:**
+                *   Testo (Placeholder): "[Specializzazione Principale]" (es. "Idraulico", "Web Designer Freelance").
+                *   Stile: Testo di dimensioni leggermente inferiori al nome.
+            *   **Valutazione Media:**
+                *   Contenuto (Placeholder):
+                    *   Una serie di 5 icone a forma di stella (es. ★★★★☆), dove il riempimento indica la valutazione.
+                    *   Accanto alle stelle, un testo numerico e testuale: "([Numero Recensioni] recensioni)" (es. "(120 recensioni)").
+                *   Stile: Stelle di colore distintivo (es. giallo/arancione), testo recensioni più piccolo.
+            *   **Località/Distanza:**
+                *   Testo (Placeholder): "[Città, Provincia] ([Distanza] km)" (es. "Milano, MI (2.5 km)"). La distanza è mostrata se disponibile.
+                *   Stile: Testo di dimensioni simili alla specializzazione.
+
+        *   **Area Descrizione Breve/Tagline (sotto le informazioni principali):**
+            *   **Contenuto (Placeholder):** Un blocco di testo lorem ipsum di 1-2 righe che rappresenta il tagline o un breve estratto del profilo del professionista.
+            *   **Testo Esplicativo (per il wireframe):** "[Tagline o breve descrizione del professionista - max 2 righe]".
+            *   **Stile:** Testo standard, con possibile troncamento con ellissi (...) se supera le 2 righe.
+
+        *   **Area Badge (Opzionale - posizionata in modo discreto, es. vicino al nome o alla foto):**
+            *   **Contenuto (Placeholder):** Piccole etichette rettangolari o icone con testo.
+            *   **Esempi (testo placeholder):** "[Badge: Verificato]", "[Badge: Risposta Rapida]", "[Badge: Super Pro]".
+            *   **Stile:** Etichette con colori di sfondo o bordi distintivi.
+
+        *   **Call to Action (CTA) sulla Card (posizionato in basso a destra della card o esteso per larghezza se unico):**
+            *   **Pulsante "Vedi Profilo":**
+                *   Etichetta: "Vedi Profilo".
+                *   Stile: Pulsante primario o secondario ben visibile.
+            *   **(Opzionale) Pulsante "Contatta":**
+                *   Etichetta: "Contatta" o "Richiedi Info".
+                *   Stile: Pulsante secondario, se presente insieme a "Vedi Profilo".
+
+    *   **Indicazione Visiva di Interattività:**
+        *   **Intera Card Cliccabile:** Al passaggio del mouse (su desktop) sull'intera card, questa potrebbe avere un leggero effetto visivo (es. ombra più pronunciata, leggero ingrandimento) per indicare che cliccando si accede al profilo del professionista (Schermata L). Il cursore cambia in "puntatore".
+        *   **Pulsanti CTA:** I pulsanti CTA hanno il loro hover state standard.
+
+*   **Paginazione/Carica Altri Risultati:**
+    *   **Posizione:** Sotto l'ultima `Professional Card (K)` visibile.
+    *   **Aspetto (Placeholder):**
+        *   **Pulsante "Carica Altri":** Un pulsante centrato con etichetta "Carica Altri Risultati" o "Mostra Altri Professionisti".
+        *   **Oppure, Numeri di Pagina:** Una serie di numeri di pagina cliccabili (es. "Precedente 1 2 3 ... 10 Successivo").
+    *   **Azione:** Al click, carica un nuovo set di `Professional Card (K)` e le aggiunge alla lista, oppure naviga alla pagina di risultati successiva.
+
+**3. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sulla struttura e sulla disposizione degli elementi principali della pagina dei risultati e della card del professionista, non sui dettagli di stile grafico o sui contenuti reali.
+*   Il layout mobile della Professional Card (K) tenderebbe a impilare verticalmente gli elementi (foto in alto, seguita da info, descrizione e CTA) per una migliore leggibilità su schermi stretti.
+*   L'interazione di apertura del pannello filtri (I) e il contenuto della vista Mappa (H) non sono dettagliati in questo wireframe.

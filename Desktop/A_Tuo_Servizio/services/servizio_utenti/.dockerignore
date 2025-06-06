@@ -1,0 +1,40 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.pytest_cache/
+.git/
+.gitignore
+Dockerfile
+# Test database files, assuming they might be created locally during testing
+test.db 
+app.db 
+*.sqlite3
+*.db
+
+# Coverage files
+.coverage
+.coverage.*
+htmlcov/
+
+# IDE and editor specific files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Test reports if generated locally
+# Example: test-reports/
+
+# OS specific files
+.DS_Store
+Thumbs.db

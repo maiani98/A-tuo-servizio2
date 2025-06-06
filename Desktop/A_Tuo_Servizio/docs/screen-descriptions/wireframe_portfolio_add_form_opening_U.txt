@@ -1,0 +1,66 @@
+**Wireframe Testuale: Apertura Form "Aggiungi Nuovo Progetto" dalla Sezione Portfolio (U)**
+
+**1. Contesto e Azione di Innesco:**
+
+*   **Schermata di Partenza:** Vista principale della sezione "Portfolio (U)" all'interno della schermata "Modifica Profilo Professionista (T)".
+*   **Azione dell'Utente:** L'utente clicca sul pulsante con etichetta "+ Aggiungi Nuovo Progetto", posizionato nell'header della sezione Portfolio.
+
+**2. Modalità di Presentazione del Form (Overlay Modale):**
+
+*   **Apparizione del Modale:**
+    *   Immediatamente dopo il click, un **Modale Overlay** appare, sovrapponendosi al contenuto della pagina "Modifica Profilo Professionista (T)".
+*   **Sfondo della Pagina Sottostante:**
+    *   Lo sfondo della pagina principale (l'area di modifica del profilo con la sezione Portfolio) diventa **visivamente oscurato** (es. tramite un layer semi-trasparente di colore grigio scuro o nero). Questo serve a dare focus al modale.
+    *   Gli elementi della pagina sottostante non sono interagibili finché il modale è aperto.
+
+**3. Struttura Base del Modale del Form "Aggiungi Nuovo Progetto" (Vuoto o con Placeholder Minimi):**
+
+*   **Contenitore del Modale:**
+    *   **Forma:** Rettangolare, con angoli leggermente arrotondati.
+    *   **Dimensioni:** Occupa una porzione significativa dell'area della viewport, ma non l'intera schermata (es. 70-80% della larghezza e 60-70% dell'altezza su desktop, potenzialmente più verticale e quasi full-width su mobile).
+    *   **Posizionamento:** Centrato verticalmente e orizzontalmente nella viewport.
+    *   **Sfondo:** Colore solido (es. bianco o grigio molto chiaro) per contrastare con lo sfondo oscurato della pagina.
+
+*   **Header del Modale:**
+    *   **Posizione:** Striscia orizzontale nella parte superiore del contenitore del modale.
+    *   **Elementi:**
+        *   **Titolo del Form (a sinistra):** Testo grande e chiaro, ad esempio "Aggiungi Nuovo Progetto".
+        *   **Pulsante di Chiusura (a destra):**
+            *   Icona "X" (croce) chiaramente visibile.
+            *   Azione: Al click, chiude il modale senza salvare alcuna informazione e ripristina la piena visibilità e interattività della pagina sottostante.
+
+*   **Corpo del Modale (Aree Placeholder per i Campi del Form):**
+    *   **Layout:** Serie di aree rettangolari verticalmente impilate, ognuna rappresentante lo spazio che sarà occupato dai campi del form. Non vengono mostrati i campi input effettivi, ma solo dei segnaposto per indicarne la futura posizione e l'ingombro approssimativo.
+    *   **Area per "Titolo Progetto":**
+        *   Un rettangolo stretto e lungo, con etichetta placeholder "Area per Titolo Progetto".
+    *   **Area per "Descrizione Progetto":**
+        *   Un rettangolo più alto del precedente, con etichetta placeholder "Area per Descrizione Progetto".
+    *   **Area per "Caricamento Media":**
+        *   Un rettangolo di dimensioni generose, con etichetta placeholder "Area per Caricamento Media (Immagini/Video)". Potrebbe contenere un'icona stilizzata di "upload" o "immagine".
+    *   **Area per "Data Completamento":**
+        *   Un rettangolo più piccolo, con etichetta placeholder "Area per Data Completamento".
+    *   **Area per "Categoria/Tipo di Lavoro":**
+        *   Un rettangolo simile a quello per la data, con etichetta placeholder "Area per Categoria".
+    *   **Area per "Link Esterno al Progetto":**
+        *   Un rettangolo stretto e lungo, con etichetta placeholder "Area per Link Esterno".
+    *   **Padding:** Spaziatura adeguata tra le aree placeholder per garantire una buona leggibilità e separazione visiva.
+
+*   **Footer del Modale:**
+    *   **Posizione:** Striscia orizzontale nella parte inferiore del contenitore del modale, separata dal corpo da una linea sottile o da una spaziatura.
+    *   **Allineamento Pulsanti:** Tipicamente allineati a destra.
+    *   **Elementi:**
+        *   **Pulsante "Annulla" (o "Chiudi"):**
+            *   Etichetta: "Annulla" o "Chiudi".
+            *   Stile: Meno prominente del pulsante "Salva" (es. colore di sfondo più chiaro, solo bordo).
+            *   Azione: Al click, chiude il modale senza salvare alcuna informazione, stesso comportamento del pulsante "X" nell'header del modale.
+        *   **Pulsante "Salva Progetto":**
+            *   Etichetta: "Salva Progetto".
+            *   Stile: Pulsante primario, visivamente più evidente (es. colore di sfondo pieno).
+            *   Stato Iniziale: Potrebbe essere disabilitato finché i campi obbligatori (non definiti in questo wireframe) non vengono compilati, oppure abilitato per permettere il salvataggio di un progetto anche parzialmente compilato.
+            *   Azione: Al click, avvia il processo di validazione e salvataggio del nuovo progetto (non descritto in questo wireframe). Successivamente, il modale si chiude e la lista dei progetti nella sezione Portfolio (U) si aggiorna.
+
+**4. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe descrive solo l'apparizione e la struttura base del modale del form, non i dettagli dei singoli campi o le interazioni di validazione.
+*   I placeholder indicano lo spazio riservato e la disposizione generale.
+*   La descrizione è focalizzata sull'esperienza utente al momento dell'apertura del form.

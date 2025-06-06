@@ -1,0 +1,126 @@
+/* Stili per DashboardClienteImpostazioni */
+
+.containerImpostazioni {
+    /* Eventuale padding se non già gestito da .contenutoPrincipaleDashboard */
+}
+
+.titoloSezioneDashboard { /* Può essere ereditato/condiviso */
+    font-size: 1.6rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-forte);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.sezioneImpostazioni {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 1.75rem; /* Più padding laterale */
+    background-color: var(--colore-bianco);
+    border-radius: var(--bordi-radius-grande, 8px);
+    box-shadow: var(--ombreggiatura-molto-leggera, 0 1px 4px rgba(0,0,0,0.05));
+    border: 1px solid var(--colore-bordo-sezione, var(--colore-bordo-input-leggero));
+}
+
+.sezioneImpostazioni h3 { /* Titolo interno alla sezione */
+    font-size: 1.25rem; /* Leggermente più piccolo del titolo principale della sezione */
+    font-family: var(--font-titoli);
+    color: var(--colore-primario); /* Colore primario per i titoli delle sottosezioni */
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--colore-bordo-input-molto-leggero);
+}
+
+.formImpostazioni {
+    display: grid; /* Usa grid per layout più strutturato dei campi */
+    grid-template-columns: 1fr; /* Default a una colonna */
+    gap: 1.25rem; /* Spazio tra i campi */
+}
+
+/* Layout a due colonne per form più grandi su schermi più ampi */
+@media (min-width: 768px) {
+    .formDatiPersonali { /* Classe specifica se solo questo form va a due colonne */
+        grid-template-columns: 1fr 1fr; /* Due colonne */
+        gap: 1.25rem 1.5rem; /* row-gap column-gap */
+    }
+    .formDatiPersonali .campoSpanIntero { /* Per campi che occupano entrambe le colonne */
+        grid-column: 1 / -1;
+    }
+}
+
+.formImpostazioni .bottoneSalva {
+    justify-self: flex-start; /* Allinea il bottone a sinistra nella griglia */
+    margin-top: 0.5rem;
+    min-width: 180px; /* Larghezza minima per i bottoni salva */
+}
+
+.checkboxPreferenza {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Spazio tra checkbox e label */
+    padding: 0.5rem 0; /* Padding verticale per respiro */
+    border-bottom: 1px solid var(--colore-bordo-input-molto-leggero);
+}
+.checkboxPreferenza:last-child {
+    border-bottom: none;
+}
+
+.checkboxPreferenza input[type="checkbox"] {
+    width: 18px; /* Dimensioni custom checkbox */
+    height: 18px;
+    accent-color: var(--colore-primario); /* Colora la checkbox con il colore primario */
+}
+
+.checkboxPreferenza label {
+    font-size: 0.95rem;
+    color: var(--colore-testo-secondario-scuro);
+    cursor: pointer;
+}
+
+.feedbackMessaggio { /* Classe comune per messaggi di successo o errore */
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem; /* Spazio dopo il messaggio */
+    border-radius: var(--bordi-radius-medio);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.successo {
+    background-color: var(--colore-successo-sfondo-leggero);
+    color: var(--colore-successo-testo);
+    border: 1px solid var(--colore-successo-bordo);
+}
+
+.errore {
+    background-color: var(--colore-errore-sfondo);
+    color: var(--colore-errore-testo);
+    border: 1px solid var(--colore-errore-bordo);
+}
+
+.campoEmailDisabilitato label, /* Stile per label di campo disabilitato */
+.campoEmailDisabilitato input {
+    color: var(--colore-testo-disabilitato, #6c757d);
+    cursor: not-allowed;
+}
+.campoEmailDisabilitato input {
+    background-color: var(--colore-sfondo-disabilitato, #e9ecef);
+}
+.avvisoEmail {
+    font-size: 0.8rem;
+    color: var(--colore-testo-terziario);
+    margin-top: -0.75rem; /* Avvicina al campo email */
+    margin-bottom: 0.5rem;
+}
+
+
+.bottoneEliminaAccount {
+    /* La variante "distruttivo" del componente Bottone dovrebbe già avere stili rossi.
+       Altrimenti, si possono definire qui. */
+    /* Esempio:
+    background-color: var(--colore-errore, #dc3545);
+    color: var(--colore-bianco);
+    border-color: var(--colore-errore-scuro, #bd2130); */
+    margin-top: 0.5rem;
+}

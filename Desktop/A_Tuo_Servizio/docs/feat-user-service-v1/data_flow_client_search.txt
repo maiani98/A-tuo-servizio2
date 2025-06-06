@@ -1,0 +1,88 @@
+**Flusso di Dati: Ricerca di un Professionista da parte del Cliente**
+
+Questo documento descrive il flusso di dati passo dopo passo quando un cliente esegue una ricerca di professionisti sulla piattaforma "A tuo servizio".
+
+---
+
+**1. Azione Utente Iniziale (Client Homepage - G):**
+
+*   Il cliente si trova sulla **Client Homepage (G)**.
+*   Inserisce i criteri di ricerca (servizio, località) nella barra di ricerca.
+*   Clicca sul pulsante **"Cerca"**.
+
+---
+
+**2. Interazione Frontend (Browser/App Cliente):**
+
+*   Il frontend cattura i valori dei campi di ricerca.
+*   Esegue una validazione base lato client.
+*   Costruisce una richiesta HTTP (es. `GET /api/v1/search/professionals?service=[servizio]&location=[località]`) verso l'API Gateway.
+*   Invia la richiesta asincrona, mostrando un indicatore di caricamento.
+
+---
+
+**3. Coinvolgimento API Gateway:**
+
+*   L'**API Gateway** riceve la richiesta HTTP.
+*   Funzioni:
+    *   Autenticazione/Autorizzazione (opzionale per ricerca pubblica).
+    *   Rate Limiting.
+    *   **Routing:** Inoltra la richiesta al **Servizio Ricerca (Search Service)**.
+    *   Trasformazione della Richiesta (opzionale).
+
+---
+
+**4. Interazione con il Servizio Ricerca (Search Service):**
+
+*   Il **Servizio Ricerca** riceve la richiesta HTTP.
+*   **Normalizzazione Query:** Pulisce e standardizza i termini di ricerca (servizio, località). La località può essere geocodificata.
+*   **Interrogazione Indice di Ricerca:**
+    *   Interroga il proprio indice di ricerca specializzato (es. Elasticsearch), che è **denormalizzato** e contiene già dati chiave dei professionisti (ID, nome, specializzazione, località, valutazione media, URL foto profilo).
+    *   La query all'indice include i criteri di servizio, località, e un ordinamento di default.
+*   **(Opzionale) Interazione con Altri Servizi:** Generalmente evitato per questa fase se l'indice è ben denormalizzato.
+
+---
+
+**5. Recupero e Formattazione Risultati (Servizio Ricerca):**
+
+*   L'indice restituisce al Servizio Ricerca una lista di documenti (professionisti) corrispondenti.
+*   Il Servizio Ricerca formatta i risultati in JSON, includendo:
+    *   Lista di oggetti professionista con dati per le `Professional Card (K)`.
+    *   Informazioni sulla paginazione (totale risultati, pagina corrente, ecc.).
+
+---
+
+**6. Arricchimento Risultati (Opzionale - Flusso Alternativo se l'indice non è sufficientemente denormalizzato):**
+
+*   Se il Servizio Ricerca restituisce solo ID o dati minimi:
+    *   **Orchestrazione Backend:** Un servizio orchestratore (o l'API Gateway) riceve gli ID e interroga altri servizi (Servizio Profili Professionisti, Servizio Recensioni) per ottenere i dettagli completi per ogni card.
+    *   **Arricchimento Frontend:** Il frontend riceve ID/dati minimi e fa ulteriori chiamate per i dettagli (meno efficiente).
+*   **Nota:** Un indice denormalizzato nel Servizio Ricerca è preferibile per performance ottimali.
+
+---
+
+**7. Risposta al Frontend:**
+
+*   Il **Servizio Ricerca** (o l'orchestratore) invia la risposta HTTP (JSON) finale al frontend.
+*   La risposta contiene la lista dei dati dei professionisti e i metadati di paginazione.
+
+---
+
+**8. Visualizzazione Frontend (Client Search Results Page - J):**
+
+*   Il frontend riceve il JSON.
+*   Nasconde l'indicatore di caricamento.
+*   Renderizza dinamicamente le **Professional Card (K)** sulla pagina **Client Search Results (J)**, popolando ogni card con i dati ricevuti (foto, nome, specializzazione, valutazione, località, ecc.).
+*   Visualizza il numero totale di risultati, i controlli per filtri (I), ordinamento, e paginazione.
+
+---
+
+**Microservizi Coinvolti e Comunicazione:**
+
+*   **Client Frontend (Browser/App)**
+*   **API Gateway:** Comunicazione HTTP.
+*   **Servizio Ricerca (Search Service):** Comunicazione HTTP con API Gateway.
+*   **(Opzionale) Servizio Profili Professionisti (Professional Profile Service):** Comunicazione HTTP.
+*   **(Opzionale) Servizio Recensioni e Valutazioni (Review & Rating Service):** Comunicazione HTTP.
+
+Il flusso ottimale minimizza le chiamate inter-servizio per la visualizzazione dei risultati iniziali grazie a un indice di ricerca denormalizzato.

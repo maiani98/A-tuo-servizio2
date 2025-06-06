@@ -1,0 +1,297 @@
+/* Stili per PaginaRisultatiRicerca */
+
+.paginaWrapper {
+    /* Potrebbe essere necessario un wrapper per lo sfondo grigio chiaro se Header/Footer sono bianchi */
+    /* background-color: var(--colore-sfondo-pagina-grigio, #f8f9fa); */
+    /* padding-bottom: 2rem; se il footer non ha il suo spazio */
+}
+
+.mainContent { /* Contenitore principale per breadcrumb, titolo, ricerca e layout a colonne */
+    /* Usa il componente Contenitore standard, non serve stile diretto qui se Contenitore è ben fatto */
+}
+
+.breadcrumbNav {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--colore-testo-secondario);
+}
+
+.breadcrumbNav a {
+    color: var(--colore-primario);
+    text-decoration: none;
+}
+
+.breadcrumbNav a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbNav span { /* Separatore o ultimo elemento non cliccabile */
+    margin: 0 0.5rem;
+    color: var(--colore-testo-secondario);
+}
+
+.titoloRisultati {
+    font-size: 2rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-principale);
+    margin-top: 0.5rem; /* Spazio dal breadcrumb */
+    margin-bottom: 1.5rem; /* Spazio prima della barra ricerca modificabile o filtri */
+}
+
+/* Barra di ricerca modificabile (se presente in questa pagina) */
+.searchBarModificabile {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--colore-sfondo-grigio-chiaro, #e9ecef);
+    border-radius: var(--bordi-radius-medio);
+    margin-bottom: 2rem;
+}
+.searchBarModificabile > * {
+    flex-grow: 1;
+}
+.searchBarModificabile button {
+    flex-grow: 0;
+}
+
+
+/* Layout a due colonne */
+.layoutContenuto {
+    display: flex;
+    flex-direction: row; /* Colonne affiancate */
+    gap: 2rem; /* Spazio tra colonna filtri e colonna risultati */
+    align-items: flex-start; /* Allinea le colonne all'inizio */
+}
+
+/* Colonna Filtri */
+.colonnaFiltri {
+    flex-basis: 300px; /* Larghezza fissa per la colonna filtri */
+    flex-shrink: 0; /* Non farla restringere */
+    background-color: var(--colore-bianco, #fff);
+    padding: 1.5rem;
+    border-radius: var(--bordi-radius-medio);
+    box-shadow: var(--ombreggiatura-leggera);
+    /* position: sticky; top: 20px; Potrebbe servire se la pagina scrolla molto */
+}
+
+.titoloFiltri {
+    font-size: 1.5rem;
+    font-family: var(--font-titoli);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+    padding-bottom: 0.75rem;
+}
+
+.gruppoOpzioniFiltro {
+    margin-bottom: 1.5rem;
+}
+
+.titoloGruppoFiltro { /* Se si usa un titolo per ogni gruppo di filtri */
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--colore-testo-forte);
+}
+
+.opzioneFiltro { /* Wrapper per singola checkbox o radio */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+.opzioneFiltro label {
+    color: var(--colore-testo-secondario);
+    cursor: pointer;
+}
+.opzioneFiltro input[type="checkbox"],
+.opzioneFiltro input[type="radio"] {
+    margin-right: 0.3rem;
+}
+
+.bottoneApplicaFiltri {
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.bottoneResettaFiltri {
+    width: 100%;
+}
+
+
+/* Colonna Risultati */
+.colonnaRisultati {
+    flex-grow: 1; /* Occupa il resto dello spazio */
+    min-width: 0; /* Necessario per flex-grow in alcuni scenari */
+}
+
+.intestazioneRisultati {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* Per responsività */
+    gap: 1rem;
+}
+
+.numeroRisultatiInfo { /* Paragrafo che mostra "X risultati" */
+    font-size: 0.95rem;
+    color: var(--colore-testo-secondario);
+}
+
+.controlliOrdinamentoEVista {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toggleVista {
+    display: flex;
+    border: 1px solid var(--colore-primario);
+    border-radius: var(--bordi-radius-medio);
+    overflow: hidden; /* Per i bordi arrotondati sui figli */
+}
+
+.toggleVista button {
+    background-color: var(--colore-bianco);
+    color: var(--colore-primario);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.toggleVista button.attivo {
+    background-color: var(--colore-primario);
+    color: var(--colore-bianco);
+}
+
+.toggleVista button:not(.attivo):hover {
+    background-color: var(--colore-primario-trasparente-10);
+}
+
+.toggleVista button:first-child {
+    border-right: 1px solid var(--colore-primario); /* Separatore se non sono adiacenti */
+}
+
+
+/* Placeholder Mappa Migliorato */
+.boxMappaPlaceholder {
+    width: 100%;
+    min-height: 450px; /* Altezza minima per dare l'idea */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colore-sfondo-grigio-molto-chiaro, #f8f9fa); /* Sfondo molto chiaro */
+    border: 2px dashed var(--colore-bordo-grigio-chiaro, #dee2e6); /* Bordo tratteggiato */
+    border-radius: var(--bordi-radius-grande, 8px); /* Bordi più evidenti */
+    padding: 2rem;
+    text-align: center;
+    color: var(--colore-testo-secondario);
+    margin-top: 1rem; /* Spazio se sopra c'erano i risultati lista */
+}
+
+.iconaMappaPlaceholder {
+    font-size: 3.5rem; /* Dimensione icona */
+    margin-bottom: 1.5rem; /* Spazio sotto l'icona */
+    color: var(--colore-secondario-leggero, #7fadec); /* Colore icona meno intenso */
+}
+
+.titoloMappaPlaceholder { /* Stile per il titolo nel box mappa */
+    font-size: 1.5rem;
+    color: var(--colore-testo-forte, #343a40);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-titoli);
+}
+
+.testoMappaPlaceholder { /* Paragrafo principale nel box mappa */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    max-width: 500px; /* Limita larghezza per leggibilità */
+}
+
+.testoMappaPlaceholderSub { /* Paragrafo secondario, più piccolo */
+    font-size: 0.9rem;
+    color: var(--colore-testo-terziario, #6c757d);
+    max-width: 450px;
+}
+
+
+/* Griglia Professionisti (già definita in PaginaHomepage, potrebbe essere globale) */
+.professionistiGridRisultati {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* O un numero fisso di colonne */
+    gap: 1.5rem;
+}
+
+/* Paginazione (se presente) */
+.paginazioneWrapper {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--colore-bordo-input-leggero);
+}
+
+
+/* Media Queries */
+@media (max-width: 992px) { /* Tablet e inferiori - filtri potrebbero diventare modale */
+    .layoutContenuto {
+        flex-direction: column; /* Colonne impilate */
+    }
+    .colonnaFiltri {
+        flex-basis: auto; /* Larghezza automatica quando impilata */
+        width: 100%;
+        margin-bottom: 1.5rem;
+        /* Qui si potrebbe nascondere .colonnaFiltri e mostrare un bottone "Apri Filtri"
+           che apre un Modale o un Offcanvas con il contenuto dei filtri.
+           Per ora, la lasciamo visibile e impilata. */
+    }
+    .titoloRisultati {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .intestazioneRisultati {
+        flex-direction: column;
+        align-items: flex-start; /* Allinea a sx quando in colonna */
+    }
+}
+
+@media (max-width: 480px) {
+    .titoloRisultati {
+        font-size: 1.6rem;
+    }
+    .breadcrumbNav {
+        font-size: 0.8rem;
+    }
+    /* Ulteriori aggiustamenti per mobile */
+}
+
+/* Stili per CampoCheckbox e CampoSelect se non sono globali */
+/* Esempio per un CampoCheckbox custom */
+.campoCheckboxWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.campoCheckboxWrapper input[type="checkbox"] {
+    /* Stili custom */
+}
+.campoCheckboxWrapper label {
+    font-size: 0.95rem;
+    color: var(--colore-testo-secondario);
+}
+
+/* Esempio per un CampoSelect custom */
+.campoSelectWrapper select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--colore-bordo-input);
+    border-radius: var(--bordi-radius-medio);
+    background-color: var(--colore-bianco);
+    font-size: 0.95rem;
+}

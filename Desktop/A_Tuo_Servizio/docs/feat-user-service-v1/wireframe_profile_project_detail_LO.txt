@@ -1,0 +1,98 @@
+**Wireframe Testuale: Dettaglio Progetto del Portfolio (O) nel Profilo Professionista (L - Visualizzato dal Cliente)**
+
+**1. Contesto e Azione di Innesco:**
+
+*   **Schermata di Partenza:** Pagina del "Professional Profile (L - Visualizzato dal Cliente)", specificamente la "Galleria dei Progetti (N)" all'interno della Sezione Portfolio (M).
+*   **Azione dell'Utente:** L'utente clicca su una delle card di anteprima di un progetto specifico nella galleria (N).
+
+**2. Modalità di Presentazione (Modale Overlay - Lightbox):**
+
+*   **Apparizione del Modale:**
+    *   Immediatamente dopo il click sulla card del progetto, un **Modale Overlay (Lightbox)** appare, sovrapponendosi al contenuto della pagina del Profilo Professionista (L).
+*   **Sfondo della Pagina Sottostante:**
+    *   Lo sfondo della pagina del profilo (con la galleria progetti) diventa **visualmente oscurato** (es. tramite un layer semi-trasparente di colore grigio scuro o nero), per dare massimo focus al contenuto del modale.
+    *   Gli elementi della pagina sottostante non sono interagibili finché il modale è aperto.
+*   **Dimensioni del Modale:**
+    *   Occupa una porzione molto ampia della viewport per massimizzare la visualizzazione dei media e delle informazioni del progetto (es. 80-90% della larghezza e 70-85% dell'altezza su desktop). Su mobile, si adatta per essere quasi full-screen, con un piccolo margine.
+*   **Contenitore del Modale:**
+    *   Forma rettangolare, con angoli leggermente arrotondati. Sfondo di colore solido (es. bianco o grigio molto chiaro).
+*   **Pulsante di Chiusura:**
+    *   **Posizione:** Angolo in alto a destra del contenitore del modale (o appena fuori dall'angolo, ma chiaramente associato ad esso).
+    *   **Aspetto:** Icona "X" (croce) chiaramente visibile e facilmente cliccabile.
+    *   **Azione:** Al click, chiude il modale e ripristina la piena visibilità e interattività della pagina del Profilo Professionista (L) con la galleria progetti.
+
+**3. Contenuto del Dettaglio Progetto (O) all'interno del Modale:**
+
+*   **Layout Generale Interno:**
+    *   Tipicamente, una **struttura a due colonne su desktop/tablet più larghi** (media a sinistra, dettagli testuali a destra) oppure un **layout a singola colonna su mobile** (media in alto, dettagli testuali sotto). Per questo wireframe, si descrive primariamente il layout a colonna singola o l'idea che i testi seguano la galleria.
+
+    *   **3.1. Galleria Immagini/Video del Singolo Progetto:**
+        *   **Posizione:** Parte superiore e più prominente del modale.
+        *   **Visualizzatore Media Principale:**
+            *   Un'ampia area rettangolare centrale che mostra l'immagine o il video attivo/selezionato del progetto.
+            *   **Placeholder Immagine:** Se il media attivo è un'immagine, questa viene visualizzata a piena larghezza disponibile nell'area (mantenendo l'aspect ratio). Placeholder: "[Immagine Attiva del Progetto]".
+            *   **Placeholder Video:** Se il media attivo è un video, qui viene visualizzato il player video. Placeholder: "[Player Video Attivo del Progetto]".
+        *   **Controlli di Navigazione Media (sovrapposti o ai lati del Visualizzatore Media Principale):**
+            *   **Freccia "Precedente":** Icona a forma di freccia rivolta a sinistra (es. "<"). Posizionata sul lato sinistro del visualizzatore media. Cliccabile per mostrare l'immagine/video precedente nella sequenza del progetto. Disabilitata se il media corrente è il primo.
+            *   **Freccia "Successivo":** Icona a forma di freccia rivolta a destra (es. ">"). Posizionata sul lato destro del visualizzatore media. Cliccabile per mostrare l'immagine/video successivo. Disabilitata se il media corrente è l'ultimo.
+        *   **(Opzionale) Striscia di Miniature (Thumbnail Strip):**
+            *   **Posizione:** Sotto il visualizzatore media principale.
+            *   **Contenuto:** Una fila orizzontale (scrollabile se necessario) di piccole miniature (es. 60x40 pixel) di tutte le immagini e/o video associati a quel progetto.
+            *   **Interazione:** La miniatura corrispondente al media attivo nel visualizzatore principale è evidenziata (es. con un bordo più spesso o un overlay colorato). Cliccando su un'altra miniatura, questa diventa il media attivo nel visualizzatore principale.
+        *   **(Opzionale) Controlli Video Standard (per i video nel Visualizzatore Media Principale):**
+            *   Se il media attivo è un video, vengono mostrati i controlli standard del player video (sovrapposti al video in basso, o che appaiono all'hover):
+                *   Pulsante Play/Pausa.
+                *   Barra di avanzamento ( scrubber).
+                *   Controllo del volume.
+                *   (Opzionale) Pulsante per la visualizzazione a schermo intero del video.
+
+    *   **3.2. Area Contenuti Testuali del Progetto:**
+        *   **Posizione:** Sotto la galleria immagini/video (in layout a colonna singola) o in una colonna a destra della galleria (in layout a due colonne).
+        *   **Padding:** Adeguata spaziatura interna per separare i testi dalla galleria e dagli altri elementi.
+
+        *   **Titolo Completo del Progetto:**
+            *   **Testo (Placeholder):** "[Titolo Completo e Dettagliato del Progetto Qui]".
+            *   **Stile:** Testo grande (es. H2 o H3 all'interno del modale), ben leggibile, posizionato sopra la descrizione dettagliata.
+
+        *   **Descrizione Dettagliata del Progetto:**
+            *   **Testo (Placeholder):** Un blocco di testo lorem ipsum di diverse righe (es. 5-10 righe) che rappresenta la descrizione completa fornita dal professionista (obiettivi, sfide, soluzioni, ruolo del professionista, risultati).
+            *   **Stile:** Testo di dimensioni standard per la lettura, con paragrafi ben formattati.
+
+        *   **Altri Dettagli del Progetto (se disponibili, presentati come lista etichetta-valore o piccoli blocchi informativi):**
+            *   **Data di Completamento:**
+                *   Etichetta: "Data:" o "Completato il:".
+                *   Valore (Placeholder): "[Data di Completamento del Progetto]".
+            *   **Categoria/Tipo di Lavoro:**
+                *   Etichetta: "Categoria:" o "Servizi:".
+                *   Valore (Placeholder): "[Categoria o Tipo di Lavoro Eseguito]".
+            *   **(Opzionale) Cliente:**
+                *   Etichetta: "Cliente:".
+                *   Valore (Placeholder): "[Nome del Cliente (se reso pubblico)]".
+            *   **(Opzionale) Link Esterno al Progetto:**
+                *   **Modalità Testuale:**
+                    *   Etichetta: "Link al Progetto:" o "Sito Web:".
+                    *   Valore (Placeholder): "[URL Cliccabile del Progetto Esterno]". Il link è attivo e apre una nuova scheda del browser.
+                *   **Modalità Pulsante:**
+                    *   Pulsante con etichetta: "Visita il Sito del Progetto" o "Vedi Progetto Online".
+                    *   Azione: Apre il link esterno in una nuova scheda del browser.
+
+**4. Interazioni nel Dettaglio Progetto:**
+
+*   **Navigazione Media:**
+    *   L'utente clicca sulle frecce "Precedente"/"Successivo" per scorrere le immagini/video del progetto.
+    *   L'utente clicca su una miniatura nella striscia (se presente) per visualizzare direttamente quel media.
+*   **Interazione Video:**
+    *   L'utente clicca sul pulsante "Play" per avviare un video.
+    *   L'utente utilizza i controlli standard del video (pausa, volume, scrubber).
+*   **Click su Link Esterno:**
+    *   Se presente un link esterno (testuale o come pulsante), l'utente clicca su di esso per aprire la risorsa in una nuova scheda del browser.
+*   **Chiusura del Modale:**
+    *   L'utente clicca sul pulsante "X" nell'angolo in alto a destra del modale.
+    *   (Meno comune, ma possibile) L'utente clicca al di fuori dell'area del modale (sullo sfondo oscurato) per chiuderlo.
+    *   (Meno comune, ma possibile) L'utente preme il tasto "Esc" sulla tastiera.
+
+**5. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sulla struttura e sulla disposizione degli elementi all'interno del modale del dettaglio progetto.
+*   Il contenuto specifico (immagini, testi) è rappresentato da placeholder.
+*   L'aspetto visivo (colori, font specifici, stile esatto delle icone) dipende dal design system generale della piattaforma.

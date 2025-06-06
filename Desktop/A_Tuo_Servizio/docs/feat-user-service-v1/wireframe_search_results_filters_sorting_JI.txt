@@ -1,0 +1,107 @@
+**Wireframe Testuale: Interazione con Filtri (I) e Ordinamento nella Pagina Client Search Results (J)**
+
+**1. Contesto:**
+
+*   **Pagina di Riferimento:** Pagina "Client Search Results (J)".
+*   **Elementi Esistenti (Placeholder):**
+    *   L'header della pagina con la barra di ricerca.
+    *   L'area "Titolo Risultati e Controlli" che contiene:
+        *   Testo "Trovati [X] professionisti...".
+        *   Il **Pulsante "Filtri (I)"** (con etichetta "Filtri" e/o icona imbuto).
+        *   Il controllo **Dropdown "Ordina per:"** (con un valore predefinito visibile, es. "Rilevanza", e un'icona freccia verso il basso).
+    *   L'area sottostante che visualizza la lista delle `Professional Card (K)`.
+
+**2. Interazione con il Pulsante "Filtri (I)":**
+
+*   **2.1. Azione dell'Utente:**
+    *   L'utente clicca sul **Pulsante "Filtri (I)"**.
+
+*   **2.2. Risultato (Apertura Pannello Filtri):**
+
+    *   **Modalità di Presentazione (Desktop): Sidebar Laterale**
+        *   **Apparizione:** Un pannello (sidebar) **scorre o appare** dal lato sinistro (o destro, a seconda del design) della pagina, sovrapponendosi parzialmente o spingendo il contenuto dell'area risultati (la lista delle `Professional Card (K)`).
+        *   **Sfondo Pagina:** Il resto della pagina (area risultati, header) potrebbe scurirsi leggermente per dare focus alla sidebar, oppure rimanere attivo.
+        *   **Dimensioni Sidebar:** Occupa una frazione della larghezza dello schermo (es. 25-35%), estendendosi per gran parte dell'altezza.
+
+    *   **Modalità di Presentazione (Mobile): Modale Full-Screen (o Quasi)**
+        *   **Apparizione:** Un **modale si espande** per coprire la quasi totalità o l'intera schermata del dispositivo mobile.
+        *   **Transizione:** Potrebbe scorrere dall'alto, dal basso o da un lato.
+
+    *   **Struttura Comune del Pannello Filtri (I):**
+        *   **Contenitore Pannello:** Rettangolare, con sfondo solido (es. bianco o grigio chiaro).
+
+        *   **Header del Pannello Filtri:**
+            *   **Posizione:** Striscia orizzontale in cima al pannello filtri.
+            *   **Elementi:**
+                *   **Titolo del Pannello (a sinistra/centro):** Testo grande e chiaro, "Filtri" o "Filtra Risultati".
+                *   **Pulsante di Chiusura (a destra):**
+                    *   Icona "X" (croce) chiaramente visibile.
+                    *   Azione: Al click, chiude il pannello filtri senza applicare le modifiche non salvate e ripristina la vista precedente della pagina dei risultati.
+
+        *   **Corpo del Pannello Filtri (Controlli Filtro Impilati Verticalmente):**
+            *   **Filtro Sottocategoria/Servizio Specifico (se applicabile alla ricerca corrente):**
+                *   Etichetta: "Tipologia di Servizio" o nome della categoria principale (es. "Servizi Idraulici").
+                *   Controlli (Placeholder): Una lista di **checkbox**. Ogni checkbox ha un'etichetta testuale (es. "[ ] Riparazione perdite", "[ ] Installazione sanitari", "[ ] Disostruzione scarichi"). L'utente può selezionare una o più opzioni.
+            *   **Filtro Distanza (Raggio di Ricerca):**
+                *   Etichetta: "Distanza Massima" o "Entro".
+                *   Controlli (Placeholder - una delle seguenti opzioni):
+                    *   **Slider:** Un controllo slider orizzontale con valori minimi e massimi (es. da "1 km" a "50+ km" o "Qualsiasi"). Il valore selezionato è visualizzato numericamente.
+                    *   **Opzioni Radio/Bottoni Segmentati:** Una serie di pulsanti o opzioni radio con etichette predefinite (es. "Entro 5 km", "Entro 10 km", "Entro 25 km", "Tutta la città"). L'utente può selezionare una sola opzione.
+            *   **Filtro Valutazione Minima:**
+                *   Etichetta: "Valutazione Minima".
+                *   Controlli (Placeholder): Una serie di **5 icone a forma di stella cliccabili** (☆ ☆ ☆ ☆ ☆).
+                    *   Interazione: Cliccando su una stella (es. la terza stella), si selezionano tutte le stelle fino a quella cliccata (★★★☆☆), indicando una valutazione minima di 3 stelle. Cliccando di nuovo sulla stessa stella o su una precedente, si deseleziona o si aggiorna la valutazione.
+            *   **(Opzionale) Filtro Disponibilità:**
+                *   Etichetta: "Disponibilità".
+                *   Controlli (Placeholder):
+                    *   Checkbox: "[ ] Disponibile nel weekend".
+                    *   Checkbox: "[ ] Intervento urgente / H24".
+                    *   (Potrebbe includere un selettore di data/periodo se la disponibilità è più granulare - non dettagliato qui).
+
+        *   **Footer del Pannello Filtri:**
+            *   **Posizione:** Striscia orizzontale in fondo al pannello filtri, separata dal corpo.
+            *   **Layout (Desktop):** Pulsanti tipicamente allineati a destra o distribuiti.
+            *   **Layout (Mobile):** Pulsanti spesso impilati o affiancati, a piena larghezza.
+            *   **Elementi:**
+                *   **Pulsante "Applica Filtri":**
+                    *   Etichetta: "Applica Filtri" o "Mostra Risultati".
+                    *   Stile: Pulsante primario, visivamente prominente.
+                    *   Azione: Al click, chiude il pannello filtri e aggiorna la lista dei risultati di ricerca (le `Professional Card (K)`) in base ai filtri selezionati.
+                *   **Link/Pulsante "Resetta Filtri" (o "Cancella Filtri"):**
+                    *   Etichetta: "Resetta Filtri".
+                    *   Stile: Meno prominente del pulsante "Applica" (es. link testuale, pulsante con solo bordo).
+                    *   Azione: Al click, deseleziona tutti i filtri applicati nel pannello, riportandoli allo stato predefinito. Non chiude necessariamente il pannello.
+
+**3. Interazione con il Dropdown "Ordina per:":**
+
+*   **3.1. Azione dell'Utente:**
+    *   L'utente clicca sul controllo **Dropdown "Ordina per:"** (che mostra il criterio di ordinamento corrente, es. "Rilevanza").
+
+*   **3.2. Risultato (Apparizione Menu Dropdown):**
+    *   Immediatamente sotto il controllo "Ordina per:", appare un **menu a tendina (dropdown)**.
+    *   Il menu contiene una lista verticale di opzioni di ordinamento testuali (es. "Rilevanza", "Valutazione (dal più alto al più basso)", "Distanza (dal più vicino al più lontano)", "Popolarità", "Nome (A-Z)").
+    *   L'opzione attualmente attiva potrebbe essere evidenziata nel menu.
+
+*   **3.3. Azione Successiva dell'Utente:**
+    *   L'utente clicca su una delle opzioni nel menu a tendina (es. clicca su "Valutazione (dal più alto al più basso)").
+
+*   **3.4. Risultato (Aggiornamento Ordinamento):**
+    *   **Chiusura Dropdown:** Il menu a tendina si chiude.
+    *   **Aggiornamento Controllo:** Il testo visibile nel controllo "Ordina per:" viene aggiornato per mostrare la nuova opzione selezionata (es. ora mostra "Valutazione (dal più alto al più basso)").
+    *   **Aggiornamento Lista Risultati (Feedback Visivo):**
+        *   L'area dei risultati (la lista delle `Professional Card (K)`) **si aggiorna dinamicamente** per riflettere il nuovo criterio di ordinamento.
+        *   Potrebbe apparire un **breve indicatore di caricamento/aggiornamento** (es. uno spinner temporaneo o un effetto di dissolvenza) sull'area dei risultati mentre vengono riordinati.
+
+**4. Feedback Visivo Generale dell'Applicazione di Filtri/Ordinamento:**
+
+*   **Aggiornamento Testo Conteggio Risultati:**
+    *   Dopo l'applicazione di filtri (tramite "Applica Filtri" dal pannello) o il cambio di ordinamento, il testo "Trovati [X] professionisti per '[Servizio Cercato]' in '[Località Cercata]'" **si aggiorna** per riflettere il nuovo numero [X] di risultati corrispondenti ai criteri attuali.
+*   **(Opzionale) Indicazione Filtri Attivi:**
+    *   **Badge sul Pulsante Filtri:** Vicino al pulsante "Filtri (I)", potrebbe apparire un piccolo **badge numerico** (es. un cerchietto con un numero) che indica quanti filtri o gruppi di filtri sono attualmente attivi.
+    *   **Riepilogo Testuale Filtri Attivi (Meno Comune):** In alternativa o in aggiunta, una piccola stringa di testo sopra i risultati potrebbe elencare i filtri principali attivi (es. "Filtri attivi: Valutazione 4+ stelle, Entro 10km").
+
+**5. Note Aggiuntive sul Wireframe:**
+
+*   Questo wireframe si concentra sul flusso di interazione e sulla struttura degli elementi per filtri e ordinamento.
+*   L'aspetto visivo specifico (colori, icone esatte, stile degli slider/checkbox) dipenderà dal design system generale.
+*   La logica esatta di come i filtri interagiscono tra loro (es. AND vs OR) non è definita qui.

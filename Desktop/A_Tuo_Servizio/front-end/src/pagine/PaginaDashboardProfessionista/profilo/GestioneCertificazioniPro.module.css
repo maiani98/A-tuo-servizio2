@@ -1,0 +1,128 @@
+.containerCertificazioni {
+  padding: 20px;
+}
+
+.headerSezione {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.titoloSezione {
+  color: #333;
+  margin: 0;
+}
+
+/* Stili per il Form Certificazione */
+.formCertificazione {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.titoloForm {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+.labelForm { /* Per etichette custom se CampoTesto non le ha o per <label> dirette */
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+.dateRow {
+  display: flex;
+  gap: 20px;
+}
+.dateRow > div { /* Assumendo che CampoTesto sia wrappato in un div o sia esso stesso un div */
+  flex: 1;
+}
+.inputFile {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.infoFile {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 5px;
+}
+.messaggioErrore {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.azioniFormCertificazione {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: flex-end;
+}
+
+
+/* Stili per la Lista Certificazioni */
+.listaCertificazioni {
+  display: grid;
+  grid-template-columns: 1fr; /* Una colonna di default */
+  gap: 18px;
+}
+
+@media (min-width: 768px) { /* Due colonne per tablet e desktop */
+  .listaCertificazioni {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+.cardCertificazione {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.nomeCertificazioneCard {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #0056b3;
+}
+
+.infoCertificazione {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.infoCertificazione strong {
+  color: #333;
+}
+.infoCertificazione a {
+  color: #007bff;
+  text-decoration: none;
+}
+.infoCertificazione a:hover {
+  text-decoration: underline;
+}
+
+.azioniCardCertificazione {
+  margin-top: auto; /* Spinge le azioni in basso */
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}

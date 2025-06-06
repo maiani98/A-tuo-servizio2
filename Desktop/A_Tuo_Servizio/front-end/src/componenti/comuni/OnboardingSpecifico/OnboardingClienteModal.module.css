@@ -1,0 +1,90 @@
+/* Stili per OnboardingClienteModal e potenzialmente condivisibili con OnboardingProfessionistaModal */
+
+.contenutoOnboarding {
+    padding: 0.5rem 0.5rem; /* Padding interno al corpo del modale */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Spazio tra sezioni */
+}
+
+.sezioneTesto {
+    text-align: left; /* Allinea il testo a sinistra di default */
+}
+
+.sottotitoloModale {
+    font-size: 1.05rem;
+    color: var(--colore-testo-secondario);
+    margin-bottom: 1.5rem;
+    text-align: center; /* Sottotitolo centrato */
+}
+
+.immagineTourCliente { /* E .immagineTourProfessionista se simile */
+    width: 100%;
+    height: 180px; /* Altezza fissa per il placeholder */
+    background-color: var(--colore-sfondo-grigio-chiaro, #e9ecef); /* Colore di sfondo placeholder */
+    border-radius: var(--bordi-radius-medio, 6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 1px dashed var(--colore-bordo-grigio-chiaro, #ced4da);
+}
+
+.testoPlaceholderImmagine {
+    font-size: 0.9rem;
+    color: var(--colore-testo-placeholder, #6c757d);
+}
+
+.titoloElenco {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--colore-testo-principale);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-corpo);
+}
+
+.elencoFunzionalita {
+    list-style-type: disc; /* O altro stile desiderato */
+    padding-left: 1.5rem; /* Spazio per i bullet points */
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--colore-testo-secondario);
+    line-height: 1.6;
+}
+
+.elencoFunzionalita li {
+    margin-bottom: 0.5rem; /* Spazio tra gli item della lista */
+}
+
+.azioniOnboarding {
+    display: flex;
+    flex-direction: column; /* Bottoni impilati */
+    align-items: center; /* Centra i bottoni */
+    gap: 0.75rem; /* Spazio tra i bottoni */
+    margin-top: 1rem; /* Spazio sopra i bottoni */
+    padding-top: 1rem;
+    border-top: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.bottoneAzioneOnboarding {
+    width: 100%;
+    max-width: 250px; /* Limita larghezza per estetica */
+}
+
+.bottoneSaltaTour {
+    font-size: 0.9rem;
+    color: var(--colore-testo-secondario);
+    /* Il componente Bottone con variante="link" dovrebbe gestire il resto */
+}
+
+.bottoneSaltaTour:hover {
+    color: var(--colore-primario);
+}
+
+/* Stili aggiuntivi se il titolo del modale di default non va bene */
+/* Esempio: se il componente Modale ha una classe per il suo titolo */
+/* .titoloModaleOnboarding {
+    font-size: 1.5rem;
+    color: var(--colore-primario);
+    text-align: center;
+} */

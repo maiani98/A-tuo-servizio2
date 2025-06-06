@@ -1,0 +1,179 @@
+/* Stili per DashboardClienteDettaglioRichiesta */
+
+.dettaglioRichiestaContainer {
+    /* Eventuale padding se non già gestito da .contenutoPrincipaleDashboard */
+}
+
+.titoloSezioneDashboard { /* Può essere ereditato/condiviso */
+    font-size: 1.6rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-forte);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.tornaAlleRichiesteLink {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--colore-primario);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.tornaAlleRichiesteLink:hover {
+    text-decoration: underline;
+}
+.tornaAlleRichiesteLink svg { /* Se si usa un'icona SVG */
+    margin-right: 0.3rem;
+    vertical-align: middle;
+}
+
+
+.sezioneDettaglio {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--colore-bianco);
+    border-radius: var(--bordi-radius-grande, 8px);
+    box-shadow: var(--ombreggiatura-molto-leggera, 0 1px 4px rgba(0,0,0,0.05));
+    border: 1px solid var(--colore-bordo-sezione, var(--colore-bordo-input-leggero));
+}
+
+.sezioneDettaglio h3 { /* Titolo interno alla sezione, es. "Dettagli della Tua Richiesta" */
+    font-size: 1.3rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-forte);
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Colonna label auto, colonna valore prende spazio */
+    gap: 0.75rem 1.25rem; /* row-gap column-gap */
+    align-items: baseline; /* Allinea baseline di label e valore */
+}
+
+.infoGrid dt { /* Termine (Label) */
+    font-weight: 600;
+    color: var(--colore-testo-secondario-scuro);
+    white-space: nowrap;
+}
+
+.infoGrid dd { /* Descrizione (Valore) */
+    margin: 0;
+    color: var(--colore-testo-principale);
+    line-height: 1.5;
+}
+
+.infoGrid dd a { /* Link all'interno dei valori */
+    color: var(--colore-primario);
+}
+
+.allegatiLista {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+.allegatiLista li {
+    margin-bottom: 0.25rem;
+}
+.allegatiLista a {
+    color: var(--colore-primario);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.allegatiLista a:hover {
+    text-decoration: underline;
+}
+.allegatiLista a svg { /* Icona per allegato */
+    margin-right: 0.3rem;
+    vertical-align: middle;
+}
+
+
+.titoloPreventivo { /* Titolo per la sezione "Preventivo Ricevuto" */
+    font-size: 1.4rem; /* Leggermente più grande dei titoli h3 normali */
+    color: var(--colore-successo-testo); /* Colore verde per indicare il preventivo */
+    margin-top: 0; /* Se è il primo elemento di una .sezioneDettaglio */
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.azioniPreventivo {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Per responsività bottoni */
+    border-top: 1px solid var(--colore-bordo-input-leggero);
+    padding-top: 1.5rem;
+}
+
+.cronologiaStati ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.cronologiaStati li {
+    padding: 0.75rem 0;
+    border-bottom: 1px dotted var(--colore-bordo-input-molto-leggero);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.cronologiaStati li:last-child {
+    border-bottom: none;
+}
+
+.cronologiaStati .infoStato {
+    flex-grow: 1;
+}
+
+.cronologiaStati .dataStato {
+    font-weight: 600;
+    color: var(--colore-testo-forte);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem; /* Spazio tra data/stato e nota */
+}
+.cronologiaStati .nomeStato {
+    /* Usa le classi .statoInviata, .statoPreventivoRicevuto etc. definite in DashboardClienteRichieste.module.css
+       per coerenza. Qui si potrebbe aggiungere un padding o display:inline-block se necessario. */
+    font-size: 0.85rem; /* Leggermente più piccolo se dentro la cronologia */
+    margin-left: 0.5rem;
+}
+
+.cronologiaStati .notaStato {
+    font-size: 0.9rem;
+    color: var(--colore-testo-secondario);
+    margin-top: 0.25rem;
+}
+
+/* Stili per gli stati (riutilizzati da DashboardClienteRichieste.module.css se importati o globali) */
+/* Se non sono globali, vanno duplicati o importati qui. Esempio: */
+.statoRichiesta { /* Classe base se usata in cronologia */
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--bordi-radius-badge, 12px);
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
+}
+.statoInviata { background-color: var(--colore-info-sfondo); color: var(--colore-info-testo); border: 1px solid var(--colore-info-bordo); }
+.statoVisualizzata { background-color: var(--colore-attenzione-sfondo); color: var(--colore-attenzione-testo); border: 1px solid var(--colore-attenzione-bordo); }
+.statoPreventivoRicevuto { background-color: var(--colore-successo-sfondo-leggero); color: var(--colore-successo-testo); border: 1px solid var(--colore-successo-bordo); }
+.statoAccettato { background-color: var(--colore-successo-forte-sfondo); color: var(--colore-successo-forte-testo); border: 1px solid var(--colore-successo-forte-bordo); }
+.statoRifiutato, .statoAnnullata { background-color: var(--colore-grigio-chiaro-sfondo); color: var(--colore-grigio-chiaro-testo); border: 1px solid var(--colore-grigio-chiaro-bordo); }
+.statoCompletato { background-color: var(--colore-grigio-scuro-sfondo, #6c757d); color: var(--colore-bianco); border: 1px solid var(--colore-grigio-scuro-bordo, #5a6268); }
+
+
+.messaggioCaricamento {
+    padding: 2rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--colore-testo-secondario);
+}

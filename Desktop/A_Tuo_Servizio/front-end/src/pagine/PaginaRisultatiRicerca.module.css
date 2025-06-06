@@ -1,0 +1,215 @@
+/* src/pagine/PaginaRisultatiRicerca.module.css */
+
+/* Layout Generale della Pagina */
+.paginaRisultatiWrapper { /* Classe per il Contenitore principale della pagina */
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.searchBarPagina {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: var(--colore-sfondo-chiaro);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Target specifico per i CampoTesto dentro la searchBarPagina per farli espandere.
+   Questo assume che CampoTesto renderizzi un input direttamente o che la classe
+   venga passata a un wrapper che contiene l'input.
+   Se CampoTesto ha una classe custom per il suo input, quella andrebbe usata.
+   Per ora, applichiamo a input[type="text"] come richiesto.
+*/
+.searchBarPagina input[type="text"] {
+  flex-grow: 1;
+}
+/* Se CampoTesto ha un wrapper a cui viene passata la classe, potremmo fare:
+.searchBarPagina > div { flex-grow: 1; }
+   Ma questo è meno specifico. L'ideale sarebbe una classe dedicata sul componente CampoTesto
+   che possa essere usata per targettare l'input o il suo wrapper.
+   Per esempio, se .campoRicercaServizioPagina e .campoRicercaLocalitaPagina
+   sono passate a CampoTesto, e CampoTesto applica queste classi al suo
+   elemento input o a un wrapper, allora si potrebbe fare:
+.campoRicercaServizioPagina, .campoRicercaLocalitaPagina { flex-grow: 1; }
+   Controllerò la struttura di CampoTesto.tsx - passa 'className' all'input.
+   Quindi possiamo usare le classi definite in PaginaRisultatiRicerca.tsx
+*/
+.campoRicercaServizioPagina, .campoRicercaLocalitaPagina {
+  flex-grow: 1;
+}
+
+
+.controlliRicerca {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.infoRisultati {
+  color: var(--colore-testo-secondario);
+  font-size: 0.9rem;
+  margin: 0; /* Rimuove margine default del paragrafo */
+}
+
+.azioniControlli { /* Rinominato da .wrapperBottoniControlli per coerenza con PaginaRisultatiRicerca.tsx */
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.selectOrdinamento {
+  min-width: 180px;
+}
+
+/* Layout Contenuto (Filtri e Risultati) */
+.layoutContenuto {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start; /* Allinea filtri e risultati in cima */
+}
+
+.pannelloFiltri {
+  flex-basis: 280px; /* Larghezza fissa per i filtri */
+  flex-shrink: 0;
+  background-color: var(--colore-bianco);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* Stile per il Titolo "Filtri" (se si usa il componente Titolo) */
+.pannelloFiltri .titoloFiltri { /* Assumendo che .titoloFiltri sia passato come className al componente Titolo */
+  margin-top: 0;
+  margin-bottom: 1.5rem; /* Aggiunto spazio sotto il titolo principale dei filtri */
+  font-size: 1.4rem; /* Dimensione del titolo "Filtri" */
+}
+
+.gruppoFiltro {
+  margin-bottom: 1.5rem;
+}
+
+.gruppoFiltro:last-of-type { /* Rimuove margine inferiore per l'ultimo gruppo prima del bottone */
+  margin-bottom: 1rem;
+}
+
+.titoloGruppoFiltro { /* Applicato a Titolo livello={3} */
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 1rem; /* Dimensione dei sottotitoli dei gruppi filtro */
+  color: var(--colore-testo-principale);
+}
+
+.opzioneFiltro { /* Esempio, se si usassero label per checkbox/radio */
+  display: block;
+  margin-bottom: 0.5rem;
+  /* Esempio per un input checkbox/radio dentro un label
+  .opzioneFiltro input[type="checkbox"],
+  .opzioneFiltro input[type="radio"] {
+    margin-right: 0.5rem;
+  }
+  */
+}
+
+.bottoneApplicaFiltri {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Area Risultati */
+.areaRisultati {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spazio tra il messaggio "nessun risultato" e il bottone, o tra le card e il bottone */
+}
+
+.listaCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spazio tra le ProfessionalCard */
+}
+
+.bottoneCaricaAltro {
+  align-self: center;
+  margin-top: 1rem; /* Già presente in .areaRisultati gap, ma può essere specifico */
+  padding: 0.6rem 2rem;
+}
+
+.nessunRisultato {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-style: italic;
+  color: var(--colore-testo-secondario);
+  background-color: var(--colore-bianco);
+  border-radius: 8px;
+  margin: 0; /* Rimuove margine del paragrafo */
+}
+
+/* Media Query per Responsività */
+@media (max-width: 992px) {
+  .layoutContenuto {
+    flex-direction: column;
+  }
+
+  .pannelloFiltri {
+    width: 100%;
+    flex-basis: auto;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBarPagina {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Questo target generico assicura che i figli diretti si espandano.
+     Se i figli sono i componenti CampoTesto e Bottone, e questi
+     applicano la larghezza 100% internamente quando necessario, va bene.
+     Altrimenti, si potrebbero dover targettare classi specifiche.
+     Per i CampoTesto, la classe .campoRicercaServizioPagina e .campoRicercaLocalitaPagina
+     non imposta width: 100%, ma flex-grow:1. Quando il flex-direction è column,
+     flex-grow non ha l'effetto desiderato sulla larghezza.
+     Quindi, è meglio impostare width: 100% esplicitamente.
+  */
+  .searchBarPagina > * { /* Rende i figli diretti (CampoTesto, Bottone) larghi 100% */
+    /* width: 100%;  Questo è troppo generico. Usiamo le classi specifiche. */
+  }
+  .campoRicercaServizioPagina,
+  .campoRicercaLocalitaPagina,
+  .bottoneRicercaPagina { /* Classe per il bottone dentro la search bar */
+    width: 100%;
+  }
+
+
+  .controlliRicerca {
+    flex-direction: column;
+    align-items: stretch; /* Allinea i figli a tutta larghezza */
+  }
+  
+  .infoRisultati {
+    text-align: center; /* Centra il testo dei risultati */
+    margin-bottom: 1rem; /* Spazio se i controlli vanno sotto */
+  }
+
+  .azioniControlli { /* Era .wrapperBottoniControlli */
+    width: 100%;
+    justify-content: space-between; /* Per spaziare Filtri e Ordina */
+  }
+}
+
+@media (max-width: 480px) { /* Mobile più piccolo */
+  .azioniControlli {
+    flex-direction: column; /* Filtri e Ordina uno sotto l'altro */
+    align-items: stretch; /* Fa sì che il select occupi tutta la larghezza */
+  }
+  .selectOrdinamento {
+    width: 100%; /* Select ordinamento a tutta larghezza */
+  }
+}

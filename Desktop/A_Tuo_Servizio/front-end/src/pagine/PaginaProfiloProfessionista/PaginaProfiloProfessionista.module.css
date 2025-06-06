@@ -1,0 +1,366 @@
+/* src/pagine/PaginaProfiloProfessionista/PaginaProfiloProfessionista.module.css */
+
+/* Layout Generale della Pagina */
+.paginaProfiloWrapper {
+  /* Nessuno stile specifico qui per ora, il layout generale è gestito da App.tsx
+     e il Contenitore interno gestisce il padding principale. */
+}
+
+/* === Header del Profilo === */
+.headerProfilo {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.immagineCopertina {
+  height: 280px; /* Leggermente più alta */
+  background-color: var(--colore-secondario); /* Placeholder se non c'è immagine */
+  background-image: url('https://via.placeholder.com/1200x280/6AC0B2/FFFFFF?text=Copertina+Profilo'); /* Esempio di placeholder */
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+}
+
+.contenitoreIntestazione { /* Classe per il Contenitore sotto la copertina */
+  padding-top: 1.5rem; /* Spazio tra copertina e contenuto "sopra" */
+}
+
+.contenutoIntestazioneProfilo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-top: -100px; /* Per far risalire la foto sulla copertina */
+}
+
+.fotoProfiloWrapper { /* Wrapper per la foto per eventuale styling futuro (es. bordi, icone) */
+  /* Nessuno stile specifico richiesto qui per ora */
+}
+
+.fotoProfilo {
+  width: 150px; /* Più grande */
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid var(--colore-bianco);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  object-fit: cover;
+  background-color: var(--colore-primario); /* Sfondo per placeholder se l'immagine non carica */
+  z-index: 2; /* Per stare sopra l'immagine di copertina */
+}
+
+.fotoPlaceholder { /* Usato quando l'immagine non è disponibile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--colore-bianco);
+  /* width, height, border-radius, background-color sono già in .fotoProfilo */
+}
+
+.testataInfo {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nomeProfessionista { /* Classe per il Titolo livello={1} */
+  font-size: 2rem; /* Adattato da Titolo H1 */
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--colore-testo-principale); /* Assicuriamoci che il colore sia corretto */
+}
+
+.specializzazioneProfilo { /* Classe per il Paragrafo */
+  font-size: 1.1rem;
+  color: var(--colore-testo-secondario);
+  margin-bottom: 0.5rem;
+}
+
+.valutazioneLocalitaWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Spazio tra stelle, testo recensioni, separatore, località */
+  flex-wrap: wrap; /* Permette di andare a capo su schermi piccoli */
+  justify-content: center; /* Centra gli elementi quando vanno a capo */
+  color: var(--colore-testo-secondario);
+  margin-bottom: 0.75rem;
+}
+
+.valutazioneTesto { /* Classe per il Paragrafo del numero recensioni */
+  display: flex; /* Per allineare con le stelle se necessario */
+  align-items: center;
+  gap: 0.3rem; /* Spazio tra le stelle (se fossero qui) e il testo */
+  font-size: 0.9rem;
+  margin: 0; /* Rimuove margine default del Paragrafo */
+}
+
+.stelleIcona { /* Se si usa una classe specifica per le stelle in RenderStelle */
+  /* La funzione RenderStelle in PaginaProfiloProfessionista.tsx applica già stili inline, inclusi colore e dimensione.
+     Questa classe è qui come riferimento o per override se necessario.
+     color: #FFC107;
+     font-size: 1rem;
+  */
+}
+
+.separatoreDot { /* Era .separatoreValLoc, rinominato per chiarezza */
+  padding: 0 0.25rem;
+}
+
+.localitaProfilo { /* Classe per il Paragrafo della località */
+  font-size: 0.9rem;
+  margin: 0; /* Rimuove margine default del Paragrafo */
+}
+
+
+/* === Barra Azioni Principali (CTA) === */
+.barraAzioni {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--colore-bianco);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  flex-wrap: wrap;
+  justify-content: center; /* Centra i bottoni se vanno a capo */
+}
+
+.bottonePreferiti { /* Stili aggiuntivi per il bottone preferiti se necessario */
+  /* min-width: 160px; /* Per dare più spazio al testo "Salva Preferiti" / "Salvato" */
+}
+
+
+/* === Navigazione a Schede (Tabs) === */
+.navigazioneTabs {
+  display: flex;
+  gap: 0.25rem; /* Spazio ridotto tra i bottoni tab */
+  border-bottom: 2px solid var(--colore-sfondo-chiaro); /* Linea di base per le tab */
+  margin-bottom: 2rem;
+  justify-content: center; /* Centra il gruppo di tab */
+  flex-wrap: wrap; /* Permette alle tab di andare a capo su schermi piccoli */
+}
+
+.tabBottone {
+  padding: 0.8rem 1.5rem; /* Più padding orizzontale */
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-corpo);
+  font-size: 1rem;
+  font-weight: 500; /* Medium */
+  color: var(--colore-testo-secondario);
+  border-bottom: 3px solid transparent; /* Spazio per la linea attiva, trasparente di default */
+  margin-bottom: -2px; /* Per sovrapporre il bordo inferiore del bottone a quello di .navigazioneTabs */
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.tabBottone:hover {
+  color: var(--colore-primario);
+}
+
+.tabAttiva {
+  color: var(--colore-primario);
+  border-bottom-color: var(--colore-primario);
+  font-weight: 600; /* Semibold per la tab attiva */
+}
+
+
+/* === Contenuto delle Schede === */
+.contenutoScheda {
+  padding: 1rem 0.5rem; /* Aggiunto padding orizzontale */
+}
+
+.titoloSezioneScheda { /* Classe per il componente Titolo livello={2} */
+  font-size: 1.5rem; /* 24px */
+  color: var(--colore-testo-principale);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-family: var(--font-titoli);
+  font-weight: 600; /* Semibold */
+}
+
+.testoDescrizioneLunga { /* Classe per il componente Paragrafo */
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: var(--colore-testo-principale); /* Assicura che il colore sia quello standard del corpo */
+}
+
+/* === Stili per la Galleria Portfolio === */
+.galleriaProgetti {
+  /* Può essere vuoto se il componente Griglia gestisce tutto, o per sovrascritture specifiche */
+}
+
+.cardAnteprimaProgetto {
+  background-color: var(--colore-bianco);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex; 
+  flex-direction: column;
+}
+
+.cardAnteprimaProgetto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.immagineAnteprimaProgetto {
+  width: 100%;
+  height: 180px; 
+  object-fit: cover;
+  display: block; 
+}
+
+.contenutoTestualeAnteprima { 
+  padding: 1rem;
+  flex-grow: 1; 
+}
+
+.titoloAnteprimaProgetto { 
+  font-weight: 600;
+  margin-top: 0; 
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  color: var(--colore-testo-principale);
+  line-height: 1.4;
+}
+
+.categoriaAnteprimaProgetto { 
+  font-size: 0.8rem;
+  color: var(--colore-testo-secondario);
+  margin-bottom: 0; 
+}
+
+/* === Stili per il Contenuto del Modale Dettaglio Progetto === */
+.galleriaImmaginiDettaglio {
+  display: flex;
+  gap: 0.75rem; 
+  margin-top: 1rem; 
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem; 
+  overflow-x: auto;
+}
+
+.galleriaImmaginiDettaglio img { 
+  height: 80px;
+  width: auto; 
+  max-width: 120px; 
+  border-radius: 4px;
+  object-fit: cover;
+  cursor: pointer; 
+}
+
+.categoriaDettaglioProgetto { 
+  font-size: 0.9rem;
+  color: var(--colore-testo-secondario);
+  margin-bottom: 0.75rem; 
+  font-style: italic;
+}
+
+.descrizioneDettaglioProgetto { 
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  white-space: pre-wrap; 
+}
+
+/* === Stili per la Sezione Servizi Offerti === */
+.serviziElenco {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.servizioItem {
+  background-color: var(--colore-bianco);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  /* margin-bottom è gestito dal gap di .serviziElenco */
+}
+
+.nomeServizio { /* Classe per h4 */
+  font-family: var(--font-titoli);
+  font-weight: 600;
+  font-size: 1.2rem; 
+  color: var(--colore-primario);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.descrizioneServizio { /* Classe per Paragrafo */
+  line-height: 1.6;
+  color: var(--colore-testo-principale);
+  margin-bottom: 0.5rem;
+}
+
+.prezzoServizio { /* Classe per Paragrafo */
+  font-size: 0.9rem;
+  color: var(--colore-testo-secondario);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+
+/* === Media query === */
+@media (max-width: 768px) {
+  .contenutoIntestazioneProfilo {
+    margin-top: -80px; 
+  }
+  .fotoProfilo {
+    width: 120px;
+    height: 120px;
+  }
+  .nomeProfessionista {
+    font-size: 1.8rem;
+  }
+  .specializzazioneProfilo {
+    font-size: 1rem;
+  }
+  .barraAzioni {
+    flex-direction: column; 
+    align-items: stretch; 
+  }
+  .barraAzioni > button { 
+    width: 100%;
+  }
+  .tabBottone {
+    padding: 0.7rem 0.8rem; 
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .immagineCopertina {
+    height: 200px; 
+  }
+  .contenutoIntestazioneProfilo {
+    margin-top: -60px; 
+  }
+  .fotoProfilo {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+  .nomeProfessionista {
+    font-size: 1.5rem;
+  }
+  .valutazioneLocalitaWrapper {
+    gap: 0.3rem; 
+  }
+  .valutazioneTesto, .localitaProfilo {
+    font-size: 0.85rem;
+  }
+  .navigazioneTabs {
+    gap: 0; 
+  }
+  .tabBottone { 
+    flex-grow: 1;
+    flex-basis: 0; 
+    text-align: center;
+  }
+}

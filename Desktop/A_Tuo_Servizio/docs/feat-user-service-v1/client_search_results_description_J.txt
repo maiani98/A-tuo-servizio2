@@ -1,0 +1,97 @@
+**Descrizione Testuale: Client Search Results (J)**
+
+**1. Obiettivo Primario (UX):**
+
+L'obiettivo primario della pagina dei Risultati di Ricerca del Cliente è presentare in modo chiaro, organizzato e facilmente navigabile l'elenco dei professionisti che corrispondono ai criteri di ricerca dell'utente, consentendo di filtrare, ordinare e approfondire i profili per prendere una decisione informata.
+
+**2. Elementi Chiave UI e Layout:**
+
+**2.1. Header Fisso (Sticky):**
+    *   **Scopo:** Mantenere visibilità del brand, permettere modifiche rapide alla ricerca e accesso all'account.
+    *   **Layout Desktop:**
+        *   A sinistra: Logo del brand.
+        *   Al centro: Barra di ricerca (pre-compilata con i termini della ricerca precedente e modificabile). Include i campi "Che servizio cerchi?" e "Dove?", con pulsante "Cerca" o icona lente.
+        *   A destra: Link testuale o icona "Il Mio Account" (con menu dropdown se utente autenticato) o "Accedi/Registrati".
+    *   **Layout Mobile:**
+        *   A sinistra: Logo del brand.
+        *   A destra: Icona "Il Mio Account" o "Accedi/Registrati".
+        *   La barra di ricerca (pre-compilata) potrebbe essere presente ma più compatta, oppure accessibile tramite un'icona "Modifica Ricerca" che la espande o porta a una vista dedicata.
+
+**2.2. Area Titolo Risultati e Controlli:**
+    *   **Scopo:** Fornire un riepilogo del numero di risultati e offrire controlli per affinare e visualizzare i risultati.
+    *   **Layout Desktop:**
+        *   A sinistra: Testo "X professionisti trovati per '[termine ricerca]' in '[località]'".
+        *   A destra (allineati orizzontalmente):
+            *   Pulsante/Icona "Filtri" (I): All'attivazione (click), apre un pannello filtri. Questo pannello può essere una sidebar laterale (es. a sinistra) che spinge il contenuto dei risultati, oppure un modale overlay.
+            *   Dropdown "Ordina per": Opzioni comuni (es. "Rilevanza", "Valutazione (dal più alto)", "Distanza (dal più vicino)", "Popolarità").
+            *   Toggle Visualizzazione: Icone o testo per passare tra "Lista" (J - default) e "Mappa" (H). L'opzione attiva è evidenziata.
+    *   **Layout Mobile:**
+        *   Testo "X professionisti trovati" (più conciso).
+        *   I controlli ("Filtri", "Ordina per", "Visualizzazione Lista/Mappa") sono tipicamente raggruppati in una singola riga sotto il titolo, o accessibili tramite un pulsante "Opzioni" che apre un menu/modale. Il toggle Lista/Mappa potrebbe essere rappresentato solo da icone. L'apertura dei filtri su mobile avviene tramite un pulsante che apre un pannello full-screen o quasi.
+
+**2.3. Area Risultati (List View - J):**
+    *   **Scopo:** Visualizzare le informazioni chiave di ciascun professionista in un formato scansionabile.
+    *   **Layout Desktop e Mobile (con adattamenti):**
+        *   **Professional Cards (K):** Una lista verticale di card, ognuna rappresentante un professionista.
+            *   **Contenuto della Card (K):**
+                *   **Foto Profilo:** Immagine chiara del professionista o logo aziendale.
+                *   **Nome del Professionista/Azienda:** Grande e ben leggibile.
+                *   **Specializzazione Primaria:** Es. "Idraulico", "Web Designer Freelance".
+                *   **Valutazione Media e Numero Recensioni:** Es. "★★★★☆ (120 recensioni)".
+                *   **Località/Distanza:** Es. "Milano (2.5 km)" o "Roma - Zona Prati". La distanza è calcolata se la geolocalizzazione dell'utente è nota e il professionista ha un indirizzo valido.
+                *   **Tagline/Estratto del Profilo:** Breve descrizione accattivante o specializzazioni chiave (1-2 righe).
+                *   **Badge/Icone Speciali (Opzionale):** Es. "Verificato", "Risposta Rapida", "Super Pro".
+                *   **CTA (Call to Action):** Pulsante ben visibile "Vedi Profilo" e/o "Contatta" (o "Richiedi Preventivo").
+            *   **Adattamento Mobile Card:** Le informazioni potrebbero essere impilate in modo più verticale per adattarsi alla larghezza ridotta. La quantità di testo visibile per il tagline potrebbe essere ridotta, con possibilità di espansione. I CTA potrebbero essere più prominenti.
+        *   **Paginazione o Scroll Infinito:**
+            *   **Paginazione:** Controlli numerati (1, 2, 3... Prossimo) in fondo alla lista dei risultati.
+            *   **Scroll Infinito:** Nuovi risultati vengono caricati automaticamente man mano che l'utente scorre verso il basso. È importante fornire un indicatore di caricamento.
+
+**2.4. Pannello Filtri (I):**
+    *   **Scopo:** Permettere agli utenti di restringere i risultati della ricerca in base a criteri specifici.
+    *   **Presentazione Desktop:** Tipicamente una sidebar laterale (es. sinistra) o un modale. Se sidebar, potrebbe essere inizialmente collassata e aprirsi al click sul pulsante "Filtri".
+    *   **Presentazione Mobile:** Si apre come un modale full-screen o quasi, sovrapponendosi ai risultati, per massimizzare lo spazio per le opzioni di filtro. Si chiude con una "X" o un pulsante "Applica".
+    *   **Contenuto del Pannello Filtri:**
+        *   Titolo: "Filtri".
+        *   **Sottocategoria/Servizio Specifico:** Checkbox o lista selezionabile (es. se la ricerca era "Idraulico", qui potrebbero esserci "Riparazione perdite", "Installazione sanitari").
+        *   **Distanza/Raggio di Ricerca:** Slider o dropdown per selezionare un raggio (es. entro 5km, 10km, 25km). Richiede che la località dell'utente sia nota.
+        *   **Valutazione Minima:** Serie di stelle cliccabili (es. da ★ a ★★★★★) o un dropdown (es. "4+ stelle").
+        *   **Disponibilità (Opzionale):** Filtri per disponibilità specifica (es. "Disponibile nel weekend", "Intervento urgente"). Questo dipende dalla complessità del sistema.
+        *   **Altri Filtri Specifici del Settore:** A seconda del tipo di professionisti (es. "Anni di esperienza", "Certificazioni", "Lingue parlate").
+    *   **Azioni nel Pannello Filtri:**
+        *   Pulsante "Applica Filtri": Applica i filtri selezionati e aggiorna la lista dei risultati.
+        *   Pulsante/Link "Resetta Filtri" (o "Cancella Filtri"): Riporta tutti i filtri allo stato predefinito.
+
+**2.5. Stato "Nessun Risultato":**
+    *   **Scopo:** Informare l'utente quando la sua ricerca o i filtri applicati non producono risultati e guidarlo verso azioni correttive.
+    *   **Layout:**
+        *   Messaggio chiaro: Es. "Nessun professionista trovato per i tuoi criteri." o "Spiacenti, la tua ricerca non ha prodotto risultati."
+        *   Suggerimenti Utili:
+            *   "Prova a modificare i termini della tua ricerca."
+            *   "Allarga il raggio di ricerca."
+            *   "Rimuovi alcuni filtri."
+            *   "Verifica che non ci siano errori di battitura."
+            *   Link per tornare alla homepage o per esplorare categorie popolari.
+
+**3. Interazioni Principali (UX):**
+
+*   **Scorrere i Risultati:** L'utente scorre verticalmente la lista delle card dei professionisti.
+*   **Click su Card Professionista:** Cliccando su una card (o sul pulsante "Vedi Profilo") l'utente viene reindirizzato alla pagina di dettaglio del profilo del professionista (F).
+*   **Modificare la Ricerca Iniziale:** L'utente può modificare i termini nei campi di ricerca nell'header e cliccare "Cerca" per avviare una nuova ricerca.
+*   **Aprire e Chiudere Pannello Filtri:** Click sul pulsante "Filtri" per aprire il pannello. Click su "Applica Filtri", "X" (chiudi), o al di fuori del pannello (se modale) per chiuderlo.
+*   **Applicare/Resettare Filtri:** L'utente seleziona/deseleziona opzioni nel pannello filtri e clicca "Applica Filtri". I risultati si aggiornano dinamicamente (idealmente con un indicatore di caricamento). Click su "Resetta Filtri" per rimuovere i filtri attivi.
+*   **Cambiare Ordinamento:** L'utente seleziona un'opzione dal dropdown "Ordina per". La lista dei risultati si ricarica secondo il nuovo criterio.
+*   **Cambiare Visualizzazione:** Click sul toggle per passare dalla visualizzazione Lista (J) alla visualizzazione Mappa (H) e viceversa.
+*   **Paginazione/Scroll Infinito:** Interazione con i controlli di paginazione o scroll automatico per caricare più risultati.
+*   **Contattare Direttamente (se disponibile):** Click sul pulsante "Contatta" (se presente sulla card) per avviare un'azione di contatto diretto (es. form, chat).
+
+**4. Considerazioni UI/UX Aggiuntive Chiave:**
+
+*   **Scansione Rapida delle Card:** Il design delle Professional Card (K) deve permettere all'utente di cogliere rapidamente le informazioni più rilevanti (specializzazione, valutazione, località) senza dover leggere ogni dettaglio. L'uso di icone e una chiara gerarchia visiva sono fondamentali.
+*   **Feedback Visivo per Filtri/Ordinamento:** L'utente deve ricevere un feedback chiaro quando i filtri o l'ordinamento vengono applicati (es. indicatori di caricamento, aggiornamento del numero di risultati, stato attivo dei filtri/ordinamento).
+*   **Performance e Tempi di Caricamento:** La pagina deve caricarsi velocemente, specialmente l'aggiornamento dei risultati dopo l'applicazione di filtri o cambio di ordinamento. Considerare lazy loading per le immagini nelle card.
+*   **Adattamento Mobile Efficace:**
+    *   **Card:** Le card dei professionisti devono rimanere leggibili e funzionali su schermi piccoli, con CTA facilmente toccabili.
+    *   **Filtri:** Il pannello filtri su mobile deve essere facile da usare, con controlli touch-friendly e opzioni ben spaziate, occupando lo schermo per una migliore usabilità.
+*   **Stato Attivo dei Filtri:** Deve essere facile per l'utente vedere quali filtri sono attualmente attivi (es. badge sul pulsante "Filtri" con il numero di filtri attivi, o un riepilogo dei filtri attivi sopra i risultati).
+*   **Consistenza con la Visualizzazione Mappa (H):** Sebbene questa sia la descrizione per la vista Lista (J), le informazioni disponibili e i filtri dovrebbero essere consistenti con la vista Mappa.

@@ -1,0 +1,126 @@
+.containerAree {
+  padding: 20px;
+}
+
+.titoloSezione {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.sottotitoloSezione {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.formAree {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Spazio tra le sezioni del form */
+}
+
+.sezioneFormTags,
+.sezioneFormRaggio,
+.sezioneMappa {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.labelForm {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.inputTagContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.inputTag { /* Stile per CampoTesto usato come input per i tag */
+  flex-grow: 1;
+}
+
+.bottoneAddTag {
+  flex-shrink: 0; /* Non far restringere il bottone */
+  align-self: flex-end; /* Allinea con la base dell'input se CampoTesto ha padding/margin diversi */
+  /* Potrebbe essere necessario aggiustare l'allineamento verticale se CampoTesto ha un'altezza diversa */
+  height: auto; /* O un'altezza specifica se CampoTesto ha un'altezza fissa */
+  padding: 10px 15px; /* Assicurati che sia simile all'altezza dell'input */
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 0; /* Spazio sopra e sotto i tag */
+}
+
+.tagItem {
+  background-color: #007bff;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 15px; /* Forma a pillola */
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.removeTagButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 2px; /* Piccolo padding per facilitare il click */
+  line-height: 1; /* Per un miglior allineamento verticale della X */
+}
+.removeTagButton:hover {
+  opacity: 0.8;
+}
+
+.noTags {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.titoloSottoSezione {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #0056b3;
+  font-size: 1.1rem;
+}
+
+.mappaPlaceholder {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  color: #495057;
+}
+.mappaPlaceholder img {
+  margin-top: 10px;
+}
+
+.azioniForm {
+  margin-top: 10px; /* Ridotto gap se l'ultima sezione ha già padding */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.feedbackPositivo {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+}

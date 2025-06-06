@@ -1,0 +1,172 @@
+/* Stili per DashboardClienteMessaggi */
+
+.titoloSezioneDashboard { /* Può essere ereditato/condiviso */
+    font-size: 1.6rem;
+    font-family: var(--font-titoli);
+    color: var(--colore-testo-forte);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--colore-bordo-input-leggero);
+}
+
+.layoutMessaggi {
+    display: flex;
+    gap: 1.5rem; /* Spazio tra colonna lista e colonna chat */
+    /* Altezza: calcolata per riempire lo spazio disponibile meno padding e titolo. 
+       Questo è un esempio, potrebbe necessitare di aggiustamenti specifici.
+       Assumendo che .dashboardLayout abbia padding: 1.5rem e .titoloDashboard margin-bottom: 1.5rem
+       e .contenutoPrincipaleDashboard (in PaginaDashboardCliente.module.css) abbia padding: 1.5rem
+       Altezza header globale: var(--altezza-header, 60px)
+       Altezza titolo dashboard: circa 2rem (font-size) + 1.5rem (margin-bottom) = 3.5rem
+       Padding contenitore principale dashboard: 1.5rem
+       Padding .dashboardLayout: 1.5rem (top)
+       Totale: 60px + (3.5rem * 16px/rem) + (1.5rem*16px/rem) + (1.5rem*16px/rem) = 60 + 56 + 24 + 24 = 164px
+       Quindi, altezza potrebbe essere calc(100vh - ~170px) o usare flexbox sul genitore.
+       Per semplicità, usiamo un'altezza fissa o min-height per ora.
+    */
+    height: 600px; /* Altezza fissa per il contenitore della chat, o min-height */
+    max-height: calc(100vh - var(--altezza-header, 60px) - 100px); /* Esempio di max-height */
+}
+
+.listaConversazioniColonna {
+    flex: 0 0 320px; /* Larghezza fissa per la lista delle conversazioni */
+    background-color: var(--colore-sfondo-widget, var(--colore-bianco));
+    border-radius: var(--bordi-radius-medio, 6px);
+    border: 1px solid var(--colore-bordo-widget, var(--colore-bordo-input-leggero));
+    overflow-y: auto; /* Scroll se le conversazioni eccedono l'altezza */
+    padding: 0.75rem; /* Padding interno alla colonna */
+    box-shadow: var(--ombreggiatura-molto-leggera);
+}
+
+.cardAnteprimaConversazione {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.9rem;
+    border-radius: var(--bordi-radius-piccolo, 4px);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid var(--colore-bordo-input-molto-leggero, #f1f1f1);
+}
+.cardAnteprimaConversazione:last-child {
+    border-bottom: none;
+}
+
+.cardAnteprimaConversazione:hover {
+    background-color: var(--colore-sfondo-hover-leggero, #f8f9fa);
+}
+
+.conversazioneAttiva {
+    background-color: var(--colore-primario-trasparente-10, rgba(0, 123, 255, 0.07));
+    border-left: 3px solid var(--colore-primario);
+    padding-left: calc(0.9rem - 3px); /* Compensa il bordo sinistro */
+}
+
+.avatarConversazione {
+    width: 48px; /* Dimensione avatar */
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--colore-grigio-placeholder-avatar, #ced4da);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--colore-bianco);
+    flex-shrink: 0; /* Non far restringere l'avatar */
+}
+.avatarConversazione img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.contenutoAnteprima {
+    flex-grow: 1;
+    overflow: hidden; /* Per ellipsis su testi lunghi */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente se l'altezza lo permette */
+}
+
+.headerAnteprima {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.2rem; /* Spazio tra nome e anteprima messaggio */
+}
+
+.nomeProfessionistaAnteprima {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--colore-testo-forte);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.timestampAnteprima {
+    font-size: 0.75rem;
+    color: var(--colore-testo-terziario, #6c757d);
+    white-space: nowrap; /* Non mandare a capo il timestamp */
+    margin-left: 0.5rem; /* Spazio dal nome */
+}
+
+.testoAnteprimaMessaggio {
+    font-size: 0.85rem;
+    color: var(--colore-testo-secondario);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Mostra ... se il testo è troppo lungo */
+    margin-bottom: 0.1rem; /* Piccolo spazio se c'è il badge sotto */
+}
+
+.footerAnteprima { /* Contenitore per il badge non letti, se necessario per layout */
+    display: flex;
+    justify-content: flex-end; /* Spinge il badge a destra */
+    height: 16px; /* Altezza per evitare cambi di layout se il badge appare/scompare */
+}
+
+.badgeNonLetti {
+    background-color: var(--colore-primario);
+    color: var(--colore-bianco);
+    font-size: 0.7rem;
+    padding: 3px 7px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.chatAttivaColonna {
+    flex-grow: 1;
+    background-color: var(--colore-bianco);
+    border-radius: var(--bordi-radius-medio, 6px);
+    border: 1px solid var(--colore-bordo-widget, var(--colore-bordo-input-leggero));
+    box-shadow: var(--ombreggiatura-molto-leggera);
+    display: flex; /* Per far sì che <Outlet /> o <PaginaChat /> si espandano */
+    flex-direction: column;
+    overflow: hidden; /* Nasconde contenuto che eccede, PaginaChat gestirà il suo scroll */
+}
+
+.placeholderChat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: var(--colore-testo-secondario);
+    padding: 2rem;
+}
+.iconaPlaceholderChat {
+    font-size: 3rem;
+    color: var(--colore-grigio-leggero-testo);
+    margin-bottom: 1rem;
+}
+
+.messaggioNessunaConversazione {
+    padding: 1rem;
+    text-align: center;
+    color: var(--colore-testo-secondario);
+    font-style: italic;
+}
