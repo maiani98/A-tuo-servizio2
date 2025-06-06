@@ -28,10 +28,16 @@ Progetto modulare per una piattaforma di servizi professionali, organizzata in m
 
 ## Guida rapida
 
-1. Crea l’ambiente virtuale e installa dipendenze (per Django e microservizi FastAPI/NodeJS).  
-2. Avvia i container Docker definiti nei `Dockerfile` di ogni microservizio sotto `services/`.  
-3. Consulta la documentazione in `docs/` per istruzioni dettagliate su mockup, API e flussi dati.  
-4. Esegui gli script di manutenzione presenti in `scripts/`.  
+1. Crea l’ambiente virtuale e installa dipendenze (per Django e microservizi FastAPI/NodeJS).
+2. Avvia l’intera piattaforma tramite `docker-compose` posizionandoti nella root del progetto e lanciando:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+   Il comando avvia tutti i microservizi e i relativi database.
+3. Consulta la documentazione in `docs/` per istruzioni dettagliate su mockup, API e flussi dati.
+4. Esegui gli script di manutenzione presenti in `scripts/`.
 
 ## Scelte architetturali
 
