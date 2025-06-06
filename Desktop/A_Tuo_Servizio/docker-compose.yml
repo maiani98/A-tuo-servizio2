@@ -1,0 +1,112 @@
+version: '3.8'
+services:
+  user-service:
+    build: ./services/servizio_utenti
+    env_file:
+      - ./services/servizio_utenti/.env.example
+    ports:
+      - "8000:8000"
+
+  profili-service:
+    build: ./services/servizio_profili_professionisti
+    env_file:
+      - ./services/servizio_profili_professionisti/.env.example
+    ports:
+      - "8001:8000"
+
+  portfolio-service:
+    build: ./services/servizio_portfolio
+    env_file:
+      - ./services/servizio_portfolio/.env.example
+    ports:
+      - "8002:8000"
+
+  ricerca-service:
+    build: ./services/servizio_ricerca
+    env_file:
+      - ./services/servizio_ricerca/.env.example
+    ports:
+      - "8003:8000"
+
+  calendar-db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: calendar_db
+      POSTGRES_USER: calendar_user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+
+  calendar-service:
+    image: node:18
+    working_dir: /usr/src/app
+    volumes:
+      - ./services/calendar-svc:/usr/src/app
+    env_file:
+      - ./services/calendar-svc/.env.example
+    command: node index.js
+    depends_on:
+      - calendar-db
+    ports:
+      - "3002:3002"
+
+  quotes-db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: quotes_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5434:5432"
+
+  quote-service:
+    image: node:18
+    working_dir: /usr/src/app
+    volumes:
+      - ./services/quote-svc:/usr/src/app
+    env_file:
+      - ./services/quote-svc/.env.example
+    command: node index.js
+    depends_on:
+      - quotes-db
+    ports:
+      - "3000:3000"
+
+  mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+
+  kafka:
+    image: bitnami/kafka:latest
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_BROKER_ID=1
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    ports:
+      - "2181:2181"
+
+  chat-service:
+    image: node:18
+    working_dir: /usr/src/app
+    volumes:
+      - ./services/chat-svc:/usr/src/app
+    env_file:
+      - ./services/chat-svc/.env.example
+    command: node index.js
+    depends_on:
+      - kafka
+      - mongo
+    ports:
+      - "3001:3001"
