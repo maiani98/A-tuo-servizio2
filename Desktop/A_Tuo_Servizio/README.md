@@ -17,8 +17,11 @@ Progetto modulare per una piattaforma di servizi professionali, organizzata in m
 
 - **docs/**  
   Documentazione, mockup e user stories:
-  - `feat-user-service-v1/` – descrizioni e diagrammi relativi alla feature User Service v1  
-  - `screen-descriptions/` – wireframe e descrizioni delle schermate principali  
+  - `feat-user-service-v1/` – descrizioni e diagrammi relativi alla prima
+    implementazione del servizio utenti e alla proposta di architettura
+    complessiva dei microservizi;
+  - `screen-descriptions/` – wireframe e schede riassuntive delle schermate
+    principali a supporto dello sviluppo front‑end.
 
 - **scripts/**  
   Script e cron-job (ad esempio `scripts/cron-jobs.sh`).  
