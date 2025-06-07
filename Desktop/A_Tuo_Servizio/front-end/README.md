@@ -13,6 +13,7 @@ This project is the frontend application for `client-autoservizio`.
 1. Clone the repository.
 2. Navigate to the `client-autoservizio` directory: `cd client-autoservizio`
 3. Install dependencies: `npm install` (or `yarn install`)
+4. Copy `.env.example` to `.env` and adjust `VITE_API_BASE_URL` if your backend runs on a different URL.
 
 ### Running the Development Server
 ```bash
