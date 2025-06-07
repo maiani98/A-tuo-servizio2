@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:8000', // TODO: Configurare l'URL base corretto per le API backend
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000',
   // headers: {
   //   'Content-Type': 'application/json',
   // },
