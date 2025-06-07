@@ -28,6 +28,8 @@ import PaginaAttesaVerificaEmail from '../pagine/PaginaAttesaVerificaEmail/Pagin
 import PaginaEmailVerificata from '../pagine/PaginaEmailVerificata/PaginaEmailVerificata'; // Importazione per PaginaEmailVerificata
 import PaginaRichiestaResetPassword from '../pagine/PaginaRichiestaResetPassword/PaginaRichiestaResetPassword'; // Importazione per PaginaRichiestaResetPassword
 import PaginaResetPassword from '../pagine/PaginaResetPassword/PaginaResetPassword'; // Importazione per PaginaResetPassword
+import PaginaTerminiCondizioni from '../pagine/PaginaTerminiCondizioni/PaginaTerminiCondizioni';
+import PaginaPrivacyPolicy from '../pagine/PaginaPrivacyPolicy/PaginaPrivacyPolicy';
 
 // Si assume che App.tsx (o un componente simile) fornisca il layout generale (Header, Footer)
 // e contenga un <Outlet /> implicito se queste route sono figlie di una route radice con layout.
@@ -147,6 +149,8 @@ const router = createBrowserRouter([
         path: '/scrivi-recensione/:idProfessionista', // Route di primo livello
         element: <PaginaInvioRecensione />,
       }
+      { path: "termini-e-condizioni", element: <PaginaTerminiCondizioni /> },
+      { path: "privacy-policy", element: <PaginaPrivacyPolicy /> },
     ],
   },
   // Puoi aggiungere qui altre route di primo livello se necessario (es. per una pagina 404)
