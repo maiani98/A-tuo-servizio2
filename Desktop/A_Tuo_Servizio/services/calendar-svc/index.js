@@ -18,6 +18,11 @@ app.use('/api', calendarRoutes); // Mount calendar routes under /api (e.g. /api/
                                  // So mounting them under /api/calendar is more explicit:
 app.use('/api/calendar', calendarRoutes);
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', service: 'calendar-svc' });
+});
+
 
 // Basic root route
 app.get('/', (req, res) => {

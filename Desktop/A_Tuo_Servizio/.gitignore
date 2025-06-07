@@ -1,0 +1,14 @@
+# General
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+!.env.example
+
+
+# Node
+node_modules/
+
+# Misc
+.DS_Store
+
