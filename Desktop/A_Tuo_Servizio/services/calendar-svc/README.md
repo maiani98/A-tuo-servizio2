@@ -59,6 +59,8 @@ A unique constraint exists on `(professional_id, start_time)`.
     npm install
     ```
 
+3.  Copy `.env.example` to `.env` and modify database parameters if needed.
+
 ## Running the Service
 
 1.  Ensure your PostgreSQL database is running and accessible with the configured credentials.
