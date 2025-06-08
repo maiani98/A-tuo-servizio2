@@ -50,7 +50,8 @@ Configure these environment variables before running the service. For developmen
     npm install
     ```
 
-3.  Ensure the `uploads` directory exists within `chat-svc` if not created automatically by the service start-up.
+3.  Copy `.env.example` to `.env` and adjust values like `MONGO_URI` or `KAFKA_BROKERS` if needed.
+4.  Ensure the `uploads` directory exists within `chat-svc` if not created automatically by the service start-up.
 
 ## Running the Service
 

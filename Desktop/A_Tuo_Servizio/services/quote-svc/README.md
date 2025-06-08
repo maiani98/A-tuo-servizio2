@@ -43,6 +43,8 @@ Before running the service, you would typically set up the following environment
     npm install
     ```
 
+3.  Copy `.env.example` to `.env` and adjust the database or Kafka settings if needed.
+
 ## Running the Service
 
 1.  Ensure your PostgreSQL database and Kafka cluster are running and accessible with the configured credentials/addresses.

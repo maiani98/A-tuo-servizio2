@@ -17,7 +17,7 @@ Questo microservizio espone API per la registrazione, il login e la gestione dei
    ```bash
    pip install -r requirements.txt
    ```
-3. Copiare `.env.example` in `.env` e personalizzare il `SECRET_KEY`:
+3. Copiare `.env.example` in `.env` e personalizzare le variabili `SECRET_KEY` e `DATABASE_URL` se necessario:
    ```bash
    cp .env.example .env
    ```
